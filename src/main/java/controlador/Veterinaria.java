@@ -8,6 +8,7 @@ import modelo.Cliente;
 import modelo.HoraMedica;
 import modelo.Mascota;
 import java.util.ArrayList;
+import modelo.MedicoVeterinario;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Veterinaria {
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
+    private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
 
     public ArrayList<Cliente> getClientes() {
         return clientes;
@@ -54,6 +56,16 @@ public class Veterinaria {
     public void agregarHora(HoraMedica h){
         this.horas.add(h);
     }
+
+    public ArrayList<MedicoVeterinario> getMedicos() {
+        return medicos;
+    }
+
+    public void setMedicos(ArrayList<MedicoVeterinario> medicos) {
+        this.medicos = medicos;
+    }
+    
+    
     
     
 }
