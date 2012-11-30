@@ -16,7 +16,7 @@ public class ConnectioFactory {
 //            inputStream = Resources.getResourceAsStream(resource);
             sqlMapper = new SqlSessionFactoryBuilder().build(reader);
         } catch ( Exception e ) {
-            
+            System.out.println(e);
         }
 
     }

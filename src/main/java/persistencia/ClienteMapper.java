@@ -12,22 +12,22 @@ public interface ClienteMapper {
 	final String SELECT_ALL = "SELECT * FROM cliente";
         final String UPDATE_BY_ID = "UPDATE cliente (rut,nombre,direccion,telefono,email) "
                 + "VALUES (#{rut},#{nombre},#{direccion},#{telefono},#{email}) WHERE rut=#{rut}";
-        final String SELECT_BY_ID = "SELECT FROM cliente WHERE id=#{id}";
-	final String DELETE_BY_ID = "DELETE FROM cliente WHERE id=#{id}";
+        final String SELECT_BY_RUT = "SELECT FROM cliente WHERE rut=#{rut}";
+	final String DELETE_BY_RUT = "DELETE FROM cliente WHERE rut=#{rut}";
 	
 	@Select(SELECT_ALL)
 	List<Cliente> getAllUsuarios();
 	
 	@Insert(INSERT)
-	void insert(Cliente cliente);
+	int insert(Cliente cliente);
         
         @Update(UPDATE_BY_ID)
-        int updateById(Cliente cliente);
+        int updateByRut(Cliente cliente);
         
-        @Select(SELECT_BY_ID)
-        Cliente selectById(String rut);
+        @Select(SELECT_BY_RUT)
+        Cliente selectByRut(String rut);
 	
-	@Delete(DELETE_BY_ID)
-	int deleteById(String id);
+	@Delete(DELETE_BY_RUT)
+	int deleteById(String rut);
 	
 }

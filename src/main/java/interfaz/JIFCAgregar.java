@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import controlador.Veterinaria;
 import modelo.Cliente;
 
 /**
@@ -13,6 +14,7 @@ import modelo.Cliente;
 public class JIFCAgregar extends javax.swing.JInternalFrame {
     
     private Cliente cl=new Cliente();
+    private Veterinaria vet = Veterinaria.obtenerInstancia();
     
     /**
      * Creates new form JIFCAgregar
@@ -195,7 +197,9 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         cl.setDireccion(cDireccion.getText());
         cl.setTelefono(Integer.parseInt(cTelefono.getText()));
         cl.setEmail(cEmail.getText());
-        
+        boolean s = vet.agregarCliente(obtenerDatosCliente());
+        if (s)
+            System.out.println("Bien!");
         this.setVisible(false);
         
     }//GEN-LAST:event_agregarClienteActionPerformed

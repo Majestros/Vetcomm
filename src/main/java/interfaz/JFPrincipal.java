@@ -11,7 +11,7 @@ import controlador.Veterinaria;
  * @author Casa
  */
 public class JFPrincipal extends javax.swing.JFrame {
-    private Veterinaria veterinaria=new Veterinaria();
+    private Veterinaria veterinaria= Veterinaria.obtenerInstancia();
     /**
      * Creates new form JFVentanaGeneral
      */
@@ -145,7 +145,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         jDesktopPane1.add(agregarC);
         agregarC.setVisible(true);
         
-        veterinaria.agregarCliente(agregarC.obtenerDatosCliente());
         
     }//GEN-LAST:event_cAgregarActionPerformed
 

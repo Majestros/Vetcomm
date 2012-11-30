@@ -9,6 +9,7 @@ import modelo.HoraMedica;
 import modelo.Mascota;
 import java.util.ArrayList;
 import modelo.MedicoVeterinario;
+import persistencia.ClienteManager;
 
 /**
  *
@@ -16,11 +17,23 @@ import modelo.MedicoVeterinario;
  */
 public class Veterinaria {
     
+    private static Veterinaria INSTANCIA = null;
+    private ClienteManager cManager = new ClienteManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
 
+    private Veterinaria(){
+        
+    }
+    
+    public static Veterinaria obtenerInstancia(){
+        if(INSTANCIA == null){
+            INSTANCIA = new Veterinaria();
+        }
+        return INSTANCIA;
+    }
     public ArrayList<Cliente> getClientes() {
         return clientes;
     }
@@ -49,8 +62,17 @@ public class Veterinaria {
         this.mascotas.add(m);
     }
     
-    public void agregarCliente(Cliente c){
-        this.clientes.add(c);
+    /**
+     * Agrega un cliente
+     * @return verdadero si se agrego el cliente.
+     */
+    public boolean agregarCliente(Cliente c){
+       if ( cManager.insert(c)> 0){
+           this.clientes.add(c);
+           return true;
+       }else{
+           return false;
+       }
     }
     
     public void agregarHora(HoraMedica h){

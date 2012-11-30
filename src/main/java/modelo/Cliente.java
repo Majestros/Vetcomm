@@ -20,6 +20,7 @@ public class Cliente {
     private ArrayList<Mascota> mascota = new ArrayList<Mascota>();
 
     public Cliente() {
+        super();
     }
 
     public Cliente(String rut, String nombre, String direccion, int telefono, String email) {
