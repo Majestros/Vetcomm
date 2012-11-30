@@ -321,14 +321,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         return this.hist;
     }
     
-    /*
-     * error en el arraylist porque es private ...
-    private void llenarListaClientes(){
-        for (Cliente c : Veterinaria.clientes) {
-            jComboBox1.addItem(c);
-        }
-    }
-    */
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarHistorial;
     private javax.swing.JButton agregarMascota;

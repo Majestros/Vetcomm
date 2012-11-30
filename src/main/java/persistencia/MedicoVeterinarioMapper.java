@@ -10,6 +10,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 /**
  *
@@ -19,9 +20,10 @@ public interface MedicoVeterinarioMapper {
 
     final String INSERT = "INSERT INTO medicoveterinario (rut, nombre, especialidad) VALUES (#{rut},#{nombre},#{especialidad}) ";
     final String SELECT_ALL = "SELECT * FROM medicoveterniario";
-//    final String SELECT_BY_ID = "SELECT FROM medicoveterinario WHERE id=#{id}";
+    final String SELECT_BY_ID = "SELECT FROM medicoveterinario WHERE id=#{id}";
     final String DELETE_BY_ID = "DELETE FROM medicoveterinario WHERE id=#{id}";
-//    final String UPDATE_BY_ID = "";
+    final String UPDATE_BY_ID = "UPDATE medicoveterinario (rut, nombre, especialidad) "
+                + "VALUES (#{rut},#{nombre},#{especial})";
     
     @Insert(INSERT)
 	void insert(Cliente cliente);
@@ -31,4 +33,8 @@ public interface MedicoVeterinarioMapper {
     
     @Delete(DELETE_BY_ID)
 	int deleteById(String id);
+    
+    @Update (UPDATE_BY_ID)
+        int updateById(MedicoVeterinario medicoveterinario);
+        
 }

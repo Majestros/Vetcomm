@@ -17,8 +17,8 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper class="persistencia.ClienteMapper"/>
-		<mapper class="persistencia.MascotaMapper"/>
+		<mapper package="persistencia"/>
+<!--		<mapper class="persistencia.MascotaMapper"/>-->
 	</mappers>
 <!-- 	<typeAliases> -->
 <!-- 		<typeAlias alias="Usuario" type="cesg.mybatis.domain.Usuario"/> -->
