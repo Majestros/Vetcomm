@@ -35,11 +35,11 @@ public class ClienteManager {
         return result;
     }
     
-    public Cliente selectByRut(String rut){
-        Cliente c = new Cliente();
-        
-        return c;
-    }
+//    public Cliente selectByRut(String rut){
+//        Cliente c = new Cliente();
+//        
+//        return c;
+//    }
 
     public void deleteById(String rut) {
         cMapper.deleteById(rut);
