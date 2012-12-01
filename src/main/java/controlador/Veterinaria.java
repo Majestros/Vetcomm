@@ -1,20 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package controlador;
 
+import java.util.ArrayList;
 import modelo.Cliente;
 import modelo.HoraMedica;
 import modelo.Mascota;
-import java.util.ArrayList;
 import modelo.MedicoVeterinario;
 import persistencia.ClienteManager;
-
-/**
- *
- * @author Kal-El
- */
+ 
 public class Veterinaria {
     
     private static Veterinaria INSTANCIA = null;

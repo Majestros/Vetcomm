@@ -5,7 +5,6 @@
 package persistencia;
 
 import controlador.ConnectioFactory;
-import java.sql.SQLException;
 import modelo.Cliente;
 import org.apache.ibatis.session.SqlSession;
 
@@ -28,6 +27,18 @@ public class ClienteManager {
 //        cMapper.insert(c);
         session.commit();
         return resut;
+    }
+    
+    public int updateByRut(Cliente c){
+        int result = cMapper.updateByRut(c);
+        session.commit();
+        return result;
+    }
+    
+    public Cliente selectByRut(String rut){
+        Cliente c = new Cliente();
+        
+        return c;
     }
 
     public void deleteById(String rut) {

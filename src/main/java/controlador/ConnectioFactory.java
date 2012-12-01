@@ -7,13 +7,12 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class ConnectioFactory {
     private static final String resource = "mybatis-config.xml";
-    private static  SqlSessionFactory sqlMapper;
+    private static SqlSessionFactory sqlMapper;
     private static Reader reader;
 
     static {
         try {
             reader = Resources.getResourceAsReader(resource);
-//            inputStream = Resources.getResourceAsStream(resource);
             sqlMapper = new SqlSessionFactoryBuilder().build(reader);
         } catch ( Exception e ) {
             System.out.println(e);
