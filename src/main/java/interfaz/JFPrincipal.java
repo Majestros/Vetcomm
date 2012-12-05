@@ -17,6 +17,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private Veterinaria veterinaria= Veterinaria.obtenerInstancia();
     
     //creacion tabla para listar Horas medicas del dia.
+    //blah blah
     DefaultTableModel listarHora = new DefaultTableModel();
     private ArrayList<HoraMedica> listaHoras= new ArrayList<HoraMedica>();
     
