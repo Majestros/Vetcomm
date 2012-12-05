@@ -20,24 +20,24 @@ public interface MedicoVeterinarioMapper {
 
     final String INSERT = "INSERT INTO medicoveterinario (rut, nombre, especialidad) VALUES (#{rut},#{nombre},#{especialidad}) ";
     final String SELECT_ALL = "SELECT * FROM medicoveterniario";
-    final String SELECT_BY_ID = "SELECT FROM medicoveterinario WHERE rut=#{rut}";
-    final String DELETE_BY_ID = "DELETE FROM medicoveterinario WHERE rut=#{rut}";
-    final String UPDATE_BY_ID = "UPDATE medicoveterinario (rut, nombre, especialidad) "
+    final String SELECT_BY_RUT = "SELECT FROM medicoveterinario WHERE rut=#{rut}";
+    final String DELETE_BY_RUT = "DELETE FROM medicoveterinario WHERE rut=#{rut}";
+    final String UPDATE_BY_RUT = "UPDATE medicoveterinario (rut, nombre, especialidad) "
                 + "VALUES (#{rut},#{nombre},#{especial})";
     
     @Insert(INSERT)
-	void insert(Cliente cliente);
+	int insert(MedicoVeterinario medicoveterinario);
     
     @Select(SELECT_ALL)
         List<MedicoVeterinario> getAllUsuarios();
     
-    @Select(SELECT_BY_ID)
-        int selectById(String rut);
+    @Select(SELECT_BY_RUT)
+        int selectByRut(String rut);
     
-    @Delete(DELETE_BY_ID)
-	int deleteById(String rut);
+    @Delete(DELETE_BY_RUT)
+	int deleteByRut(String rut);
     
-    @Update (UPDATE_BY_ID)
-        int updateById(MedicoVeterinario medicoveterinario);
+    @Update (UPDATE_BY_RUT)
+        int updateByRut(MedicoVeterinario medicoveterinario);
         
 }
