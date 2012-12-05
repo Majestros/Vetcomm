@@ -29,6 +29,6 @@ public interface ClienteMapper {
         Cliente selectByRut(String rut);
 	
 	@Delete(DELETE_BY_RUT)
-	int deleteById(String rut);
+	int deleteByRut(String rut);
 	
 }

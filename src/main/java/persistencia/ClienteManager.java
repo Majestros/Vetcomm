@@ -41,9 +41,8 @@ public class ClienteManager {
 //        return c;
 //    }
 
-    public void deleteById(String rut) {
-        cMapper.deleteById(rut);
-
+    public void deleteByRut(String rut) {
+        cMapper.deleteByRut(rut);
         session.commit();
     }
 }

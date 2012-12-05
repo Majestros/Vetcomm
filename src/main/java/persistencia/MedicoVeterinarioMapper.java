@@ -32,12 +32,12 @@ public interface MedicoVeterinarioMapper {
         List<MedicoVeterinario> getAllUsuarios();
     
     @Select(SELECT_BY_RUT)
-        int selectById(String rut);
+        int selectByRut(String rut);
     
     @Delete(DELETE_BY_RUT)
-	int deleteById(String rut);
+	int deleteByRut(String rut);
     
     @Update (UPDATE_BY_RUT)
-        int updateById(MedicoVeterinario medicoveterinario);
+        int updateByRut(MedicoVeterinario medicoveterinario);
         
 }

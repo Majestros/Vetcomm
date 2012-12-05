@@ -29,14 +29,13 @@ public class MedicoVeterinarioManager {
     }
     
     public int updateByRut(MedicoVeterinario v){
-        int result = vMapper.updateById(v);
+        int result = vMapper.updateByRut(v);
         session.commit();
         return result;
     }
 
     public void deleteByRut(String rut) {
-        vMapper.deleteById(rut);
-
+        vMapper.deleteByRut(rut);
         session.commit();
     }
 }
