@@ -5,6 +5,9 @@
 package interfaz;
 
 import controlador.Veterinaria;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import modelo.HoraMedica;
 
 /**
  *
@@ -12,12 +15,20 @@ import controlador.Veterinaria;
  */
 public class JFPrincipal extends javax.swing.JFrame {
     private Veterinaria veterinaria= Veterinaria.obtenerInstancia();
+    
+    //creacion tabla para listar Horas medicas del dia.
+    //blah blah
+    DefaultTableModel listarHora = new DefaultTableModel();
+    private ArrayList<HoraMedica> listaHoras= new ArrayList<HoraMedica>();
+    
     /**
      * Creates new form JFVentanaGeneral
      */
     public JFPrincipal() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +40,10 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jDesktopPane1 = new javax.swing.JDesktopPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JTListarHoras = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cAgregar = new javax.swing.JMenuItem();
@@ -46,6 +61,52 @@ public class JFPrincipal extends javax.swing.JFrame {
         hmEliminar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        JTListarHoras.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Id.", "Cliente", "Mascota", "Veterinario", "Hora"
+            }
+        ));
+        jScrollPane1.setViewportView(JTListarHoras);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Consultas del Día.");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(244, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(234, 234, 234))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+        );
+
+        jPanel1.setBounds(0, 0, 680, 440);
+        jDesktopPane1.add(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        jMenuBar1.setName("null"); // NOI18N
 
         jMenu1.setText("Cliente");
 
@@ -139,6 +200,14 @@ public class JFPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Funcion para mostrar datos en la tabla, posteriormente se debe de complementar en el constructor...
+    public void listarHoras(ArrayList<HoraMedica> hora){
+        String titulos[] = {"RUT","DV","NOMBRE","APELLIDOS","TELEFONO","EMAIL"};
+        listarHora.setColumnIdentifiers(titulos);
+        this.JTListarHoras.setModel(listarHora);
+        this.listaHoras = hora;
+    }
+    
     private void cAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAgregarActionPerformed
         // TODO add your handling code here:
         JIFCAgregar agregarC=new JIFCAgregar();
@@ -230,17 +299,21 @@ public class JFPrincipal extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable JTListarHoras;
     private javax.swing.JMenuItem cAgregar;
     private javax.swing.JMenuItem cBuscar;
     private javax.swing.JMenuItem hmCrear;
     private javax.swing.JMenuItem hmEliminar;
     private javax.swing.JDesktopPane jDesktopPane1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem mAgregar;
     private javax.swing.JMenuItem mBuscar;
     private javax.swing.JMenuItem mvAgregar;
