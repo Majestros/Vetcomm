@@ -217,7 +217,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
         
        //Cliente client = (Cliente) jComboBox1.getSelectedItem();
-       // ma.setCl(client); maloooo arreglarlo
+       // ma.setCl(client); malo falta arreglarlo
         
         vet.agregarMascota(obtenerDatosMascota());
         
