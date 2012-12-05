@@ -13,7 +13,7 @@ public class Veterinaria {
     private static Veterinaria INSTANCIA = null;
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
-    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    private static ArrayList<Cliente> clientes;
     private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
@@ -51,9 +51,12 @@ public class Veterinaria {
     public void setMascotas(ArrayList<Mascota> mascotas) {
         this.mascotas = mascotas;
     }
-    
-    public void agregarMascota(Mascota m){
-        this.mascotas.add(m);
+    //cambie este metodo de la misma forma que esta el agregarCliente, retornando 
+    //un boolean para verificar si funciona el agregar
+    public boolean agregarMascota(Mascota m){        
+       
+           this.mascotas.add(m);
+           
     }
     
     /**

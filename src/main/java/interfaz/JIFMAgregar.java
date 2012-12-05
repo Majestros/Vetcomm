@@ -4,6 +4,8 @@
  */
 package interfaz;
 
+import controlador.Veterinaria;
+import modelo.Cliente;
 import modelo.HistorialMedico;
 import modelo.Mascota;
 
@@ -12,13 +14,15 @@ import modelo.Mascota;
  * @author Casa
  */
 public class JIFMAgregar extends javax.swing.JInternalFrame {
+    private Veterinaria vet = Veterinaria.obtenerInstancia();
     private Mascota ma=new Mascota(); 
-    private HistorialMedico hist=new HistorialMedico();
+    //private HistorialMedico hist=new HistorialMedico();
     /**
      * Creates new form JIFMAgregar
      */
     public JIFMAgregar() {
         initComponents();
+        llenarListaCliente();
     }
 
     /**
@@ -42,16 +46,6 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         mId = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox();
         agregarMascota = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        hDiagnostico = new javax.swing.JTextField();
-        hFecha = new javax.swing.JTextField();
-        agregarHistorial = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -95,6 +89,11 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,118 +153,27 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
             }
         });
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
-
-        jLabel5.setText("Historial Medico:");
-
-        jLabel6.setText("Sintoma:");
-
-        jLabel8.setText("Diagnostico:");
-
-        jLabel9.setText("Fecha:");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        hDiagnostico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hDiagnosticoActionPerformed(evt);
-            }
-        });
-
-        hFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hFechaActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel5))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel9))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(29, 29, 29)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(hFecha, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(hDiagnostico, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))))))
-                .addContainerGap(29, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(hDiagnostico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(hFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        agregarHistorial.setText("Agregar al Historial");
-        agregarHistorial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarHistorialActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(361, 361, 361)
-                        .addComponent(agregarHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(379, Short.MAX_VALUE)
+                .addContainerGap(382, Short.MAX_VALUE)
                 .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(agregarHistorial)
-                .addGap(18, 18, 18)
+                .addGap(104, 104, 104)
                 .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,8 +200,15 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         ma.setId(mId.getText());
         ma.setNombre(mNombre.getText());
         ma.setRaza(mRaza.getText());
-       // ma.setGenero(mGenero.getText());
+        ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
         
+        Cliente client = (Cliente) jComboBox1.getSelectedItem();
+       // ma.setCl(client); maloooo arreglarlo
+        
+        boolean s = vet.agregarMascota(obtenerDatosMascota());
+        if (s)
+            System.out.println("Bien!");
+        this.setVisible(false);
         
         
     }//GEN-LAST:event_agregarMascotaActionPerformed
@@ -302,45 +217,29 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         return this.ma;
     }
     
-    private void hDiagnosticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hDiagnosticoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hDiagnosticoActionPerformed
-
-    private void hFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hFechaActionPerformed
-
-    private void agregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarHistorialActionPerformed
-        // TODO add your handling code here:
-        hist.setSintoma(jTextArea1.getText());
-        hist.setDiagnostico(hDiagnostico.getText());
-        hist.setFecha(hFecha.getText());
-    }//GEN-LAST:event_agregarHistorialActionPerformed
-
-    public HistorialMedico obtenerDatosHistorialMedico(){
-        return this.hist;
+    //error: arraylist cliente es privado. El arraylist deberia ser public static ???? 
+    private void llenarListaCliente(){
+        for (Cliente client : Veterinaria.obtenerInstancia().getClientes()) {
+            jComboBox1.addItem(client);
+        }
     }
+    
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarHistorial;
     private javax.swing.JButton agregarMascota;
-    private javax.swing.JTextField hDiagnostico;
-    private javax.swing.JTextField hFecha;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField mGenero;
     private javax.swing.JTextField mId;
     private javax.swing.JTextField mNombre;

@@ -21,6 +21,9 @@ public class Mascota {
         this.genero = genero;
     }
 
+
+    
+    
     public String getId() {
         return id;
     }
@@ -60,5 +63,8 @@ public class Mascota {
     public void setHistorial(ArrayList<HistorialMedico> historial) {
         this.historial = historial;
     }
+
+   
+    
     
 }
