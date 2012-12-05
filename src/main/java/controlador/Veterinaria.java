@@ -51,12 +51,11 @@ public class Veterinaria {
     public void setMascotas(ArrayList<Mascota> mascotas) {
         this.mascotas = mascotas;
     }
-    //cambie este metodo de la misma forma que esta el agregarCliente, retornando 
-    //un boolean para verificar si funciona el agregar
-    public boolean agregarMascota(Mascota m){        
-       
-           this.mascotas.add(m);
-           
+    
+    
+    
+    public void agregarMascota(Mascota m){             
+           this.mascotas.add(m);           
     }
     
     /**

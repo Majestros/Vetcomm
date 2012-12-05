@@ -22,7 +22,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
      */
     public JIFMAgregar() {
         initComponents();
-        llenarListaCliente();
+        //llenarListaCliente();
     }
 
     /**
@@ -202,13 +202,11 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         ma.setRaza(mRaza.getText());
         ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
         
-        Cliente client = (Cliente) jComboBox1.getSelectedItem();
+       //Cliente client = (Cliente) jComboBox1.getSelectedItem();
        // ma.setCl(client); maloooo arreglarlo
         
-        boolean s = vet.agregarMascota(obtenerDatosMascota());
-        if (s)
-            System.out.println("Bien!");
-        this.setVisible(false);
+        vet.agregarMascota(obtenerDatosMascota());
+        
         
         
     }//GEN-LAST:event_agregarMascotaActionPerformed
