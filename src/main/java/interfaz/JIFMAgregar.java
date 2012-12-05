@@ -4,6 +4,8 @@
  */
 package interfaz;
 
+import controlador.Veterinaria;
+import modelo.Cliente;
 import modelo.HistorialMedico;
 import modelo.Mascota;
 
@@ -12,13 +14,15 @@ import modelo.Mascota;
  * @author Casa
  */
 public class JIFMAgregar extends javax.swing.JInternalFrame {
+    private Veterinaria vet = Veterinaria.obtenerInstancia();
     private Mascota ma=new Mascota(); 
-    private HistorialMedico hist=new HistorialMedico();
+    //private HistorialMedico hist=new HistorialMedico();
     /**
      * Creates new form JIFMAgregar
      */
     public JIFMAgregar() {
         initComponents();
+        llenarListaCliente();
     }
 
     /**
@@ -85,6 +89,11 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -151,20 +160,34 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addContainerGap(35, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(332, Short.MAX_VALUE)
                 .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
+=======
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(382, Short.MAX_VALUE)
+                .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+>>>>>>> 5dc6e74ce76b4c0ff6c219434ee38fbbbc898339
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+<<<<<<< HEAD
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40))
+=======
+                .addGap(104, 104, 104)
+                .addComponent(agregarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+>>>>>>> 5dc6e74ce76b4c0ff6c219434ee38fbbbc898339
         );
 
         pack();
@@ -191,8 +214,15 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         ma.setId(mId.getText());
         ma.setNombre(mNombre.getText());
         ma.setRaza(mRaza.getText());
-       // ma.setGenero(mGenero.getText());
+        ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
         
+        Cliente client = (Cliente) jComboBox1.getSelectedItem();
+       // ma.setCl(client); maloooo arreglarlo
+        
+        boolean s = vet.agregarMascota(obtenerDatosMascota());
+        if (s)
+            System.out.println("Bien!");
+        this.setVisible(false);
         
         
     }//GEN-LAST:event_agregarMascotaActionPerformed
@@ -200,7 +230,24 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
     public Mascota obtenerDatosMascota(){
         return this.ma;
     }
+<<<<<<< HEAD
            
+=======
+    
+    //error: arraylist cliente es privado. El arraylist deberia ser public static ???? 
+    private void llenarListaCliente(){
+        for (Cliente client : Veterinaria.obtenerInstancia().getClientes()) {
+            jComboBox1.addItem(client);
+        }
+    }
+    
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    
+>>>>>>> 5dc6e74ce76b4c0ff6c219434ee38fbbbc898339
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarMascota;

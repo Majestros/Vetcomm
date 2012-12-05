@@ -19,7 +19,7 @@
 	<mappers>
 		<mapper class="persistencia.MascotaMapper"/>
 		<mapper class="persistencia.ClienteMapper"/>
-                <!--<mapper class="persistencia.MedicoVeterinarioMapper"/>-->
+                <mapper class="persistencia.MedicoVeterinarioMapper"/>
                 <!--<mapper class="persistencia.HoraMedicaMapper"/>-->
                 
 	</mappers>

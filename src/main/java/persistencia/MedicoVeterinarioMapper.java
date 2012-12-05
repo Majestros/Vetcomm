@@ -4,7 +4,6 @@
  */
 package persistencia;
 
-import modelo.Cliente;
 import modelo.MedicoVeterinario;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
