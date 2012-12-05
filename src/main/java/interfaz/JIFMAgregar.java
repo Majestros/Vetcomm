@@ -217,7 +217,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
         
        //Cliente client = (Cliente) jComboBox1.getSelectedItem();
-       // ma.setCl(client); malo falta arreglarlo
+       // ma.setCl(client); malo arreglarlo
         
         vet.agregarMascota(obtenerDatosMascota());
         
@@ -228,11 +228,9 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
     public Mascota obtenerDatosMascota(){
         return this.ma;
     }
-<<<<<<< HEAD
-           
-=======
+
     
-    //error: arraylist cliente es privado. El arraylist deberia ser public static ???? 
+    
     private void llenarListaCliente(){
         for (Cliente client : Veterinaria.obtenerInstancia().getClientes()) {
             jComboBox1.addItem(client);
@@ -245,7 +243,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     
->>>>>>> 5dc6e74ce76b4c0ff6c219434ee38fbbbc898339
+
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarMascota;
