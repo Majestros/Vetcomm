@@ -13,7 +13,7 @@ public class Veterinaria {
     private static Veterinaria INSTANCIA = null;
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
-    private static ArrayList<Cliente> clientes;
+    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
@@ -31,32 +31,6 @@ public class Veterinaria {
     public ArrayList<Cliente> getClientes() {
         return clientes;
     }
-
-    public void setClientes(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-
-    public ArrayList<HoraMedica> getHoras() {
-        return horas;
-    }
-
-    public void setHoras(ArrayList<HoraMedica> horas) {
-        this.horas = horas;
-    }
-
-    public ArrayList<Mascota> getMascotas() {
-        return mascotas;
-    }
-
-    public void setMascotas(ArrayList<Mascota> mascotas) {
-        this.mascotas = mascotas;
-    }
-    
-    
-    
-    public void agregarMascota(Mascota m){             
-           this.mascotas.add(m);           
-    }
     
     /**
      * Agrega un cliente
@@ -66,11 +40,25 @@ public class Veterinaria {
        if ( cManager.insert(c)> 0){
            this.clientes.add(c);
            return true;
-       }else{
-           return false;
        }
+           return false;
+       
     }
     
+    public boolean eliminarCliente(Cliente c){
+        if(this.cManager.deleteByRut(c.getRut())){
+            this.clientes.remove(c);
+            return true;
+        }
+        return false;
+    }
+//    ------------------------------------------------------------
+    
+    public boolean agregarMascota(Mascota m){
+        return false;
+    }
+    
+//    ------------------------------------------------------------
     public void agregarHora(HoraMedica h){
         this.horas.add(h);
     }
@@ -82,6 +70,8 @@ public class Veterinaria {
     public void setMedicos(ArrayList<MedicoVeterinario> medicos) {
         this.medicos = medicos;
     }
+    
+    
     
     
     

@@ -82,5 +82,21 @@ public class Cliente {
 //    public void agregarMascota(Mascota m){
 //        this.mascota.add(m);
 //    }
-//    
+//
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Cliente other = (Cliente) obj;
+        if ((this.rut == null) ? (other.rut != null) : !this.rut.equals(other.rut)) {
+            return false;
+        }
+        return true;
+    }
+    
 }
