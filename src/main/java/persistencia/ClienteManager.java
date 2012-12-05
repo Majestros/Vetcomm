@@ -5,19 +5,19 @@
 package persistencia;
 
 import controlador.ConnectioFactory;
-import controlador.Veterinaria;
+import java.util.ArrayList;
 import modelo.Cliente;
 import org.apache.ibatis.session.SqlSession;
 
 /**
- *
- * @author Kal-El
+ * Clase encargada de implementar todas las consultas<br/>
+ * a la base de datos
+ * @version 1.0
  */
 public class ClienteManager {
 
     private SqlSession session;
     private ClienteMapper cMapper;
-    private Veterinaria vLocal = Veterinaria.obtenerInstancia();
 
     public ClienteManager() {
         session = ConnectioFactory.getSession().openSession();
@@ -37,21 +37,17 @@ public class ClienteManager {
         return result;
     }
 
-    public Cliente selectByRut(String rut) {
-        for (Cliente cliente : vLocal.getClientes()) {
-            if (rut.equals(cliente.getRut())) {
-                return cliente;
-            }
-        }
-        return null;
-    }
-
     public boolean deleteByRut(String rut) {
         if(cMapper.deleteByRut(rut)>0){
             session.commit();
             return true;
         }
         return false;
+    }
+
+    public ArrayList<Cliente> obtenerClientes() {
+        ArrayList<Cliente> listaAct = cMapper.getAllUsuarios();
+        return listaAct;
     }
 
 }

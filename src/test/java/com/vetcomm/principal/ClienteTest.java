@@ -23,6 +23,7 @@ public class ClienteTest {
          Cliente cPrueba = new Cliente("175826394", "Boris", "Garibaldi 0935", 737637, "anum.bmr.01@gmail.com");
          cM.insert(cPrueba);
 //         cM.deleteById("1758294");
+         
      
      }
 }

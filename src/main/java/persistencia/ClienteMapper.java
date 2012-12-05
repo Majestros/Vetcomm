@@ -1,5 +1,6 @@
 package persistencia;
 
+import java.util.ArrayList;
 import java.util.List;
 import modelo.Cliente;
 import org.apache.ibatis.annotations.Delete;
@@ -17,7 +18,7 @@ public interface ClienteMapper {
 	final String DELETE_BY_RUT = "DELETE FROM cliente WHERE rut=#{rut}";
 	
 	@Select(SELECT_ALL)
-	List<Cliente> getAllUsuarios();
+	ArrayList<Cliente> getAllUsuarios();
 	
 	@Insert(INSERT)
 	int insert(Cliente cliente);

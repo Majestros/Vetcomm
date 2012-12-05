@@ -9,8 +9,7 @@ import persistencia.ClienteManager;
 import persistencia.MascotaManager;
  
 public class Veterinaria {
-    
-    private static Veterinaria INSTANCIA = null;
+
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
@@ -18,15 +17,8 @@ public class Veterinaria {
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
 
-    private Veterinaria(){
+    public Veterinaria(){
         
-    }
-    
-    public static Veterinaria obtenerInstancia(){
-        if(INSTANCIA == null){
-            INSTANCIA = new Veterinaria();
-        }
-        return INSTANCIA;
     }
     public ArrayList<Cliente> getClientes() {
         return clientes;
@@ -42,7 +34,6 @@ public class Veterinaria {
            return true;
        }
            return false;
-       
     }
     
     public boolean eliminarCliente(Cliente c){
@@ -55,6 +46,18 @@ public class Veterinaria {
 //    ------------------------------------------------------------
     
     public boolean agregarMascota(Mascota m){
+        if ( mManager.insert(m)> 0){
+           this.mascotas.add(m);
+           return true;
+       }
+           return false;
+    }
+    
+    public boolean eliminarMascota(Mascota m){
+        if(this.mManager.deleteById(m.getId())){
+            this.mascotas.remove(m);
+            return true;
+        }
         return false;
     }
     
@@ -70,8 +73,23 @@ public class Veterinaria {
     public void setMedicos(ArrayList<MedicoVeterinario> medicos) {
         this.medicos = medicos;
     }
-    
-    
+    /**
+     * Busca un cliente en la coleccion de clientes<br/>
+     * @return Null si no se encuntra el cliente.
+     */
+        public Cliente selectByRut(String rut) {
+        for (Cliente cliente : getClientes()) {
+            if (rut.equals(cliente.getRut())) {
+                return cliente;
+            }
+        }
+        return null;
+    }
+
+    void actualizarArrays() {
+        this.clientes = cManager.obtenerClientes();
+        this.mascotas = mManager.obtenerMascotas();
+    }
     
     
     

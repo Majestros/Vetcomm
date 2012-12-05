@@ -5,6 +5,7 @@
 package persistencia;
 
 import controlador.ConnectioFactory;
+import java.util.ArrayList;
 import modelo.Mascota;
 import org.apache.ibatis.session.SqlSession;
 
@@ -35,10 +36,16 @@ public class MascotaManager {
         return result;
     }
 
-    public void deleteById(String rut) {
-        mMapper.deleteById(rut);
+    public boolean deleteById(String id) {
+        if(mMapper.deleteById(id)>0){
+            session.commit();
+            return true;
+        }
+        return false;
+    }
 
-        session.commit();
+    public ArrayList<Mascota> obtenerMascotas() {
+        return mMapper.getAllMascotas();
     }
     
 }

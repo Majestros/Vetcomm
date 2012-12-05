@@ -10,7 +10,7 @@
  */
 package interfaz;
 
-import controlador.Veterinaria;
+import static controlador.Principal.VETERINARIA;
 import modelo.Mascota;
 
 /**
@@ -19,7 +19,6 @@ import modelo.Mascota;
  */
 public class JIFMAgregar extends javax.swing.JInternalFrame {
 
-    private Veterinaria vet = Veterinaria.obtenerInstancia();
     private Mascota ma=new Mascota(); 
     /** Creates new form JIFMAgregar */
     public JIFMAgregar() {
@@ -45,7 +44,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         mId = new javax.swing.JTextField();
         mNombre = new javax.swing.JTextField();
         mRaza = new javax.swing.JTextField();
-        mGenero = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox();
         agregarMascota = new javax.swing.JButton();
 
         setClosable(true);
@@ -81,11 +80,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
             }
         });
 
-        mGenero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mGeneroActionPerformed(evt);
-            }
-        });
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -98,12 +93,16 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(mGenero)
-                    .addComponent(mRaza)
-                    .addComponent(mNombre)
-                    .addComponent(mId, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mRaza)
+                            .addComponent(mNombre)
+                            .addComponent(mId, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -124,7 +123,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(mGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -153,7 +152,7 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(agregarMascota)
                 .addContainerGap())
         );
@@ -173,21 +172,21 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mRazaActionPerformed
 
-    private void mGeneroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mGeneroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mGeneroActionPerformed
-
     private void agregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMascotaActionPerformed
         // TODO add your handling code here:
         ma.setId(mId.getText());
         ma.setNombre(mNombre.getText());
         ma.setRaza(mRaza.getText());
-        ma.setGenero(Boolean.parseBoolean(mGenero.getText())); 
+        String genero = jComboBox1.getSelectedItem().toString();
         
-       //Cliente client = (Cliente) jComboBox1.getSelectedItem();
-       // ma.setCl(client); malo arreglarlo
+        if(genero.equals("Hembra")){
+            ma.setGenero(false);
+        }else{
+            ma.setGenero(true);
+        }
         
-        vet.agregarMascota(obtenerDatosMascota());
+        
+        VETERINARIA.agregarMascota(obtenerDatosMascota());
     }//GEN-LAST:event_agregarMascotaActionPerformed
 
     public Mascota obtenerDatosMascota(){
@@ -205,12 +204,12 @@ public class JIFMAgregar extends javax.swing.JInternalFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarMascota;
+    private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField mGenero;
     private javax.swing.JTextField mId;
     private javax.swing.JTextField mNombre;
     private javax.swing.JTextField mRaza;

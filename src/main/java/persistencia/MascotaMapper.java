@@ -1,5 +1,6 @@
 package persistencia;
 
+import java.util.ArrayList;
 import java.util.List;
 import modelo.Mascota;
 import org.apache.ibatis.annotations.Delete;
@@ -17,7 +18,7 @@ public interface MascotaMapper {
 	final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
 	
 	@Select(SELECT_ALL)
-	List<Mascota> getAllMascotas();
+	ArrayList<Mascota> getAllMascotas();
 	
 	@Insert(INSERT)
 	int insert(Mascota mascota);
