@@ -6,11 +6,13 @@ import modelo.HoraMedica;
 import modelo.Mascota;
 import modelo.MedicoVeterinario;
 import persistencia.ClienteManager;
+import persistencia.MascotaManager;
  
 public class Veterinaria {
     
     private static Veterinaria INSTANCIA = null;
     private ClienteManager cManager = new ClienteManager();
+    private MascotaManager mManager = new MascotaManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();

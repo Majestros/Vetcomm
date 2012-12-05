@@ -5,13 +5,8 @@
 package com.vetcomm.principal;
 
 import modelo.Cliente;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import persistencia.ClienteManager;
-import static org.junit.Assert.*;
 
 /**
  *

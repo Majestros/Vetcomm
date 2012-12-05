@@ -20,10 +20,10 @@ public interface MascotaMapper {
 	List<Mascota> getAllMascotas();
 	
 	@Insert(INSERT)
-	void insert(Mascota mascota);
+	int insert(Mascota mascota);
         
         @Update(UPDATE_BY_ID)
-        void updateById(Mascota mascota);
+        int updateById(Mascota mascota);
 	
 	@Delete(DELETE_BY_ID)
 	int deleteById(String id);
