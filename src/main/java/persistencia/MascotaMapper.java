@@ -1,7 +1,6 @@
 package persistencia;
 
 import java.util.ArrayList;
-import java.util.List;
 import modelo.Cliente;
 import modelo.Mascota;
 import org.apache.ibatis.annotations.Delete;
