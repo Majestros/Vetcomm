@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package interfaz;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 import static controlador.Principal.VETERINARIA;
 /**
@@ -35,9 +36,6 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         buscarCliente = new javax.swing.JButton();
         editarCliente = new javax.swing.JButton();
         borrarCliente = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
         rut = new javax.swing.JLabel();
         agregarMascota = new javax.swing.JButton();
@@ -64,7 +62,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
                 .addComponent(cRut, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(67, 67, 67))
         );
@@ -89,12 +87,6 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
 
         borrarCliente.setText("Eliminar ");
 
-        jLabel1.setText("Nombre");
-
-        jLabel3.setText("Rut");
-
-        jLabel4.setText("jLabel4");
-
         agregarMascota.setText("Agregar mascota");
         agregarMascota.setEnabled(false);
         agregarMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +104,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(107, 107, 107))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(241, Short.MAX_VALUE)
+                .addContainerGap(283, Short.MAX_VALUE)
                 .addComponent(buscarCliente)
                 .addGap(233, 233, 233))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -124,18 +116,11 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addComponent(agregarMascota)
                 .addGap(82, 82, 82))
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addGap(91, 91, 91)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(rut, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(201, Short.MAX_VALUE))
+                .addGap(185, 185, 185)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(rut, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
+                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(222, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,16 +132,10 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buscarCliente)
                         .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(borrarCliente)
                             .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,11 +156,15 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         c =VETERINARIA.selectByRut(cRut.getText());
         
+        // llena el arreglo de mascotas
+        VETERINARIA.llenarMascotasDeCliente(c);
+        
         if (c!=null){
-            nombre.setText(c.getNombre());
-            rut.setText(c.getRut());
-            agregarMascota.setEnabled(true);
+            JFCMostrar.run(c);
+        }else {
+            JOptionPane.showMessageDialog(null,"Cliente no se pudo encontrar.");
         }
+        
        
        
     }//GEN-LAST:event_buscarClienteActionPerformed
@@ -202,10 +185,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
     private javax.swing.JButton buscarCliente;
     private javax.swing.JTextField cRut;
     private javax.swing.JButton editarCliente;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel rut;

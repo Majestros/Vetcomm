@@ -4,11 +4,9 @@
  */
 package persistencia;
 
-import controlador.ConnectioFactory;
+import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
 import modelo.Cliente;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 /**
  * Clase encargada de implementar todas las consultas<br/>
@@ -17,36 +15,31 @@ import org.apache.ibatis.session.SqlSessionFactory;
  */
 public class ClienteManager {
 
-    private SqlSession session;
     private ClienteMapper cMapper;
 
     public ClienteManager() {
-        SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();
-        
-        if (sqlSessionFactory != null)
-            session = sqlSessionFactory.openSession();
-        
-        cMapper = session.getMapper(ClienteMapper.class);
+        if (SQLSESSION != null)
+            cMapper = SQLSESSION.getMapper(ClienteMapper.class);
     }
 
     public int insert(Cliente c) {
         int resut = cMapper.insert(c);
 //        cMapper.insert(c);
         if( resut > 0)
-            session.commit();
+            SQLSESSION.commit();
         return resut;
     }
 
     public int updateByRut(Cliente c) {
         int result = cMapper.updateByRut(c);
         if(result > 0)
-            session.commit();
+            SQLSESSION.commit();
         return result;
     }
 
     public boolean deleteByRut(String rut) {
         if(cMapper.deleteByRut(rut)>0){
-            session.commit();
+            SQLSESSION.commit();
             return true;
         }
         return false;

@@ -9,6 +9,8 @@ import interfaz.JFPrincipal;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -21,7 +23,8 @@ public class Principal {
     /**
      * Instancia unica de veterinaria
      */
-    public static Veterinaria VETERINARIA = new Veterinaria();
+    public static Veterinaria VETERINARIA;
+    public static SqlSession SQLSESSION;
     private static Logger LOGGER = LoggerFactory.getLogger(Principal.class);
     
     public static void main(String[] args){
@@ -36,7 +39,17 @@ public class Principal {
         catch (UnsupportedLookAndFeelException ex) {
             LOGGER.error("Laf no soportada.", ex);
         }
-//        VETERINARIA.actualizarArrays();
+        
+        // Abre una conexion a la DB 
+        SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();
+        
+        if (sqlSessionFactory != null){
+            SQLSESSION = sqlSessionFactory.openSession();
+        }
+        
+        // Inicio
+        VETERINARIA = new Veterinaria();
+        VETERINARIA.actualizarArrays();
         JFPrincipal jfPrincipal = new JFPrincipal();
         jfPrincipal.setVisible(true);
     }

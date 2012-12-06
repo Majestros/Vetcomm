@@ -13,7 +13,7 @@ public class Veterinaria {
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+   // private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
 
@@ -47,7 +47,7 @@ public class Veterinaria {
     
     public boolean agregarMascota(Mascota m){
         if ( mManager.insert(m)> 0){
-           this.mascotas.add(m);
+//           this.mascotas.add(m);
            return true;
        }
            return false;
@@ -55,7 +55,7 @@ public class Veterinaria {
     
     public boolean eliminarMascota(Mascota m){
         if(this.mManager.deleteById(m.getId())){
-            this.mascotas.remove(m);
+//            this.mascotas.remove(m);
             return true;
         }
         return false;
@@ -86,9 +86,16 @@ public class Veterinaria {
         return null;
     }
 
-    void actualizarArrays() {
+    /**
+     * Establece las mascotas que posee un cliente.
+     **/
+    public void llenarMascotasDeCliente (Cliente c){
+        c.setMascota(mManager.obtenerTodasByCliente(c));
+    }
+        
+    protected void actualizarArrays() {
         this.clientes = cManager.obtenerClientes();
-        this.mascotas = mManager.obtenerMascotas();
+//        this.mascotas = mManager.obtenerMascotas();
     }
     
     
