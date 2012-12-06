@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
 import static controlador.Principal.VETERINARIA;
 import modelo.Cliente;
 
@@ -198,7 +199,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         cl.setEmail(cEmail.getText());
         boolean s = VETERINARIA.agregarCliente(obtenerDatosCliente());
         if (s)
-            System.out.println("Bien!");
+            JOptionPane.showMessageDialog(rootPane, "Cliente agregado!");
         this.setVisible(false);
         
     }//GEN-LAST:event_agregarClienteActionPerformed

@@ -8,6 +8,7 @@ import controlador.ConnectioFactory;
 import java.util.ArrayList;
 import modelo.Mascota;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 /**
  *
@@ -19,7 +20,11 @@ public class MascotaManager {
     private MascotaMapper mMapper;
     
     public MascotaManager() {
-        session = ConnectioFactory.getSession().openSession();
+        SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();
+        
+        if (sqlSessionFactory != null )
+            session = sqlSessionFactory.openSession();
+        
         mMapper = session.getMapper(MascotaMapper.class);
     }
 

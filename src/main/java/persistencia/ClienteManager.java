@@ -8,6 +8,7 @@ import controlador.ConnectioFactory;
 import java.util.ArrayList;
 import modelo.Cliente;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 
 /**
  * Clase encargada de implementar todas las consultas<br/>
@@ -20,20 +21,26 @@ public class ClienteManager {
     private ClienteMapper cMapper;
 
     public ClienteManager() {
-        session = ConnectioFactory.getSession().openSession();
+        SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();
+        
+        if (sqlSessionFactory != null)
+            session = sqlSessionFactory.openSession();
+        
         cMapper = session.getMapper(ClienteMapper.class);
     }
 
     public int insert(Cliente c) {
         int resut = cMapper.insert(c);
 //        cMapper.insert(c);
-        session.commit();
+        if( resut > 0)
+            session.commit();
         return resut;
     }
 
     public int updateByRut(Cliente c) {
         int result = cMapper.updateByRut(c);
-        session.commit();
+        if(result > 0)
+            session.commit();
         return result;
     }
 
