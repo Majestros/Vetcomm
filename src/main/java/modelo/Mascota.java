@@ -8,7 +8,7 @@ public class Mascota {
     private String nombre;
     private String raza;
     private boolean genero;
-    private ArrayList<HistorialMedico> historial = new ArrayList<HistorialMedico>();
+    private ArrayList<FichaMedica> historial = new ArrayList<FichaMedica>();
 
     public Mascota() {
         super();
@@ -56,11 +56,11 @@ public class Mascota {
         this.genero = genero;
     }
 
-    public ArrayList<HistorialMedico> getHistorial() {
+    public ArrayList<FichaMedica> getHistorial() {
         return historial;
     }
 
-    public void setHistorial(ArrayList<HistorialMedico> historial) {
+    public void setHistorial(ArrayList<FichaMedica> historial) {
         this.historial = historial;
     }
 

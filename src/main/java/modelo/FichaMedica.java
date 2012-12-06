@@ -8,21 +8,31 @@ package modelo;
  *
  * @author Kal-El
  */
-public class HistorialMedico {
+public class FichaMedica {
     
     private int id;
+    private String asunto;
     private String sintoma;
     private String diagnostico;
     private String fecha;
 
-    public HistorialMedico() {
+    public FichaMedica() {
     }
 
-    public HistorialMedico(int id, String sintoma, String diagnostico, String fecha) {
+    public FichaMedica(int id, String asunto, String sintoma, String diagnostico, String fecha) {
         this.id = id;
+        this.asunto = asunto;
         this.sintoma = sintoma;
         this.diagnostico = diagnostico;
         this.fecha = fecha;
+    }
+
+    public String getAsunto() {
+        return asunto;
+    }
+
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
     }
 
     public String getDiagnostico() {
@@ -56,7 +66,5 @@ public class HistorialMedico {
     public void setSintoma(String sintoma) {
         this.sintoma = sintoma;
     }
-    
-    
-    
+
 }

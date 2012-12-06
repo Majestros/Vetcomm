@@ -15,7 +15,7 @@ package interfaz;
  * @author Kal-El
  */
 
-import modelo.HistorialMedico;
+import modelo.FichaMedica;
 import modelo.Mascota;
 
 public class JIFHistMedAgregar extends javax.swing.JInternalFrame {
