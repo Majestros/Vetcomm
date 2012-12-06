@@ -18,11 +18,13 @@ import modelo.Mascota;
  * @author Kal-El
  */
 public class JIFMAgregar extends javax.swing.JInternalFrame {
-
+    
     private Mascota ma=new Mascota(); 
+    private String rut;
     /** Creates new form JIFMAgregar */
-    public JIFMAgregar() {
+    public JIFMAgregar(String rut) {
         initComponents();
+        this.rut = rut;
         //llenarListaCliente();
         
     }

@@ -28,14 +28,14 @@ public class Principal {
         
         // Estable el LookAndFeel del programa
         
-        try {
-            LookAndFeel laf = new SeaGlassLookAndFeel();
-            if (laf.isSupportedLookAndFeel())
-                UIManager.setLookAndFeel(laf);
-        }
-        catch (UnsupportedLookAndFeelException ex) {
-            LOGGER.error("Laf no soportada.", ex);
-        }
+//        try {
+//            LookAndFeel laf = new SeaGlassLookAndFeel();
+//            if (laf.isSupportedLookAndFeel())
+//                UIManager.setLookAndFeel(laf);
+//        }
+//        catch (UnsupportedLookAndFeelException ex) {
+//            LOGGER.error("Laf no soportada.", ex);
+//        }
         VETERINARIA.actualizarArrays();
         JFPrincipal jfPrincipal = new JFPrincipal();
         jfPrincipal.setVisible(true);

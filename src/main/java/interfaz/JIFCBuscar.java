@@ -11,6 +11,8 @@ import static controlador.Principal.VETERINARIA;
  */
 public class JIFCBuscar extends javax.swing.JInternalFrame {
 
+    
+    private Cliente c;
     /**
      * Creates new form JIFCBuscar
      */
@@ -38,6 +40,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
         rut = new javax.swing.JLabel();
+        agregarMascota = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -92,6 +95,14 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
 
         jLabel4.setText("jLabel4");
 
+        agregarMascota.setText("Agregar mascota");
+        agregarMascota.setEnabled(false);
+        agregarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarMascotaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,7 +120,9 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(borrarCliente)
-                .addGap(182, 182, 182))
+                .addGap(27, 27, 27)
+                .addComponent(agregarMascota)
+                .addGap(82, 82, 82))
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -130,22 +143,27 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(buscarCliente)
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(borrarCliente)
-                    .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(buscarCliente)
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(borrarCliente)
+                            .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(44, 44, 44))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(agregarMascota)
+                        .addGap(58, 58, 58))))
         );
 
         pack();
@@ -157,17 +175,29 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
         // TODO add your handling code here:
-        Cliente c=VETERINARIA.selectByRut(cRut.getText());
+        c =VETERINARIA.selectByRut(cRut.getText());
         
         if (c!=null){
             nombre.setText(c.getNombre());
             rut.setText(c.getRut());
+            agregarMascota.setEnabled(true);
         }
        
        
     }//GEN-LAST:event_buscarClienteActionPerformed
 
+    private void agregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMascotaActionPerformed
+        if (c != null){
+//            JIFMAgregar agregarMascota = new JIFMAgregar();
+//            agregarMascota.setVisible(true);
+            
+            new JFMAgregar(c.getRut()).setVisible(true);
+            
+        }
+    }//GEN-LAST:event_agregarMascotaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarMascota;
     private javax.swing.JButton borrarCliente;
     private javax.swing.JButton buscarCliente;
     private javax.swing.JTextField cRut;

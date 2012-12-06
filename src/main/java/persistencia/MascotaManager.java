@@ -48,4 +48,8 @@ public class MascotaManager {
         return mMapper.getAllMascotas();
     }
     
+    public Mascota obtenerMascota(Mascota m){
+        return mMapper.selectById(m);
+    }
+    
 }
