@@ -5,13 +5,16 @@ import modelo.Cliente;
 import modelo.HoraMedica;
 import modelo.Mascota;
 import modelo.MedicoVeterinario;
+import modelo.Usuario;
 import persistencia.ClienteManager;
 import persistencia.MascotaManager;
+import persistencia.UsuarioManager;
  
 public class Veterinaria {
 
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
+    private UsuarioManager usrManager = new UsuarioManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
    // private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
@@ -98,7 +101,9 @@ public class Veterinaria {
 //        this.mascotas = mManager.obtenerMascotas();
     }
     
-    
+    public boolean esUsuarioRegistrado(Usuario usuario){
+        return (usrManager.obtenerUsuario(usuario) != null);
+    }
     
     
 }

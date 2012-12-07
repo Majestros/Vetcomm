@@ -10,15 +10,22 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
+import static controlador.Principal.VETERINARIA;
+import modelo.Usuario;
+
 /**
  *
  * @author Kal-El
  */
 public class JFIngreso extends javax.swing.JFrame {
 
+    Usuario usuario;
     /** Creates new form JFIngreso */
     public JFIngreso() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        usuario = new Usuario();
     }
 
     /** This method is called from within the constructor to
@@ -33,27 +40,24 @@ public class JFIngreso extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        rut = new javax.swing.JTextField();
-        Contraseña = new javax.swing.JTextField();
-        ingresarContraseña = new javax.swing.JButton();
+        _usuario = new javax.swing.JTextField();
+        clave = new javax.swing.JPasswordField();
+        ingresal = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setText("Rut:");
+        jLabel1.setText("Usuario");
 
         jLabel2.setText("Contraseña: ");
 
-        rut.setText("recuerda ver las variables");
-        rut.addActionListener(new java.awt.event.ActionListener() {
+        _usuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rutActionPerformed(evt);
+                _usuarioActionPerformed(evt);
             }
         });
-
-        Contraseña.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -66,8 +70,8 @@ public class JFIngreso extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Contraseña)
-                    .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clave)
+                    .addComponent(_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -76,18 +80,18 @@ public class JFIngreso extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(Contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(clave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(134, 134, 134))
         );
 
-        ingresarContraseña.setText("Ingresar");
-        ingresarContraseña.addActionListener(new java.awt.event.ActionListener() {
+        ingresal.setText("Ingresar");
+        ingresal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresarContraseñaActionPerformed(evt);
+                ingresalActionPerformed(evt);
             }
         });
 
@@ -103,7 +107,7 @@ public class JFIngreso extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(302, Short.MAX_VALUE)
-                .addComponent(ingresarContraseña)
+                .addComponent(ingresal)
                 .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addGap(149, 149, 149)
@@ -118,20 +122,33 @@ public class JFIngreso extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ingresarContraseña)
+                .addComponent(ingresal)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ingresarContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarContraseñaActionPerformed
+    private void ingresalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresalActionPerformed
+        usuario.setNombre(_usuario.getText());
+        String pw = new String (clave.getPassword());
+        usuario.setContraseña(pw);
+        if(VETERINARIA.esUsuarioRegistrado(usuario)){ 
+            new JFPrincipal().setVisible(true);
+            this.dispose();
+        }           
+        else{ 
+            JOptionPane.showMessageDialog(rootPane, "Usuario no registrado!");
+            this._usuario.setText("");
+            this.clave.setText("");
+        }
+            
+            
+    }//GEN-LAST:event_ingresalActionPerformed
 
-    private void rutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rutActionPerformed
+    private void _usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__usuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rutActionPerformed
+    }//GEN-LAST:event__usuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,12 +186,12 @@ public class JFIngreso extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Contraseña;
-    private javax.swing.JButton ingresarContraseña;
+    private javax.swing.JTextField _usuario;
+    private javax.swing.JPasswordField clave;
+    private javax.swing.JButton ingresal;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField rut;
     // End of variables declaration//GEN-END:variables
 }

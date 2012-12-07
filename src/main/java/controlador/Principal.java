@@ -5,6 +5,7 @@
 package controlador;
 
 import com.seaglasslookandfeel.SeaGlassLookAndFeel;
+import interfaz.JFIngreso;
 import interfaz.JFPrincipal;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
@@ -50,8 +51,9 @@ public class Principal {
         // Inicio
         VETERINARIA = new Veterinaria();
         VETERINARIA.actualizarArrays();
-        JFPrincipal jfPrincipal = new JFPrincipal();
-        jfPrincipal.setVisible(true);
+        
+        // Inicia la UI de ingreso
+        new JFIngreso().setVisible(true);
     }
     
 }

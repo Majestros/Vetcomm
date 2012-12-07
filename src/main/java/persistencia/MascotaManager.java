@@ -1,6 +1,7 @@
 
 package persistencia;
 
+import persistencia.mappers.MascotaMapper;
 import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
 import modelo.Cliente;

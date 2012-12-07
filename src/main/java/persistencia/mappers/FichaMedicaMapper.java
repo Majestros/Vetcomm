@@ -1,4 +1,4 @@
-package persistencia;
+package persistencia.mappers;
 
 import java.util.ArrayList;
 import modelo.FichaMedica;

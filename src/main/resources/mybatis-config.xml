@@ -17,9 +17,10 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper class="persistencia.MascotaMapper"/>
-		<mapper class="persistencia.ClienteMapper"/>
-                <mapper class="persistencia.FichaMedicaMapper"/>                
+		<mapper class="persistencia.mappers.MascotaMapper"/>
+		<mapper class="persistencia.mappers.ClienteMapper"/>
+                <mapper class="persistencia.mappers.FichaMedicaMapper"/>
+                <mapper class="persistencia.mappers.UsuarioMapper"/>
 	</mappers>
 <!-- 	<typeAliases> -->
 <!-- 		<typeAlias alias="Usuario" type="cesg.mybatis.domain.Usuario"/> -->

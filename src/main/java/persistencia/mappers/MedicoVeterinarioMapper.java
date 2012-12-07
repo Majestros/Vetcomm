@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package persistencia;
+package persistencia.mappers;
 
 import modelo.MedicoVeterinario;
 import java.util.List;

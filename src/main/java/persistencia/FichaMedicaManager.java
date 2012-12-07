@@ -4,6 +4,7 @@
  */
 package persistencia;
 
+import persistencia.mappers.FichaMedicaMapper;
 import controlador.ConnectioFactory;
 import modelo.Cliente;
 import modelo.FichaMedica;

@@ -4,6 +4,7 @@
  */
 package persistencia;
 
+import persistencia.mappers.ClienteMapper;
 import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
 import modelo.Cliente;
