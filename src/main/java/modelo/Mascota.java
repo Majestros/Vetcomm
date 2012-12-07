@@ -48,7 +48,7 @@ public class Mascota {
         this.raza = raza;
     }
 
-    public boolean isGenero() {
+    public boolean getGenero() {
         return genero;
     }
 

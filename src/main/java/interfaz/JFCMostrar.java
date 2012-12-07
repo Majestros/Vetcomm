@@ -12,6 +12,7 @@ package interfaz;
 import static controlador.Principal.VETERINARIA;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.Mascota;
 
@@ -40,7 +41,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             //TODO: llenar el JList
             mascotasCliente=c.getMascota();
             llenarLista();
-//            agregarMascota.setEnabled(true);
+
             
             
         }
@@ -80,6 +81,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         actualizar = new javax.swing.JButton();
         eliminarMascota = new javax.swing.JButton();
+        mostrarMascota = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
@@ -155,7 +157,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(actualizar);
-        actualizar.setBounds(210, 240, 100, 23);
+        actualizar.setBounds(210, 240, 140, 23);
 
         eliminarMascota.setText("Eliminar Mascota");
         eliminarMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +167,15 @@ public class JFCMostrar extends javax.swing.JFrame {
         });
         getContentPane().add(eliminarMascota);
         eliminarMascota.setBounds(130, 370, 120, 23);
+
+        mostrarMascota.setText("Mostrar Mascota");
+        mostrarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarMascotaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(mostrarMascota);
+        mostrarMascota.setBounds(210, 280, 140, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,6 +210,18 @@ public class JFCMostrar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_eliminarMascotaActionPerformed
 
+    private void mostrarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarMascotaActionPerformed
+        // TODO add your handling code here:
+         Mascota mascota = (Mascota) jList1.getSelectedValue();
+        if (mascota!=null){
+            JFMMostrar.main(mascota);
+        }else {
+            JOptionPane.showMessageDialog(null,"No se a elegido mascota.");
+        }
+        
+        
+    }//GEN-LAST:event_mostrarMascotaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,6 +248,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton mostrarMascota;
     private javax.swing.JLabel nombre;
     private javax.swing.JLabel rut;
     private javax.swing.JLabel telefono;
