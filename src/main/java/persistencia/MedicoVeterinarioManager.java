@@ -34,8 +34,11 @@ public class MedicoVeterinarioManager {
         return result;
     }
 
-    public void deleteByRut(String rut) {
-        vMapper.deleteByRut(rut);
-        SQLSESSION.commit();
+    public boolean deleteByRut(String rut) {
+        if(vMapper.deleteByRut(rut)>0){
+            SQLSESSION.commit();
+            return true;
+        }
+        return false;
     }
 }

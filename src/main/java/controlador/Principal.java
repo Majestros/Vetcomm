@@ -31,14 +31,14 @@ public class Principal {
         
         // Estable el LookAndFeel del programa
         
-        try {
-            LookAndFeel laf = new SeaGlassLookAndFeel();
-            if (laf.isSupportedLookAndFeel())
-                UIManager.setLookAndFeel(laf);
-        }
-        catch (UnsupportedLookAndFeelException ex) {
-            LOGGER.error("Laf no soportada.", ex);
-        }
+//        try {
+//            LookAndFeel laf = new SeaGlassLookAndFeel();
+//            if (laf.isSupportedLookAndFeel())
+//                UIManager.setLookAndFeel(laf);
+//        }
+//        catch (UnsupportedLookAndFeelException ex) {
+//            LOGGER.error("Laf no soportada.", ex);
+//        }
         
         // Abre una conexion a la DB 
         SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();

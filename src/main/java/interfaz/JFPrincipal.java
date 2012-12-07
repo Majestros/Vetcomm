@@ -159,6 +159,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenu4.add(mvAgregar);
 
         mvBuscar.setText("Buscar");
+        mvBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mvBuscarActionPerformed(evt);
+            }
+        });
         jMenu4.add(mvBuscar);
 
         mvEliminar.setText("Eliminar");
@@ -255,6 +260,13 @@ public class JFPrincipal extends javax.swing.JFrame {
         agregarMv.setVisible(true);
         
     }//GEN-LAST:event_mvAgregarActionPerformed
+
+    private void mvBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvBuscarActionPerformed
+        // TODO add your handling code here:
+        JIFMvBuscar buscarMv=new JIFMvBuscar();
+        jDesktopPane1.add(buscarMv);
+        buscarMv.setVisible(true);
+    }//GEN-LAST:event_mvBuscarActionPerformed
 
     /**
      * @param args the command line arguments

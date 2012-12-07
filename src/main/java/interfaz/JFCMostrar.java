@@ -35,7 +35,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             nombre.setText(c.getNombre());
             rut.setText(c.getRut());
             direccion.setText(c.getDireccion());
-            telefono.setText(c.getNombre());
+            telefono.setText(String.valueOf(c.getTelefono()));
             email.setText(c.getEmail());
             
             //TODO: llenar el JList

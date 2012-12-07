@@ -4,6 +4,7 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
 import modelo.MedicoVeterinario;
 import static controlador.Principal.VETERINARIA;
 /**
@@ -12,7 +13,7 @@ import static controlador.Principal.VETERINARIA;
  */
 public class JIFMvAgregar extends javax.swing.JInternalFrame {
 
-    private MedicoVeterinario mve=new MedicoVeterinario();
+    private MedicoVeterinario v=new MedicoVeterinario();
     /**
      * Creates new form JIFMVAgregar
      */
@@ -121,15 +122,18 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
 
     private void agregarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMedicoVeterinarioActionPerformed
         // TODO add your handling code here:
-        mve.setRut(mvRut.getText());
-        mve.setNombre(mvNombre.getText());
-        mve.setEspecialidad(mvEspecialidad.getText());
+        v.setRut(mvRut.getText());
+        v.setNombre(mvNombre.getText());
+        v.setEspecialidad(mvEspecialidad.getText());
         
-        
+        boolean s = VETERINARIA.agregarMedicoVeterinario(obtenerDatosVeterinario());
+        if (s)
+            JOptionPane.showMessageDialog(rootPane, "Medico Veterinario agregado!");
+        this.setVisible(false);
     }//GEN-LAST:event_agregarMedicoVeterinarioActionPerformed
 
     public MedicoVeterinario obtenerDatosVeterinario(){
-            return this.mve;
+            return this.v;
         }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

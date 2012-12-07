@@ -122,7 +122,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
 
     private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
         // TODO add your handling code here:
-        c =VETERINARIA.selectByRut(cRut.getText());
+        c =VETERINARIA.selectClienteByRut(cRut.getText());
         
         // llena el arreglo de mascotas
         VETERINARIA.llenarMascotasDeCliente(c);

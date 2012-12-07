@@ -62,36 +62,6 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Email: ");
 
-        cRut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cRutActionPerformed(evt);
-            }
-        });
-
-        cNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cNombreActionPerformed(evt);
-            }
-        });
-
-        cDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cDireccionActionPerformed(evt);
-            }
-        });
-
-        cTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cTelefonoActionPerformed(evt);
-            }
-        });
-
-        cEmail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cEmailActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -167,27 +137,11 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(agregarCliente)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cRutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cRutActionPerformed
-
-    private void cNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cNombreActionPerformed
-
-    private void cDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cDireccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cDireccionActionPerformed
-
-    private void cTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cTelefonoActionPerformed
 
     private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
         // TODO add your handling code here:
@@ -208,10 +162,6 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         return this.cl;
     }
     
-    private void cEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cEmailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cEmailActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarCliente;
     private javax.swing.JTextField cDireccion;

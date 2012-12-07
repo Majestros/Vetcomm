@@ -11,6 +11,7 @@
 package interfaz;
 
 import static controlador.Principal.VETERINARIA;
+import javax.swing.JOptionPane;
 import modelo.Mascota;
 
 /**
@@ -130,8 +131,8 @@ public class JFMAgregar extends javax.swing.JFrame {
         }
         
         
-        VETERINARIA.agregarMascota(obtenerDatosMascota());
-                                                  
+       VETERINARIA.agregarMascota(obtenerDatosMascota());
+                                                 
 
     
     }//GEN-LAST:event_agregarMascotaActionPerformed

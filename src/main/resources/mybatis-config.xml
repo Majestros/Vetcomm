@@ -21,6 +21,7 @@
 		<mapper class="persistencia.mappers.ClienteMapper"/>
                 <mapper class="persistencia.mappers.FichaMedicaMapper"/>
                 <mapper class="persistencia.mappers.UsuarioMapper"/>
+                <mapper class="persistencia.mappers.MedicoVeterinarioMapper"/>
 	</mappers>
 <!-- 	<typeAliases> -->
 <!-- 		<typeAlias alias="Usuario" type="cesg.mybatis.domain.Usuario"/> -->
