@@ -4,9 +4,9 @@
  */
 package persistencia;
 
+import static controlador.Principal.SQLSESSION;
 import persistencia.mappers.FichaMedicaMapper;
 import controlador.ConnectioFactory;
-import modelo.Cliente;
 import modelo.FichaMedica;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -17,29 +17,25 @@ import org.apache.ibatis.session.SqlSessionFactory;
  */
 public class FichaMedicaManager {
 
-    private SqlSession session;
     private FichaMedicaMapper fMapper;
 
     public FichaMedicaManager() {
-        SqlSessionFactory sqlSessionFactory = ConnectioFactory.getSession();
         
-        if (sqlSessionFactory != null)
-            session = sqlSessionFactory.openSession();
-        
-        fMapper = session.getMapper(FichaMedicaMapper.class);
+        if (SQLSESSION != null)        
+            fMapper = SQLSESSION.getMapper(FichaMedicaMapper.class);
     }
 
     public int insert(FichaMedica f) {
         int resut = fMapper.insert(f);
 //        cMapper.insert(c);
         if( resut > 0)
-            session.commit();
+            SQLSESSION.commit();
         return resut;
     }
 
     public boolean deleteById(String id) {
         if(fMapper.deleteById(id)>0){
-            session.commit();
+            SQLSESSION.commit();
             return true;
         }
         return false;
