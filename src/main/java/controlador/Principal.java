@@ -49,7 +49,8 @@ public class Principal {
         
         // Inicio
         VETERINARIA = new Veterinaria();
-        VETERINARIA.actualizarArrays();
+        VETERINARIA.actualizarArrayClientes();
+        VETERINARIA.actualizarArrayMedicos();
         
         // Inicia la UI de ingreso
         new JFIngreso().setVisible(true);

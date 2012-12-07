@@ -25,7 +25,6 @@ public class ClienteManager {
 
     public int insert(Cliente c) {
         int resut = cMapper.insert(c);
-//        cMapper.insert(c);
         if( resut > 0)
             SQLSESSION.commit();
         return resut;

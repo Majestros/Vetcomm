@@ -5,6 +5,7 @@
 package persistencia;
 
 import static controlador.Principal.SQLSESSION;
+import java.util.ArrayList;
 import persistencia.mappers.MedicoVeterinarioMapper;
 import modelo.MedicoVeterinario;
 
@@ -40,5 +41,14 @@ public class MedicoVeterinarioManager {
             return true;
         }
         return false;
+    }
+    
+    public MedicoVeterinario obtenerMedicoVeterinario(String rut){
+        return vMapper.selectByRut(rut);
+    }
+
+    public ArrayList<MedicoVeterinario> obtenerMedicosVeterinarios() {
+        ArrayList<MedicoVeterinario> listaAct = vMapper.selectAll();
+        return listaAct;
     }
 }

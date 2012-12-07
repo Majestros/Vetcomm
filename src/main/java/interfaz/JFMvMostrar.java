@@ -10,6 +10,8 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
+import static controlador.Principal.VETERINARIA;
 import modelo.MedicoVeterinario;
 
 /**
@@ -101,6 +103,11 @@ public class JFMvMostrar extends javax.swing.JFrame {
         );
 
         jBeliminarMedicoVeterinario.setText("Eliminar");
+        jBeliminarMedicoVeterinario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarMedicoVeterinarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +134,13 @@ public class JFMvMostrar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBeliminarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMedicoVeterinarioActionPerformed
+        // TODO add your handling code here:
+        VETERINARIA.eliminarMedicoVeterinario(v);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Medico Eliminado!");
+    }//GEN-LAST:event_jBeliminarMedicoVeterinarioActionPerformed
 
     /**
      * @param args the command line arguments

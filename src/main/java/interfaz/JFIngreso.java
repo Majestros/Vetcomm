@@ -46,6 +46,7 @@ public class JFIngreso extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("VETCOMM SOLUTIONS");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 

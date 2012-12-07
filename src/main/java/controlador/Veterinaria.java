@@ -57,9 +57,13 @@ public class Veterinaria {
         c.setMascota(mManager.obtenerTodasByCliente(c));
     }
 
-    protected void actualizarArrays() {
+    protected void actualizarArrayClientes() {
         this.clientes = cManager.obtenerClientes();
 //        this.mascotas = mManager.obtenerMascotas();
+    }
+    
+    protected void actualizarArrayMedicos(){
+        this.medicos = vManager.obtenerMedicosVeterinarios();
     }
 //    ------------------------------------------------------------
 
