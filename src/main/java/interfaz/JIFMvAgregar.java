@@ -5,7 +5,7 @@
 package interfaz;
 
 import modelo.MedicoVeterinario;
-
+import static controlador.Principal.VETERINARIA;
 /**
  *
  * @author Administrador
@@ -50,24 +50,6 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
         jLabel2.setText("Nombre:");
 
         jLabel3.setText("Especialidad: ");
-
-        mvRut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mvRutActionPerformed(evt);
-            }
-        });
-
-        mvNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mvNombreActionPerformed(evt);
-            }
-        });
-
-        mvEspecialidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mvEspecialidadActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -129,25 +111,13 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(agregarMedicoVeterinario)
                 .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void mvRutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvRutActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mvRutActionPerformed
-
-    private void mvNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mvNombreActionPerformed
-
-    private void mvEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvEspecialidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mvEspecialidadActionPerformed
 
     private void agregarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMedicoVeterinarioActionPerformed
         // TODO add your handling code here:
