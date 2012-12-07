@@ -34,11 +34,8 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         cRut = new javax.swing.JTextField();
         buscarCliente = new javax.swing.JButton();
-        editarCliente = new javax.swing.JButton();
-        borrarCliente = new javax.swing.JButton();
         nombre = new javax.swing.JLabel();
         rut = new javax.swing.JLabel();
-        agregarMascota = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -83,44 +80,24 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
             }
         });
 
-        editarCliente.setText("Editar");
-
-        borrarCliente.setText("Eliminar ");
-
-        agregarMascota.setText("Agregar mascota");
-        agregarMascota.setEnabled(false);
-        agregarMascota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarMascotaActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(107, 107, 107))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
-                .addComponent(buscarCliente)
-                .addGap(233, 233, 233))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(177, Short.MAX_VALUE)
-                .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(borrarCliente)
-                .addGap(27, 27, 27)
-                .addComponent(agregarMascota)
-                .addGap(82, 82, 82))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(185, 185, 185)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(rut, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGap(151, 151, 151))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(58, 58, 58))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(223, Short.MAX_VALUE)
+                .addComponent(buscarCliente)
+                .addGap(205, 205, 205))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,21 +105,12 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(buscarCliente)
-                        .addGap(28, 28, 28)
-                        .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(borrarCliente)
-                            .addComponent(editarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(agregarMascota)
-                        .addGap(58, 58, 58))))
+                .addComponent(buscarCliente)
+                .addGap(51, 51, 51)
+                .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,22 +137,9 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_buscarClienteActionPerformed
 
-    private void agregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMascotaActionPerformed
-        if (c != null){
-//            JIFMAgregar agregarMascota = new JIFMAgregar();
-//            agregarMascota.setVisible(true);
-            
-            new JFMAgregar(c.getRut()).setVisible(true);
-            
-        }
-    }//GEN-LAST:event_agregarMascotaActionPerformed
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarMascota;
-    private javax.swing.JButton borrarCliente;
     private javax.swing.JButton buscarCliente;
     private javax.swing.JTextField cRut;
-    private javax.swing.JButton editarCliente;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel nombre;

@@ -64,7 +64,10 @@ public class Mascota {
         this.historial = historial;
     }
 
-   
+   @Override
+   public String toString (){
+       return nombre;
+   }
     
     
 }

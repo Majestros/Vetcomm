@@ -9,9 +9,11 @@
  * Created on 06-12-2012, 05:02:06 PM
  */
 package interfaz;
-
+import static controlador.Principal.VETERINARIA;
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import modelo.Cliente;
+import modelo.Mascota;
 
 /**
  *
@@ -19,6 +21,7 @@ import modelo.Cliente;
  */
 public class JFCMostrar extends javax.swing.JFrame {
     private Cliente c;
+    ArrayList<Mascota> mascotasCliente = new ArrayList<Mascota>();
     /** Creates new form JFCMostrar */
     public JFCMostrar(Cliente c) {
         initComponents();
@@ -33,10 +36,23 @@ public class JFCMostrar extends javax.swing.JFrame {
             direccion.setText(c.getDireccion());
             telefono.setText(c.getNombre());
             email.setText(c.getEmail());
-            //TODO: llenar el JList
             
+            //TODO: llenar el JList
+            mascotasCliente=c.getMascota();
+            llenarLista();
 //            agregarMascota.setEnabled(true);
+            
+            
         }
+    }
+    
+    public void llenarLista(){
+        DefaultListModel modeloLista = new DefaultListModel();
+        
+        for (Mascota mascota : mascotasCliente) {
+            modeloLista.addElement(mascota);
+        }
+        jList1.setModel(modeloLista);
     }
 
     /** This method is called from within the constructor to
@@ -52,37 +68,37 @@ public class JFCMostrar extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         rut = new javax.swing.JLabel();
-        nombre = new javax.swing.JLabel();
         direccion = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         telefono = new javax.swing.JLabel();
         email = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        nombre = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jLabel7 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        actualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(500, 600));
         getContentPane().setLayout(null);
 
         jLabel1.setText("Rut");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 46, 17, 14);
+        jLabel1.setBounds(10, 46, 80, 14);
 
         jLabel2.setText("Nombre");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 78, 37, 14);
+        jLabel2.setBounds(10, 78, 90, 14);
 
         jLabel3.setText("Dirección");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 103, 43, 14);
+        jLabel3.setBounds(10, 103, 90, 14);
 
         rut.setText(".");
         getContentPane().add(rut);
         rut.setBounds(139, 44, 230, 14);
-        getContentPane().add(nombre);
-        nombre.setBounds(297, 78, 0, 14);
 
         direccion.setText(".");
         getContentPane().add(direccion);
@@ -90,11 +106,11 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 128, 42, 14);
+        jLabel4.setBounds(10, 128, 100, 14);
 
         jLabel5.setText("Email");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 153, 35, 14);
+        jLabel5.setBounds(10, 153, 90, 14);
 
         telefono.setText(".");
         getContentPane().add(telefono);
@@ -104,9 +120,9 @@ public class JFCMostrar extends javax.swing.JFrame {
         getContentPane().add(email);
         email.setBounds(142, 153, 220, 10);
 
-        jLabel6.setText(".");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(142, 78, 220, 10);
+        nombre.setText(".");
+        getContentPane().add(nombre);
+        nombre.setBounds(142, 78, 220, 10);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -116,42 +132,55 @@ public class JFCMostrar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 232, 156, 130);
+        jScrollPane1.setBounds(10, 232, 180, 130);
 
         jLabel7.setText("Mascotas Registradas");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(100, 207, 105, 14);
 
+        jButton1.setText("Agregar Mascota");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(273, 370, 120, 23);
+
+        actualizar.setText("Actualizar");
+        actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(actualizar);
+        actualizar.setBounds(210, 240, 100, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         new JFMAgregar(c.getRut()).setVisible(true);
+ //      es lo mismo        
+ //            JIFMAgregar agregarMascota = new JIFMAgregar();
+//            agregarMascota.setVisible(true);
+         
+   
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+        // TODO add your handling code here:
+        VETERINARIA.llenarMascotasDeCliente(c);
+        mascotasCliente=c.getMascota();
+        llenarLista();
+    }//GEN-LAST:event_actualizarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void run(final Cliente c) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFCMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFCMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFCMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFCMostrar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
 
@@ -161,14 +190,15 @@ public class JFCMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton actualizar;
     private javax.swing.JLabel direccion;
     private javax.swing.JLabel email;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;
