@@ -6,9 +6,7 @@ package persistencia;
 
 import static controlador.Principal.SQLSESSION;
 import persistencia.mappers.MedicoVeterinarioMapper;
-import controlador.ConnectioFactory;
 import modelo.MedicoVeterinario;
-import org.apache.ibatis.session.SqlSession;
 
 /**
  *
