@@ -34,8 +34,8 @@ public class MascotaManager {
         return result;
     }
 
-    public boolean deleteById(String id) {
-        if(mMapper.deleteById(id)>0){
+    public boolean deleteById(Mascota mascota) {
+        if(mMapper.deleteById(mascota) > 0){
             SQLSESSION.commit();
             return true;
         }

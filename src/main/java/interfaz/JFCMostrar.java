@@ -79,6 +79,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         actualizar = new javax.swing.JButton();
+        eliminarMascota = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
@@ -136,7 +137,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLabel7.setText("Mascotas Registradas");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(100, 207, 105, 14);
+        jLabel7.setBounds(40, 200, 130, 14);
 
         jButton1.setText("Agregar Mascota");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -156,6 +157,15 @@ public class JFCMostrar extends javax.swing.JFrame {
         getContentPane().add(actualizar);
         actualizar.setBounds(210, 240, 100, 23);
 
+        eliminarMascota.setText("Eliminar Mascota");
+        eliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarMascotaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(eliminarMascota);
+        eliminarMascota.setBounds(130, 370, 120, 23);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -172,10 +182,22 @@ public class JFCMostrar extends javax.swing.JFrame {
 
     private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
         // TODO add your handling code here:
-        VETERINARIA.llenarMascotasDeCliente(c);
+        actualizar();
+    }//GEN-LAST:event_actualizarActionPerformed
+
+    private void actualizar(){
+    VETERINARIA.llenarMascotasDeCliente(c);
         mascotasCliente=c.getMascota();
         llenarLista();
-    }//GEN-LAST:event_actualizarActionPerformed
+    }
+    private void eliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMascotaActionPerformed
+        // TODO add your handling code here:
+        Mascota mascotaAEliminar = (Mascota) jList1.getSelectedValue();
+        if (mascotaAEliminar != null ){
+            VETERINARIA.eliminarMascota(mascotaAEliminar);
+        actualizar();
+        }
+    }//GEN-LAST:event_eliminarMascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,6 +214,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizar;
     private javax.swing.JLabel direccion;
+    private javax.swing.JButton eliminarMascota;
     private javax.swing.JLabel email;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

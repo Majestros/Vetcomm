@@ -24,7 +24,7 @@ public interface MascotaMapper {
         final String UPDATE_BY_ID = "UPDATE mascota (id, nombre, raza, genero) "
                 + "VALUES (#{id},#{nombre},#{raza},#{genero})";
 	
-        final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
+        final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id} AND nombre=#{nombre}";
 	
 	@Select(SELECT_ALL)
 	ArrayList<Mascota> getAllMascotas();
@@ -44,6 +44,6 @@ public interface MascotaMapper {
         int updateById(Mascota mascota);
 	
 	@Delete(DELETE_BY_ID)
-	int deleteById(String id);
+	int deleteById(Mascota mascota);
 	
 }

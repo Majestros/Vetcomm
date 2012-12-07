@@ -54,7 +54,7 @@ public class Veterinaria {
     }
     
     public boolean eliminarMascota(Mascota m){
-        if(this.mManager.deleteById(m.getId())){
+        if(this.mManager.deleteById(m)){
 //            this.mascotas.remove(m);
             return true;
         }
