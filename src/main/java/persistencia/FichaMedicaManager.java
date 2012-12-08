@@ -5,31 +5,27 @@
 package persistencia;
 
 import static controlador.Principal.SQLSESSION;
-import persistencia.mappers.FichaMedicaMapper;
-import controlador.ConnectioFactory;
+import java.util.ArrayList;
 import modelo.FichaMedica;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
+import persistencia.mappers.FichaMedicaMapper;
 
-/**
- *
- * @author Kal-El
- */
+
 public class FichaMedicaManager {
 
     private FichaMedicaMapper fMapper;
 
     public FichaMedicaManager() {
         
-        if (SQLSESSION != null)        
+        if (SQLSESSION != null) {
             fMapper = SQLSESSION.getMapper(FichaMedicaMapper.class);
+        }
     }
 
     public int insert(FichaMedica f) {
         int resut = fMapper.insert(f);
-//        cMapper.insert(c);
-        if( resut > 0)
+        if( resut > 0) {
             SQLSESSION.commit();
+        }
         return resut;
     }
 
@@ -39,6 +35,18 @@ public class FichaMedicaManager {
             return true;
         }
         return false;
+    }
+    
+    public int updateById(FichaMedica f){
+        int result = fMapper.updateById(f);
+        if(result > 0) {
+            SQLSESSION.commit();
+        }
+        return result;
+    }
+    public ArrayList<FichaMedica> obtenerClientes() {
+        ArrayList<FichaMedica> listaAct = fMapper.selectAll();
+        return listaAct;
     }
     
 }

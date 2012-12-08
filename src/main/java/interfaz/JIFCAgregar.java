@@ -146,7 +146,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
     private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
         // TODO add your handling code here:
         
-        cl.setRut(cRut.getText());
+        cl.setRut(quitaEspacios(cRut.getText()));
         cl.setNombre(cNombre.getText());
         cl.setDireccion(cDireccion.getText());
         cl.setTelefono(Integer.parseInt(cTelefono.getText()));
@@ -160,6 +160,17 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
 
     public Cliente obtenerDatosCliente(){
         return this.cl;
+    }
+    
+    public String quitaEspacios(String texto) {
+        java.util.StringTokenizer tokens = new java.util.StringTokenizer(texto);
+        texto = "";
+        while(tokens.hasMoreTokens()){
+            texto += " "+tokens.nextToken();
+        }
+        texto = texto.toString();
+        texto = texto.trim();
+        return texto;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

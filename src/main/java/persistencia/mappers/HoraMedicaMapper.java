@@ -1,19 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package persistencia.mappers;
 
+import java.util.ArrayList;
 import modelo.HoraMedica;
+import org.apache.ibatis.annotations.Delete;
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
-/**
- *
- * @author Kal-El
- */
 public interface HoraMedicaMapper {
 
-    public int insert(HoraMedica h);
-
-    public int deleteByFecha(String fecha);
-    
+//    final String INSERT = "INSERT INTO fichamedica (id, asunto, sintoma, diagnostico, fecha) "
+//                + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
+//    final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
+//    final String UPDATE_BY_FECHA = "UPDATE fichamedica (id, asunto, sintoma, diagnostico, fecha) "
+//                + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
+//
+//    
 }

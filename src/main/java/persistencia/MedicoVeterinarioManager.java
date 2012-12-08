@@ -1,18 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package persistencia;
 
 import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
-import persistencia.mappers.MedicoVeterinarioMapper;
 import modelo.MedicoVeterinario;
+import persistencia.mappers.MedicoVeterinarioMapper;
 
-/**
- *
- * @author Kal-El
- */
 public class MedicoVeterinarioManager {
 
     private MedicoVeterinarioMapper vMapper;
@@ -29,21 +21,21 @@ public class MedicoVeterinarioManager {
         return resut;
     }
 
+    public boolean deleteByRut(String rut) {
+        if (vMapper.deleteByRut(rut) > 0) {
+            SQLSESSION.commit();
+            return true;
+        }
+        return false;
+    }
+
     public int updateByRut(MedicoVeterinario v) {
         int result = vMapper.updateByRut(v);
         SQLSESSION.commit();
         return result;
     }
 
-    public boolean deleteByRut(String rut) {
-        if(vMapper.deleteByRut(rut)>0){
-            SQLSESSION.commit();
-            return true;
-        }
-        return false;
-    }
-    
-    public MedicoVeterinario obtenerMedicoVeterinario(String rut){
+    public MedicoVeterinario obtenerMedicoVeterinario(String rut) {
         return vMapper.selectByRut(rut);
     }
 

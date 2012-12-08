@@ -17,22 +17,24 @@ public class HoraMedicaManager {
     private HoraMedicaMapper hMapper;
 
     public HoraMedicaManager() {
-        if (SQLSESSION != null) 
+        if (SQLSESSION != null) {
             hMapper = SQLSESSION.getMapper(HoraMedicaMapper.class);
-    }
-    
-    public int insert(HoraMedica h){
-        int resut = hMapper.insert(h);
-        if(resut > 0)
-            SQLSESSION.commit();
-        return resut;
-    }
-    
-    public boolean deleteByFecha(String fecha) {
-        if(hMapper.deleteByFecha(fecha)>0){
-            SQLSESSION.commit();
-            return true;
         }
-        return false;
     }
+    
+//    public int insert(HoraMedica h){
+//        int resut = hMapper.insert(h);
+//        if(resut > 0) {
+//            SQLSESSION.commit();
+//        }
+//        return resut;
+//    }
+//    
+//    public boolean deleteByFecha(String fecha) {
+//        if(hMapper.deleteByFecha(fecha)>0){
+//            SQLSESSION.commit();
+//            return true;
+//        }
+//        return false;
+//    }
 }

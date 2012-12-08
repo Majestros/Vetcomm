@@ -103,7 +103,7 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
 
     private void buscarVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarVeterinarioActionPerformed
         // TODO add your handling code here:
-        v =VETERINARIA.selectMedicoVeterinarioByRut(rut.getText());
+        v =VETERINARIA.selectMedicoVeterinarioByRut(quitaEspacios(rut.getText()));
         
         if (v!=null){
             JFMvMostrar.main(v);
@@ -112,6 +112,17 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_buscarVeterinarioActionPerformed
 
+    public String quitaEspacios(String texto) {
+        java.util.StringTokenizer tokens = new java.util.StringTokenizer(texto);
+        texto = "";
+        while(tokens.hasMoreTokens()){
+            texto += " "+tokens.nextToken();
+        }
+        texto = texto.toString();
+        texto = texto.trim();
+        return texto;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarVeterinario;
     private javax.swing.JLabel jLabel1;

@@ -1,46 +1,44 @@
 
 package persistencia;
 
-import persistencia.mappers.MascotaMapper;
 import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
 import modelo.Cliente;
 import modelo.Mascota;
+import persistencia.mappers.MascotaMapper;
 
-/**
- * Clase encarda de la persistencia con la db 
- * @version 1.0
- */
 public class MascotaManager {
     
     private MascotaMapper mMapper;
     
-    public MascotaManager() {
-        
-        if (SQLSESSION != null )        
+    public MascotaManager() {        
+        if (SQLSESSION != null ) {
             mMapper = SQLSESSION.getMapper(MascotaMapper.class);
+        }
     }
 
     public int insert(Mascota m) {
         int resut = mMapper.insert(m);
-        if (resut > 0)
+        if (resut > 0) {
             SQLSESSION.commit();
+        }
         return resut;
     }
     
-    public int updateById(Mascota m){
-        int result = mMapper.updateById(m);
-        if(result > 0)
-            SQLSESSION.commit();
-        return result;
-    }
-
     public boolean deleteById(Mascota mascota) {
         if(mMapper.deleteById(mascota) > 0){
             SQLSESSION.commit();
             return true;
         }
         return false;
+    }
+    
+    public int updateById(Mascota m){
+        int result = mMapper.updateById(m);
+        if(result > 0) {
+            SQLSESSION.commit();
+        }
+        return result;
     }
 
     public ArrayList<Mascota> obtenerMascotas() {

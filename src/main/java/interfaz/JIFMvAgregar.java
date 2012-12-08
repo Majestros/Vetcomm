@@ -122,19 +122,31 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
 
     private void agregarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMedicoVeterinarioActionPerformed
         // TODO add your handling code here:
-        v.setRut(mvRut.getText());
+        v.setRut(quitaEspacios(mvRut.getText()));
         v.setNombre(mvNombre.getText());
         v.setEspecialidad(mvEspecialidad.getText());
         
         boolean s = VETERINARIA.agregarMedicoVeterinario(obtenerDatosVeterinario());
-        if (s)
+        if (s) {
             JOptionPane.showMessageDialog(rootPane, "Medico Veterinario agregado!");
+        }
         this.setVisible(false);
     }//GEN-LAST:event_agregarMedicoVeterinarioActionPerformed
 
     public MedicoVeterinario obtenerDatosVeterinario(){
             return this.v;
         }
+    
+    public String quitaEspacios(String texto) {
+        java.util.StringTokenizer tokens = new java.util.StringTokenizer(texto);
+        texto = "";
+        while(tokens.hasMoreTokens()){
+            texto += " "+tokens.nextToken();
+        }
+        texto = texto.toString();
+        texto = texto.trim();
+        return texto;
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarMedicoVeterinario;

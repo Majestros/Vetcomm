@@ -28,8 +28,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         initComponents();
         this.c=c;
         
-        DefaultListModel dlm = new DefaultListModel();
-        
+        DefaultListModel dlm = new DefaultListModel();        
         
         if (c!=null){
             nombre.setText(c.getNombre());
@@ -89,43 +88,43 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLabel1.setText("Rut");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 46, 80, 14);
+        jLabel1.setBounds(30, 30, 80, 14);
 
         jLabel2.setText("Nombre");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 78, 90, 14);
+        jLabel2.setBounds(30, 60, 90, 14);
 
         jLabel3.setText("Dirección");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 103, 90, 14);
+        jLabel3.setBounds(30, 90, 90, 14);
 
         rut.setText(".");
         getContentPane().add(rut);
-        rut.setBounds(139, 44, 230, 14);
+        rut.setBounds(160, 30, 230, 14);
 
         direccion.setText(".");
         getContentPane().add(direccion);
-        direccion.setBounds(142, 103, 220, 10);
+        direccion.setBounds(160, 90, 220, 10);
 
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 128, 100, 14);
+        jLabel4.setBounds(30, 110, 100, 14);
 
         jLabel5.setText("Email");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 153, 90, 14);
+        jLabel5.setBounds(30, 140, 90, 14);
 
         telefono.setText(".");
         getContentPane().add(telefono);
-        telefono.setBounds(142, 128, 220, 10);
+        telefono.setBounds(160, 110, 220, 10);
 
         email.setText(".");
         getContentPane().add(email);
-        email.setBounds(142, 153, 220, 10);
+        email.setBounds(160, 140, 220, 10);
 
         nombre.setText(".");
         getContentPane().add(nombre);
-        nombre.setBounds(142, 78, 220, 10);
+        nombre.setBounds(160, 60, 220, 10);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -135,11 +134,11 @@ public class JFCMostrar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(10, 232, 180, 130);
+        jScrollPane1.setBounds(30, 210, 180, 130);
 
         jLabel7.setText("Mascotas Registradas");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(40, 200, 130, 14);
+        jLabel7.setBounds(60, 180, 130, 14);
 
         jButton1.setText("Agregar Mascota");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +147,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(273, 370, 120, 23);
+        jButton1.setBounds(220, 360, 120, 23);
 
         actualizar.setText("Actualizar");
         actualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -157,7 +156,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(actualizar);
-        actualizar.setBounds(210, 240, 140, 23);
+        actualizar.setBounds(230, 220, 140, 23);
 
         eliminarMascota.setText("Eliminar Mascota");
         eliminarMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -166,7 +165,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(eliminarMascota);
-        eliminarMascota.setBounds(130, 370, 120, 23);
+        eliminarMascota.setBounds(80, 360, 120, 23);
 
         mostrarMascota.setText("Mostrar Mascota");
         mostrarMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -175,7 +174,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(mostrarMascota);
-        mostrarMascota.setBounds(210, 280, 140, 23);
+        mostrarMascota.setBounds(230, 260, 140, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
