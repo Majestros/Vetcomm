@@ -115,7 +115,7 @@ public class JIFHmCrear extends javax.swing.JInternalFrame {
 
         jTagno.setText("Año");
         jPanel1.add(jTagno);
-        jTagno.setBounds(300, 260, 25, 20);
+        jTagno.setBounds(300, 260, 70, 20);
 
         jButton1.setText("Guardar");
 
@@ -136,7 +136,7 @@ public class JIFHmCrear extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
                 .addGap(19, 19, 19))

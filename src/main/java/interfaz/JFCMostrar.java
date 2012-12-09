@@ -52,7 +52,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         for (Mascota mascota : mascotasCliente) {
             modeloLista.addElement(mascota);
         }
-        jList1.setModel(modeloLista);
+        jListMascotas.setModel(modeloLista);
     }
 
     /** This method is called from within the constructor to
@@ -77,7 +77,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jLemail = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jListMascotas = new javax.swing.JList();
         jBactualizar = new javax.swing.JButton();
         jBmostrarMascota = new javax.swing.JButton();
         jBagregarMascota = new javax.swing.JButton();
@@ -135,12 +135,12 @@ public class JFCMostrar extends javax.swing.JFrame {
         jPanel1.add(jLabel7);
         jLabel7.setBounds(20, 170, 130, 14);
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        jListMascotas.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListMascotas);
 
         jPanel1.add(jScrollPane1);
         jScrollPane1.setBounds(20, 200, 180, 130);
@@ -219,7 +219,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     }
     private void jBeliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMascotaActionPerformed
         // TODO add your handling code here:
-        Mascota mascotaAEliminar = (Mascota) jList1.getSelectedValue();
+        Mascota mascotaAEliminar = (Mascota) jListMascotas.getSelectedValue();
         if (mascotaAEliminar != null ){
             VETERINARIA.eliminarMascota(mascotaAEliminar);
         actualizar();
@@ -228,7 +228,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
     private void jBmostrarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmostrarMascotaActionPerformed
         // TODO add your handling code here:
-         Mascota mascota = (Mascota) jList1.getSelectedValue();
+         Mascota mascota = (Mascota) jListMascotas.getSelectedValue();
         if (mascota!=null){
             JFMMostrar.main(mascota);
         }else {
@@ -269,7 +269,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLdireccion;
     private javax.swing.JLabel jLemail;
-    private javax.swing.JList jList1;
+    private javax.swing.JList jListMascotas;
     private javax.swing.JLabel jLnombre;
     private javax.swing.JLabel jLrut;
     private javax.swing.JLabel jLtelefono;

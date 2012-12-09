@@ -10,6 +10,9 @@
  */
 package interfaz;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+import modelo.FichaMedica;
 import modelo.Mascota;
 
 /**
@@ -19,6 +22,7 @@ import modelo.Mascota;
 public class JFMMostrar extends javax.swing.JFrame {
 
     private Mascota m;
+    ArrayList<FichaMedica> historial=new ArrayList<FichaMedica>();
     /** Creates new form JFMMostrar */
     public JFMMostrar(Mascota m) {
         initComponents();
@@ -35,9 +39,22 @@ public class JFMMostrar extends javax.swing.JFrame {
                 jLgenero.setText("Macho");
             }
             
+            //llenar el jList
+            historial=m.getHistorial();
+            llenarLista();
         }
     }
 
+    //para llenar la lista, faltan los metodos de agregar y de actualizar arrayList
+    public void llenarLista(){
+        DefaultListModel modeloLista = new DefaultListModel();
+        
+        for (FichaMedica ficha: historial){
+            modeloLista.addElement(ficha);
+        }
+        jListHistorial.setModel(modeloLista);
+    }
+    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -59,7 +76,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         jLgenero = new javax.swing.JLabel();
         jBagregarHistorial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jListHistorial = new javax.swing.JList();
         jBsalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -86,12 +103,12 @@ public class JFMMostrar extends javax.swing.JFrame {
 
         jBagregarHistorial.setText("Agregar Historial");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        jListHistorial.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(jListHistorial);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -233,7 +250,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLgenero;
     private javax.swing.JLabel jLid;
-    private javax.swing.JList jList1;
+    private javax.swing.JList jListHistorial;
     private javax.swing.JLabel jLnombre;
     private javax.swing.JLabel jLraza;
     private javax.swing.JPanel jPanel1;
