@@ -103,12 +103,18 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         c =VETERINARIA.selectClienteByRut(jTrut.getText());
         
         // llena el arreglo de mascotas
-        VETERINARIA.llenarMascotasDeCliente(c);
+       // VETERINARIA.llenarMascotasDeCliente(c);
+        //lo anterior lo deje como comentario porque solo si se encuentra el 
+       //cliente se va a llenar la lista de mascotas  
         
         if (c!=null){
+            this.setVisible(false);
+            // llena el arreglo de mascotas
+           VETERINARIA.llenarMascotasDeCliente(c);
             JFCMostrar.run(c);
         }else {
             JOptionPane.showMessageDialog(null,"Cliente no se pudo encontrar.");
+            jTrut.setText("");
         }
         
        

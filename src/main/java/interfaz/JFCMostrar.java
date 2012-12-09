@@ -64,67 +64,76 @@ public class JFCMostrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLrut = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLnombre = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLdireccion = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLtelefono = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLemail = new javax.swing.JLabel();
-        jLnombre = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
-        jLabel7 = new javax.swing.JLabel();
-        jBagregarMascota = new javax.swing.JButton();
         jBactualizar = new javax.swing.JButton();
-        jBeliminarMascota = new javax.swing.JButton();
         jBmostrarMascota = new javax.swing.JButton();
+        jBagregarMascota = new javax.swing.JButton();
+        jBeliminarMascota = new javax.swing.JButton();
+        jBsalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
         getContentPane().setLayout(null);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setLayout(null);
+
         jLabel1.setText("Rut");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(30, 30, 80, 14);
-
-        jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 60, 90, 14);
-
-        jLabel3.setText("Dirección");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(30, 90, 90, 14);
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(20, 20, 40, 14);
 
         jLrut.setText(".");
-        getContentPane().add(jLrut);
-        jLrut.setBounds(160, 30, 230, 14);
+        jPanel1.add(jLrut);
+        jLrut.setBounds(90, 20, 230, 14);
 
-        jLdireccion.setText(".");
-        getContentPane().add(jLdireccion);
-        jLdireccion.setBounds(160, 90, 220, 10);
-
-        jLabel4.setText("Telefono");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(30, 110, 100, 14);
-
-        jLabel5.setText("Email");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(30, 140, 90, 14);
-
-        jLtelefono.setText(".");
-        getContentPane().add(jLtelefono);
-        jLtelefono.setBounds(160, 110, 220, 10);
-
-        jLemail.setText(".");
-        getContentPane().add(jLemail);
-        jLemail.setBounds(160, 140, 220, 10);
+        jLabel2.setText("Nombre");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(20, 50, 90, 14);
 
         jLnombre.setText(".");
-        getContentPane().add(jLnombre);
-        jLnombre.setBounds(160, 60, 220, 10);
+        jPanel1.add(jLnombre);
+        jLnombre.setBounds(90, 50, 220, 10);
+
+        jLabel3.setText("Dirección");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(20, 80, 90, 14);
+
+        jLdireccion.setText(".");
+        jPanel1.add(jLdireccion);
+        jLdireccion.setBounds(90, 80, 220, 10);
+
+        jLabel4.setText("Telefono");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(20, 110, 100, 14);
+
+        jLtelefono.setText(".");
+        jPanel1.add(jLtelefono);
+        jLtelefono.setBounds(90, 110, 220, 10);
+
+        jLabel5.setText("Email");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(20, 140, 90, 14);
+
+        jLemail.setText(".");
+        jPanel1.add(jLemail);
+        jLemail.setBounds(90, 140, 220, 10);
+
+        jLabel7.setText("Mascotas Registradas");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(20, 170, 130, 14);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -133,21 +142,8 @@ public class JFCMostrar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(30, 210, 180, 130);
-
-        jLabel7.setText("Mascotas Registradas");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(60, 180, 130, 14);
-
-        jBagregarMascota.setText("Agregar Mascota");
-        jBagregarMascota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBagregarMascotaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBagregarMascota);
-        jBagregarMascota.setBounds(220, 360, 120, 23);
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 200, 180, 130);
 
         jBactualizar.setText("Actualizar");
         jBactualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -155,17 +151,8 @@ public class JFCMostrar extends javax.swing.JFrame {
                 jBactualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(jBactualizar);
-        jBactualizar.setBounds(230, 220, 140, 23);
-
-        jBeliminarMascota.setText("Eliminar Mascota");
-        jBeliminarMascota.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBeliminarMascotaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBeliminarMascota);
-        jBeliminarMascota.setBounds(80, 360, 120, 23);
+        jPanel1.add(jBactualizar);
+        jBactualizar.setBounds(220, 200, 170, 23);
 
         jBmostrarMascota.setText("Mostrar Mascota");
         jBmostrarMascota.addActionListener(new java.awt.event.ActionListener() {
@@ -173,8 +160,38 @@ public class JFCMostrar extends javax.swing.JFrame {
                 jBmostrarMascotaActionPerformed(evt);
             }
         });
-        getContentPane().add(jBmostrarMascota);
-        jBmostrarMascota.setBounds(230, 260, 140, 23);
+        jPanel1.add(jBmostrarMascota);
+        jBmostrarMascota.setBounds(220, 230, 170, 23);
+
+        jBagregarMascota.setText("Agregar Mascota");
+        jBagregarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBagregarMascotaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBagregarMascota);
+        jBagregarMascota.setBounds(220, 270, 170, 23);
+
+        jBeliminarMascota.setText("Eliminar Mascota");
+        jBeliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarMascotaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBeliminarMascota);
+        jBeliminarMascota.setBounds(220, 300, 170, 23);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(30, 20, 400, 350);
+
+        jBsalir.setText("Salir");
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBsalir);
+        jBsalir.setBounds(280, 380, 100, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -221,6 +238,11 @@ public class JFCMostrar extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jBmostrarMascotaActionPerformed
 
+    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jBsalirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,6 +260,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JButton jBagregarMascota;
     private javax.swing.JButton jBeliminarMascota;
     private javax.swing.JButton jBmostrarMascota;
+    private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -250,6 +273,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLnombre;
     private javax.swing.JLabel jLrut;
     private javax.swing.JLabel jLtelefono;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

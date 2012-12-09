@@ -10,6 +10,8 @@
  */
 package interfaz;
 
+import javax.swing.JOptionPane;
+import static controlador.Principal.VETERINARIA;
 import modelo.FichaMedica;
 
 /**
@@ -46,10 +48,11 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTadiagnostico = new javax.swing.JTextArea();
-        jTmotivo = new javax.swing.JTextField();
+        jTasunto = new javax.swing.JTextField();
         jCbdia = new javax.swing.JComboBox();
         jCbmes = new javax.swing.JComboBox();
         jTagno = new javax.swing.JTextField();
+        jTid = new javax.swing.JTextField();
         jBagregarHistorial = new javax.swing.JButton();
 
         setClosable(true);
@@ -74,7 +77,7 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
 
         jLabel1.setText("Id:");
 
-        jLabel2.setText("Motivo Consulta:");
+        jLabel2.setText("Asunto:");
 
         jTadiagnostico.setColumns(20);
         jTadiagnostico.setRows(5);
@@ -95,7 +98,7 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
                 .addComponent(jLabel5)
                 .addContainerGap(227, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addGap(38, 38, 38)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jLabel8)
@@ -118,7 +121,10 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE))
                             .addGap(0, 0, 0))
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(jTmotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTasunto, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(jTid, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap()))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -127,11 +133,13 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
                 .addGap(4, 4, 4)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTmotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTasunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
@@ -173,14 +181,14 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
+                .addContainerGap(355, Short.MAX_VALUE)
                 .addComponent(jBagregarHistorial)
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(22, 22, 22)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(45, Short.MAX_VALUE)))
+                    .addContainerGap(43, Short.MAX_VALUE)))
         );
 
         pack();
@@ -188,9 +196,19 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
 
     private void jBagregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHistorialActionPerformed
         // TODO add your handling code here:
+        h.setId(jTid.getText());
+        h.setAsunto(jTasunto.getText());
+        h.setSintoma(jTasintoma.getText());
+        h.setDiagnostico(jTadiagnostico.getText());
+        h.setFecha(jCbdia+"-"+jCbmes+"-"+jTagno);
         
+       
     }//GEN-LAST:event_jBagregarHistorialActionPerformed
 
+    public FichaMedica obtenerDatosHistorial(){
+        return h;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBagregarHistorial;
     private javax.swing.JComboBox jCbdia;
@@ -207,6 +225,7 @@ public class JIFFichaMedAgregar extends javax.swing.JInternalFrame {
     private javax.swing.JTextArea jTadiagnostico;
     private javax.swing.JTextField jTagno;
     private javax.swing.JTextArea jTasintoma;
-    private javax.swing.JTextField jTmotivo;
+    private javax.swing.JTextField jTasunto;
+    private javax.swing.JTextField jTid;
     // End of variables declaration//GEN-END:variables
 }

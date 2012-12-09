@@ -106,9 +106,11 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
         v =VETERINARIA.selectMedicoVeterinarioByRut(quitaEspacios(jTrut.getText()));
         
         if (v!=null){
+            this.setVisible(false);
             JFMvMostrar.main(v);
         }else {
             JOptionPane.showMessageDialog(null,"Medico Veterinario no se pudo encontrar.");
+            jTrut.setText("");
         }
     }//GEN-LAST:event_jBbuscarVeterinarioActionPerformed
 
