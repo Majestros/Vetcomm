@@ -14,7 +14,7 @@ import modelo.Cliente;
  */
 public class JIFCAgregar extends javax.swing.JInternalFrame {
     
-    private Cliente cl=new Cliente();
+    private Cliente c=new Cliente();
     
     /**
      * Creates new form JIFCAgregar
@@ -38,12 +38,12 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        cRut = new javax.swing.JTextField();
-        cNombre = new javax.swing.JTextField();
-        cDireccion = new javax.swing.JTextField();
-        cTelefono = new javax.swing.JTextField();
-        cEmail = new javax.swing.JTextField();
-        agregarCliente = new javax.swing.JButton();
+        jTrut = new javax.swing.JTextField();
+        jTnombre = new javax.swing.JTextField();
+        jTdireccion = new javax.swing.JTextField();
+        jTtelefono = new javax.swing.JTextField();
+        jTemail = new javax.swing.JTextField();
+        jBagregarCliente = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -76,11 +76,11 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5))
                 .addGap(77, 77, 77)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cTelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(cDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(cNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(cRut, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
-                    .addComponent(cEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
+                    .addComponent(jTtelefono, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jTdireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jTnombre, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jTrut, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+                    .addComponent(jTemail, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
                 .addGap(33, 33, 33))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,30 +89,30 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(cRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTrut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(cDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTdireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(cTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTtelefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(cEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTemail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(57, Short.MAX_VALUE))
         );
 
-        agregarCliente.setText("Agregar ");
-        agregarCliente.addActionListener(new java.awt.event.ActionListener() {
+        jBagregarCliente.setText("Agregar ");
+        jBagregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarClienteActionPerformed(evt);
+                jBagregarClienteActionPerformed(evt);
             }
         });
 
@@ -124,7 +124,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(319, 319, 319)
-                        .addComponent(agregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jBagregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -136,30 +136,30 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(agregarCliente)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addComponent(jBagregarCliente)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
+    private void jBagregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarClienteActionPerformed
         // TODO add your handling code here:
         
-        cl.setRut(quitaEspacios(cRut.getText()));
-        cl.setNombre(cNombre.getText());
-        cl.setDireccion(cDireccion.getText());
-        cl.setTelefono(Integer.parseInt(cTelefono.getText()));
-        cl.setEmail(cEmail.getText());
+        c.setRut(quitaEspacios(jTrut.getText()));
+        c.setNombre(jTnombre.getText());
+        c.setDireccion(jTdireccion.getText());
+        c.setTelefono(Integer.parseInt(jTtelefono.getText()));
+        c.setEmail(jTemail.getText());
         boolean s = VETERINARIA.agregarCliente(obtenerDatosCliente());
         if (s)
             JOptionPane.showMessageDialog(rootPane, "Cliente agregado!");
         this.setVisible(false);
         
-    }//GEN-LAST:event_agregarClienteActionPerformed
+    }//GEN-LAST:event_jBagregarClienteActionPerformed
 
     public Cliente obtenerDatosCliente(){
-        return this.cl;
+        return this.c;
     }
     
     public String quitaEspacios(String texto) {
@@ -174,17 +174,17 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarCliente;
-    private javax.swing.JTextField cDireccion;
-    private javax.swing.JTextField cEmail;
-    private javax.swing.JTextField cNombre;
-    private javax.swing.JTextField cRut;
-    private javax.swing.JTextField cTelefono;
+    private javax.swing.JButton jBagregarCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTdireccion;
+    private javax.swing.JTextField jTemail;
+    private javax.swing.JTextField jTnombre;
+    private javax.swing.JTextField jTrut;
+    private javax.swing.JTextField jTtelefono;
     // End of variables declaration//GEN-END:variables
 }

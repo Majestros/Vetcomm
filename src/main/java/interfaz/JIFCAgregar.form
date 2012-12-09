@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
@@ -29,7 +29,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="319" max="-2" attributes="0"/>
-                      <Component id="agregarCliente" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="jBagregarCliente" min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
@@ -46,8 +46,8 @@
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="agregarCliente" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <Component id="jBagregarCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="73" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -76,11 +76,11 @@
                   </Group>
                   <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="cTelefono" alignment="0" pref="238" max="32767" attributes="0"/>
-                      <Component id="cDireccion" alignment="0" pref="238" max="32767" attributes="0"/>
-                      <Component id="cNombre" alignment="0" pref="238" max="32767" attributes="0"/>
-                      <Component id="cRut" alignment="0" pref="238" max="32767" attributes="0"/>
-                      <Component id="cEmail" alignment="0" pref="238" max="32767" attributes="0"/>
+                      <Component id="jTtelefono" alignment="0" pref="238" max="32767" attributes="0"/>
+                      <Component id="jTdireccion" alignment="0" pref="238" max="32767" attributes="0"/>
+                      <Component id="jTnombre" alignment="0" pref="238" max="32767" attributes="0"/>
+                      <Component id="jTrut" alignment="0" pref="238" max="32767" attributes="0"/>
+                      <Component id="jTemail" alignment="0" pref="238" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
@@ -92,27 +92,27 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cRut" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTrut" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTnombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTdireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cTelefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTtelefono" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                      <Component id="cEmail" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTemail" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="57" max="32767" attributes="0"/>
               </Group>
@@ -145,24 +145,24 @@
             <Property name="text" type="java.lang.String" value="Email: "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="cRut">
+        <Component class="javax.swing.JTextField" name="jTrut">
         </Component>
-        <Component class="javax.swing.JTextField" name="cNombre">
+        <Component class="javax.swing.JTextField" name="jTnombre">
         </Component>
-        <Component class="javax.swing.JTextField" name="cDireccion">
+        <Component class="javax.swing.JTextField" name="jTdireccion">
         </Component>
-        <Component class="javax.swing.JTextField" name="cTelefono">
+        <Component class="javax.swing.JTextField" name="jTtelefono">
         </Component>
-        <Component class="javax.swing.JTextField" name="cEmail">
+        <Component class="javax.swing.JTextField" name="jTemail">
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="agregarCliente">
+    <Component class="javax.swing.JButton" name="jBagregarCliente">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar "/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarClienteActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBagregarClienteActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

@@ -56,7 +56,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         mvAgregar = new javax.swing.JMenuItem();
         mvBuscar = new javax.swing.JMenuItem();
-        mvEliminar = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         hmCrear = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
@@ -165,9 +164,6 @@ public class JFPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu4.add(mvBuscar);
-
-        mvEliminar.setText("Eliminar");
-        jMenu4.add(mvEliminar);
 
         jMenuBar1.add(jMenu4);
 
@@ -303,6 +299,5 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mBuscar;
     private javax.swing.JMenuItem mvAgregar;
     private javax.swing.JMenuItem mvBuscar;
-    private javax.swing.JMenuItem mvEliminar;
     // End of variables declaration//GEN-END:variables
 }

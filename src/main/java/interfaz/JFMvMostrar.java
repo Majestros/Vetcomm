@@ -49,7 +49,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
         jLrut = new javax.swing.JLabel();
         jLnombre = new javax.swing.JLabel();
         jLespecialidad = new javax.swing.JLabel();
-        jBeliminarMedicoVeterinario = new javax.swing.JButton();
+        jBeliminarVeterinario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -102,10 +102,10 @@ public class JFMvMostrar extends javax.swing.JFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        jBeliminarMedicoVeterinario.setText("Eliminar");
-        jBeliminarMedicoVeterinario.addActionListener(new java.awt.event.ActionListener() {
+        jBeliminarVeterinario.setText("Eliminar");
+        jBeliminarVeterinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBeliminarMedicoVeterinarioActionPerformed(evt);
+                jBeliminarVeterinarioActionPerformed(evt);
             }
         });
 
@@ -119,7 +119,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
                 .addContainerGap(54, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(226, Short.MAX_VALUE)
-                .addComponent(jBeliminarMedicoVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBeliminarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
@@ -128,19 +128,19 @@ public class JFMvMostrar extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jBeliminarMedicoVeterinario)
+                .addComponent(jBeliminarVeterinario)
                 .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBeliminarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMedicoVeterinarioActionPerformed
+    private void jBeliminarVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarVeterinarioActionPerformed
         // TODO add your handling code here:
         VETERINARIA.eliminarMedicoVeterinario(v);
         this.setVisible(false);
         JOptionPane.showMessageDialog(rootPane, "Medico Eliminado!");
-    }//GEN-LAST:event_jBeliminarMedicoVeterinarioActionPerformed
+    }//GEN-LAST:event_jBeliminarVeterinarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +178,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBeliminarMedicoVeterinario;
+    private javax.swing.JButton jBeliminarVeterinario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

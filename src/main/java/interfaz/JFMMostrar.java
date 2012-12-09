@@ -25,14 +25,14 @@ public class JFMMostrar extends javax.swing.JFrame {
         this.m=m;
         
        if  (m!=null){
-            id.setText(m.getId());
-            nombre.setText(m.getNombre());
-            raza.setText(m.getRaza());
+            jLid.setText(m.getId());
+            jLnombre.setText(m.getNombre());
+            jLraza.setText(m.getRaza());
             
             if (m.getGenero()==false){
-                genero.setText("Hembra");
+                jLgenero.setText("Hembra");
             }else {
-                genero.setText("Macho");
+                jLgenero.setText("Macho");
             }
             
         }
@@ -53,10 +53,10 @@ public class JFMMostrar extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        id = new javax.swing.JLabel();
-        nombre = new javax.swing.JLabel();
-        raza = new javax.swing.JLabel();
-        genero = new javax.swing.JLabel();
+        jLid = new javax.swing.JLabel();
+        jLnombre = new javax.swing.JLabel();
+        jLraza = new javax.swing.JLabel();
+        jLgenero = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -72,13 +72,13 @@ public class JFMMostrar extends javax.swing.JFrame {
 
         jLabel5.setText("Historial:");
 
-        id.setText(".");
+        jLid.setText(".");
 
-        nombre.setText(".");
+        jLnombre.setText(".");
 
-        raza.setText(".");
+        jLraza.setText(".");
 
-        genero.setText(".");
+        jLgenero.setText(".");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -94,10 +94,10 @@ public class JFMMostrar extends javax.swing.JFrame {
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(raza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(genero, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                    .addComponent(nombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(id, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLraza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLgenero, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+                    .addComponent(jLnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -106,19 +106,19 @@ public class JFMMostrar extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(id))
+                    .addComponent(jLid))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(nombre))
+                    .addComponent(jLnombre))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(raza))
+                    .addComponent(jLraza))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(genero))
+                    .addComponent(jLgenero))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel5)
                 .addContainerGap(116, Short.MAX_VALUE))
@@ -180,15 +180,15 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel genero;
-    private javax.swing.JLabel id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLgenero;
+    private javax.swing.JLabel jLid;
+    private javax.swing.JLabel jLnombre;
+    private javax.swing.JLabel jLraza;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel nombre;
-    private javax.swing.JLabel raza;
     // End of variables declaration//GEN-END:variables
 }

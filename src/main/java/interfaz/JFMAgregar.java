@@ -20,13 +20,13 @@ import modelo.Mascota;
  */
 public class JFMAgregar extends javax.swing.JFrame {
 
-    private Mascota ma=new Mascota();
+    private Mascota m=new Mascota();
     private String arg;
     /** Creates new form JFMAgregar */
     public JFMAgregar(String arg) {
         initComponents();
         this.arg = arg;
-        this.lbRutCliente.setText(arg);
+        this.jLRutCliente.setText(arg);
     }
 
     /** This method is called from within the constructor to
@@ -41,12 +41,12 @@ public class JFMAgregar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        nombre = new javax.swing.JTextField();
-        raza = new javax.swing.JTextField();
+        jTnombre = new javax.swing.JTextField();
+        jTraza = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        lbRutCliente = new javax.swing.JLabel();
-        agregarMascota = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        jLRutCliente = new javax.swing.JLabel();
+        jBagregarMascota = new javax.swing.JButton();
+        jCbgenero = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -58,14 +58,14 @@ public class JFMAgregar extends javax.swing.JFrame {
 
         jLabel4.setText("Rut Cliente");
 
-        agregarMascota.setText("Agregar");
-        agregarMascota.addActionListener(new java.awt.event.ActionListener() {
+        jBagregarMascota.setText("Agregar");
+        jBagregarMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarMascotaActionPerformed(evt);
+                jBagregarMascotaActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra" }));
+        jCbgenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,7 +74,7 @@ public class JFMAgregar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(agregarMascota)
+                    .addComponent(jBagregarMascota)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -83,11 +83,11 @@ public class JFMAgregar extends javax.swing.JFrame {
                             .addComponent(jLabel4))
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCbgenero, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lbRutCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                                .addComponent(raza)
-                                .addComponent(nombre)))))
+                                .addComponent(jLRutCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                                .addComponent(jTraza)
+                                .addComponent(jTnombre)))))
                 .addContainerGap(175, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -96,48 +96,47 @@ public class JFMAgregar extends javax.swing.JFrame {
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(lbRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLRutCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCbgenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(raza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTraza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(agregarMascota)
+                .addComponent(jBagregarMascota)
                 .addGap(22, 22, 22))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMascotaActionPerformed
+    private void jBagregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarMascotaActionPerformed
         // TODO add your handling code here:
-        ma.setId(arg);
-        ma.setNombre(nombre.getText());
-        ma.setRaza(raza.getText());
-        String genero = jComboBox1.getSelectedItem().toString();
+        m.setId(arg);
+        m.setNombre(jTnombre.getText());
+        m.setRaza(jTraza.getText());
+        String genero = jCbgenero.getSelectedItem().toString();
         
         if(genero.equals("Hembra")){
-            ma.setGenero(false);
+            m.setGenero(false);
         }else{
-            ma.setGenero(true);
+            m.setGenero(true);
         }
         
         
        VETERINARIA.agregarMascota(obtenerDatosMascota());
                                                  
 
-    
-    }//GEN-LAST:event_agregarMascotaActionPerformed
+    }//GEN-LAST:event_jBagregarMascotaActionPerformed
     public Mascota obtenerDatosMascota(){
-        return this.ma;
+        return this.m;
     }
     /**
      * @param args the command line arguments
@@ -175,14 +174,14 @@ public class JFMAgregar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarMascota;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JButton jBagregarMascota;
+    private javax.swing.JComboBox jCbgenero;
+    private javax.swing.JLabel jLRutCliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel lbRutCliente;
-    private javax.swing.JTextField nombre;
-    private javax.swing.JTextField raza;
+    private javax.swing.JTextField jTnombre;
+    private javax.swing.JTextField jTraza;
     // End of variables declaration//GEN-END:variables
 }

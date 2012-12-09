@@ -34,8 +34,8 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        rut = new javax.swing.JTextField();
-        buscarVeterinario = new javax.swing.JButton();
+        jTrut = new javax.swing.JTextField();
+        jBbuscarVeterinario = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -54,7 +54,7 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTrut, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -63,14 +63,14 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(rut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTrut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        buscarVeterinario.setText("Buscar");
-        buscarVeterinario.addActionListener(new java.awt.event.ActionListener() {
+        jBbuscarVeterinario.setText("Buscar");
+        jBbuscarVeterinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarVeterinarioActionPerformed(evt);
+                jBbuscarVeterinarioActionPerformed(evt);
             }
         });
 
@@ -85,7 +85,7 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(160, 160, 160)
-                        .addComponent(buscarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jBbuscarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -94,23 +94,23 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(buscarVeterinario)
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addComponent(jBbuscarVeterinario)
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarVeterinarioActionPerformed
+    private void jBbuscarVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarVeterinarioActionPerformed
         // TODO add your handling code here:
-        v =VETERINARIA.selectMedicoVeterinarioByRut(quitaEspacios(rut.getText()));
+        v =VETERINARIA.selectMedicoVeterinarioByRut(quitaEspacios(jTrut.getText()));
         
         if (v!=null){
             JFMvMostrar.main(v);
         }else {
             JOptionPane.showMessageDialog(null,"Medico Veterinario no se pudo encontrar.");
         }
-    }//GEN-LAST:event_buscarVeterinarioActionPerformed
+    }//GEN-LAST:event_jBbuscarVeterinarioActionPerformed
 
     public String quitaEspacios(String texto) {
         java.util.StringTokenizer tokens = new java.util.StringTokenizer(texto);
@@ -124,9 +124,9 @@ public class JIFMvBuscar extends javax.swing.JInternalFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buscarVeterinario;
+    private javax.swing.JButton jBbuscarVeterinario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField rut;
+    private javax.swing.JTextField jTrut;
     // End of variables declaration//GEN-END:variables
 }

@@ -34,10 +34,10 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        mvRut = new javax.swing.JTextField();
-        mvNombre = new javax.swing.JTextField();
-        mvEspecialidad = new javax.swing.JTextField();
-        agregarMedicoVeterinario = new javax.swing.JButton();
+        jTrut = new javax.swing.JTextField();
+        jTnombre = new javax.swing.JTextField();
+        jTespecialidad = new javax.swing.JTextField();
+        jBagregarVeterinario = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -64,9 +64,9 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
                     .addComponent(jLabel3))
                 .addGap(49, 49, 49)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(mvRut, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                    .addComponent(mvNombre)
-                    .addComponent(mvEspecialidad))
+                    .addComponent(jTrut, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                    .addComponent(jTnombre)
+                    .addComponent(jTespecialidad))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -75,22 +75,22 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(mvRut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTrut, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(mvNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTnombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(mvEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTespecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
-        agregarMedicoVeterinario.setText("Agregar");
-        agregarMedicoVeterinario.addActionListener(new java.awt.event.ActionListener() {
+        jBagregarVeterinario.setText("Agregar");
+        jBagregarVeterinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarMedicoVeterinarioActionPerformed(evt);
+                jBagregarVeterinarioActionPerformed(evt);
             }
         });
 
@@ -104,7 +104,7 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(242, Short.MAX_VALUE)
-                .addComponent(agregarMedicoVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jBagregarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(68, 68, 68))
         );
         layout.setVerticalGroup(
@@ -112,26 +112,26 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
-                .addComponent(agregarMedicoVeterinario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addComponent(jBagregarVeterinario)
                 .addGap(37, 37, 37))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agregarMedicoVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarMedicoVeterinarioActionPerformed
+    private void jBagregarVeterinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarVeterinarioActionPerformed
         // TODO add your handling code here:
-        v.setRut(quitaEspacios(mvRut.getText()));
-        v.setNombre(mvNombre.getText());
-        v.setEspecialidad(mvEspecialidad.getText());
+        v.setRut(quitaEspacios(jTrut.getText()));
+        v.setNombre(jTnombre.getText());
+        v.setEspecialidad(jTespecialidad.getText());
         
         boolean s = VETERINARIA.agregarMedicoVeterinario(obtenerDatosVeterinario());
         if (s) {
             JOptionPane.showMessageDialog(rootPane, "Medico Veterinario agregado!");
         }
         this.setVisible(false);
-    }//GEN-LAST:event_agregarMedicoVeterinarioActionPerformed
+    }//GEN-LAST:event_jBagregarVeterinarioActionPerformed
 
     public MedicoVeterinario obtenerDatosVeterinario(){
             return this.v;
@@ -149,13 +149,13 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton agregarMedicoVeterinario;
+    private javax.swing.JButton jBagregarVeterinario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField mvEspecialidad;
-    private javax.swing.JTextField mvNombre;
-    private javax.swing.JTextField mvRut;
+    private javax.swing.JTextField jTespecialidad;
+    private javax.swing.JTextField jTnombre;
+    private javax.swing.JTextField jTrut;
     // End of variables declaration//GEN-END:variables
 }

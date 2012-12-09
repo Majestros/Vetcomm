@@ -63,10 +63,10 @@
                   </Group>
                   <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="raza" alignment="0" max="32767" attributes="1"/>
-                      <Component id="genero" alignment="0" pref="150" max="32767" attributes="1"/>
-                      <Component id="nombre" alignment="0" max="32767" attributes="1"/>
-                      <Component id="id" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLraza" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLgenero" alignment="0" pref="150" max="32767" attributes="1"/>
+                      <Component id="jLnombre" alignment="0" max="32767" attributes="1"/>
+                      <Component id="jLid" alignment="0" max="32767" attributes="1"/>
                   </Group>
                   <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
@@ -78,22 +78,22 @@
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="id" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLid" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLnombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="raza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLraza" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="genero" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLgenero" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -128,22 +128,22 @@
             <Property name="text" type="java.lang.String" value="Historial:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="id">
+        <Component class="javax.swing.JLabel" name="jLid">
           <Properties>
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="nombre">
+        <Component class="javax.swing.JLabel" name="jLnombre">
           <Properties>
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="raza">
+        <Component class="javax.swing.JLabel" name="jLraza">
           <Properties>
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="genero">
+        <Component class="javax.swing.JLabel" name="jLgenero">
           <Properties>
             <Property name="text" type="java.lang.String" value="."/>
           </Properties>

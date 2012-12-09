@@ -25,7 +25,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="agregarMascota" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBagregarMascota" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -35,11 +35,11 @@
                       </Group>
                       <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jComboBox1" min="-2" pref="92" max="-2" attributes="0"/>
+                          <Component id="jCbgenero" min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lbRutCliente" alignment="0" pref="111" max="32767" attributes="1"/>
-                              <Component id="raza" alignment="0" max="32767" attributes="1"/>
-                              <Component id="nombre" alignment="0" max="32767" attributes="1"/>
+                              <Component id="jLRutCliente" alignment="0" pref="111" max="32767" attributes="1"/>
+                              <Component id="jTraza" alignment="0" max="32767" attributes="1"/>
+                              <Component id="jTnombre" alignment="0" max="32767" attributes="1"/>
                           </Group>
                       </Group>
                   </Group>
@@ -54,25 +54,25 @@
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbRutCliente" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
+                  <Component id="jLRutCliente" alignment="3" min="-2" pref="21" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTnombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jCbgenero" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="raza" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTraza" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="69" max="32767" attributes="0"/>
-              <Component id="agregarMascota" min="-2" max="-2" attributes="0"/>
+              <Component id="jBagregarMascota" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -94,26 +94,26 @@
         <Property name="text" type="java.lang.String" value="Raza"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nombre">
+    <Component class="javax.swing.JTextField" name="jTnombre">
     </Component>
-    <Component class="javax.swing.JTextField" name="raza">
+    <Component class="javax.swing.JTextField" name="jTraza">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Rut Cliente"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lbRutCliente">
+    <Component class="javax.swing.JLabel" name="jLRutCliente">
     </Component>
-    <Component class="javax.swing.JButton" name="agregarMascota">
+    <Component class="javax.swing.JButton" name="jBagregarMascota">
       <Properties>
         <Property name="text" type="java.lang.String" value="Agregar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agregarMascotaActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBagregarMascotaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
+    <Component class="javax.swing.JComboBox" name="jCbgenero">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="2">

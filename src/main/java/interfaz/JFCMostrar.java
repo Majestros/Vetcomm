@@ -31,11 +31,11 @@ public class JFCMostrar extends javax.swing.JFrame {
         DefaultListModel dlm = new DefaultListModel();        
         
         if (c!=null){
-            nombre.setText(c.getNombre());
-            rut.setText(c.getRut());
-            direccion.setText(c.getDireccion());
-            telefono.setText(String.valueOf(c.getTelefono()));
-            email.setText(c.getEmail());
+            jLnombre.setText(c.getNombre());
+            jLrut.setText(c.getRut());
+            jLdireccion.setText(c.getDireccion());
+            jLtelefono.setText(String.valueOf(c.getTelefono()));
+            jLemail.setText(c.getEmail());
             
             //TODO: llenar el JList
             mascotasCliente=c.getMascota();
@@ -67,20 +67,20 @@ public class JFCMostrar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        rut = new javax.swing.JLabel();
-        direccion = new javax.swing.JLabel();
+        jLrut = new javax.swing.JLabel();
+        jLdireccion = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        telefono = new javax.swing.JLabel();
-        email = new javax.swing.JLabel();
-        nombre = new javax.swing.JLabel();
+        jLtelefono = new javax.swing.JLabel();
+        jLemail = new javax.swing.JLabel();
+        jLnombre = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jLabel7 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        actualizar = new javax.swing.JButton();
-        eliminarMascota = new javax.swing.JButton();
-        mostrarMascota = new javax.swing.JButton();
+        jBagregarMascota = new javax.swing.JButton();
+        jBactualizar = new javax.swing.JButton();
+        jBeliminarMascota = new javax.swing.JButton();
+        jBmostrarMascota = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
@@ -98,13 +98,13 @@ public class JFCMostrar extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 90, 90, 14);
 
-        rut.setText(".");
-        getContentPane().add(rut);
-        rut.setBounds(160, 30, 230, 14);
+        jLrut.setText(".");
+        getContentPane().add(jLrut);
+        jLrut.setBounds(160, 30, 230, 14);
 
-        direccion.setText(".");
-        getContentPane().add(direccion);
-        direccion.setBounds(160, 90, 220, 10);
+        jLdireccion.setText(".");
+        getContentPane().add(jLdireccion);
+        jLdireccion.setBounds(160, 90, 220, 10);
 
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4);
@@ -114,17 +114,17 @@ public class JFCMostrar extends javax.swing.JFrame {
         getContentPane().add(jLabel5);
         jLabel5.setBounds(30, 140, 90, 14);
 
-        telefono.setText(".");
-        getContentPane().add(telefono);
-        telefono.setBounds(160, 110, 220, 10);
+        jLtelefono.setText(".");
+        getContentPane().add(jLtelefono);
+        jLtelefono.setBounds(160, 110, 220, 10);
 
-        email.setText(".");
-        getContentPane().add(email);
-        email.setBounds(160, 140, 220, 10);
+        jLemail.setText(".");
+        getContentPane().add(jLemail);
+        jLemail.setBounds(160, 140, 220, 10);
 
-        nombre.setText(".");
-        getContentPane().add(nombre);
-        nombre.setBounds(160, 60, 220, 10);
+        jLnombre.setText(".");
+        getContentPane().add(jLnombre);
+        jLnombre.setBounds(160, 60, 220, 10);
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -140,46 +140,46 @@ public class JFCMostrar extends javax.swing.JFrame {
         getContentPane().add(jLabel7);
         jLabel7.setBounds(60, 180, 130, 14);
 
-        jButton1.setText("Agregar Mascota");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBagregarMascota.setText("Agregar Mascota");
+        jBagregarMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBagregarMascotaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(220, 360, 120, 23);
+        getContentPane().add(jBagregarMascota);
+        jBagregarMascota.setBounds(220, 360, 120, 23);
 
-        actualizar.setText("Actualizar");
-        actualizar.addActionListener(new java.awt.event.ActionListener() {
+        jBactualizar.setText("Actualizar");
+        jBactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                actualizarActionPerformed(evt);
+                jBactualizarActionPerformed(evt);
             }
         });
-        getContentPane().add(actualizar);
-        actualizar.setBounds(230, 220, 140, 23);
+        getContentPane().add(jBactualizar);
+        jBactualizar.setBounds(230, 220, 140, 23);
 
-        eliminarMascota.setText("Eliminar Mascota");
-        eliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+        jBeliminarMascota.setText("Eliminar Mascota");
+        jBeliminarMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarMascotaActionPerformed(evt);
+                jBeliminarMascotaActionPerformed(evt);
             }
         });
-        getContentPane().add(eliminarMascota);
-        eliminarMascota.setBounds(80, 360, 120, 23);
+        getContentPane().add(jBeliminarMascota);
+        jBeliminarMascota.setBounds(80, 360, 120, 23);
 
-        mostrarMascota.setText("Mostrar Mascota");
-        mostrarMascota.addActionListener(new java.awt.event.ActionListener() {
+        jBmostrarMascota.setText("Mostrar Mascota");
+        jBmostrarMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mostrarMascotaActionPerformed(evt);
+                jBmostrarMascotaActionPerformed(evt);
             }
         });
-        getContentPane().add(mostrarMascota);
-        mostrarMascota.setBounds(230, 260, 140, 23);
+        getContentPane().add(jBmostrarMascota);
+        jBmostrarMascota.setBounds(230, 260, 140, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBagregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarMascotaActionPerformed
         // TODO add your handling code here:
          new JFMAgregar(c.getRut()).setVisible(true);
  //      es lo mismo        
@@ -188,28 +188,28 @@ public class JFCMostrar extends javax.swing.JFrame {
          
    
          
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBagregarMascotaActionPerformed
 
-    private void actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarActionPerformed
+    private void jBactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBactualizarActionPerformed
         // TODO add your handling code here:
         actualizar();
-    }//GEN-LAST:event_actualizarActionPerformed
+    }//GEN-LAST:event_jBactualizarActionPerformed
 
     private void actualizar(){
     VETERINARIA.llenarMascotasDeCliente(c);
         mascotasCliente=c.getMascota();
         llenarLista();
     }
-    private void eliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarMascotaActionPerformed
+    private void jBeliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMascotaActionPerformed
         // TODO add your handling code here:
         Mascota mascotaAEliminar = (Mascota) jList1.getSelectedValue();
         if (mascotaAEliminar != null ){
             VETERINARIA.eliminarMascota(mascotaAEliminar);
         actualizar();
         }
-    }//GEN-LAST:event_eliminarMascotaActionPerformed
+    }//GEN-LAST:event_jBeliminarMascotaActionPerformed
 
-    private void mostrarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarMascotaActionPerformed
+    private void jBmostrarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBmostrarMascotaActionPerformed
         // TODO add your handling code here:
          Mascota mascota = (Mascota) jList1.getSelectedValue();
         if (mascota!=null){
@@ -219,7 +219,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_mostrarMascotaActionPerformed
+    }//GEN-LAST:event_jBmostrarMascotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,22 +234,22 @@ public class JFCMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton actualizar;
-    private javax.swing.JLabel direccion;
-    private javax.swing.JButton eliminarMascota;
-    private javax.swing.JLabel email;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBactualizar;
+    private javax.swing.JButton jBagregarMascota;
+    private javax.swing.JButton jBeliminarMascota;
+    private javax.swing.JButton jBmostrarMascota;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLdireccion;
+    private javax.swing.JLabel jLemail;
     private javax.swing.JList jList1;
+    private javax.swing.JLabel jLnombre;
+    private javax.swing.JLabel jLrut;
+    private javax.swing.JLabel jLtelefono;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton mostrarMascota;
-    private javax.swing.JLabel nombre;
-    private javax.swing.JLabel rut;
-    private javax.swing.JLabel telefono;
     // End of variables declaration//GEN-END:variables
 }
