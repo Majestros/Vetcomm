@@ -83,6 +83,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jBagregarMascota = new javax.swing.JButton();
         jBeliminarMascota = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
+        jBeliminarCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
@@ -191,7 +192,16 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBsalir);
-        jBsalir.setBounds(280, 380, 100, 23);
+        jBsalir.setBounds(320, 380, 100, 23);
+
+        jBeliminarCliente.setText("Eliminar Cliente ");
+        jBeliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarClienteActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBeliminarCliente);
+        jBeliminarCliente.setBounds(133, 380, 130, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -243,6 +253,13 @@ public class JFCMostrar extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
 
+    private void jBeliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarClienteActionPerformed
+        // TODO add your handling code here:
+        VETERINARIA.eliminarCliente(c);
+        this.setVisible(false);
+        JOptionPane.showMessageDialog(rootPane, "Cliente Eliminado!");
+    }//GEN-LAST:event_jBeliminarClienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,6 +275,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBactualizar;
     private javax.swing.JButton jBagregarMascota;
+    private javax.swing.JButton jBeliminarCliente;
     private javax.swing.JButton jBeliminarMascota;
     private javax.swing.JButton jBmostrarMascota;
     private javax.swing.JButton jBsalir;
