@@ -26,6 +26,8 @@ public class Veterinaria {
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
     private ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
 
+    
+    
     public Veterinaria() {
     }
 
