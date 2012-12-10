@@ -34,6 +34,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jTrut = new javax.swing.JTextField();
         jBbuscarCliente = new javax.swing.JButton();
+        jBsalir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -72,6 +73,13 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
             }
         });
 
+        jBsalir.setText("Salir");
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,7 +91,9 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(240, Short.MAX_VALUE)
                 .addComponent(jBbuscarCliente)
-                .addGap(205, 205, 205))
+                .addGap(34, 34, 34)
+                .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -91,8 +101,10 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jBbuscarCliente)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBbuscarCliente)
+                    .addComponent(jBsalir))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,8 +133,14 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
        
     }//GEN-LAST:event_jBbuscarClienteActionPerformed
 
+    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jBsalirActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBbuscarCliente;
+    private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTrut;

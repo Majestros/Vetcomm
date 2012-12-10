@@ -44,6 +44,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         jTtelefono = new javax.swing.JTextField();
         jTemail = new javax.swing.JTextField();
         jBagregarCliente = new javax.swing.JButton();
+        jBsalir = new javax.swing.JButton();
 
         setClosable(true);
         setIconifiable(true);
@@ -116,19 +117,27 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
             }
         });
 
+        jBsalir.setText("Salir");
+        jBsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBsalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(319, 319, 319)
-                        .addComponent(jBagregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(220, Short.MAX_VALUE)
+                .addComponent(jBagregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,8 +145,10 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jBagregarCliente)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBagregarCliente)
+                    .addComponent(jBsalir))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         pack();
@@ -152,11 +163,28 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
         c.setTelefono(Integer.parseInt(jTtelefono.getText()));
         c.setEmail(jTemail.getText());
         boolean s = VETERINARIA.agregarCliente(obtenerDatosCliente());
-        if (s)
+        if (s){
             JOptionPane.showMessageDialog(rootPane, "Cliente agregado!");
-        this.setVisible(false);
+            //despues de agregar cliente, limpiar campos
+            limpiarCampos();
+        }
+            
+        
         
     }//GEN-LAST:event_jBagregarClienteActionPerformed
+
+    public void limpiarCampos(){
+        jTrut.setText("");
+        jTnombre.setText("");
+        jTdireccion.setText("");
+        jTtelefono.setText("");
+        jTemail.setText("");
+    }
+    
+    private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_jBsalirActionPerformed
 
     public Cliente obtenerDatosCliente(){
         return this.c;
@@ -175,6 +203,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBagregarCliente;
+    private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -256,6 +256,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private void jBeliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarClienteActionPerformed
         // TODO add your handling code here:
         VETERINARIA.eliminarCliente(c);
+        //falta eliminar todas las mascotas del cliente
         this.setVisible(false);
         JOptionPane.showMessageDialog(rootPane, "Cliente Eliminado!");
     }//GEN-LAST:event_jBeliminarClienteActionPerformed

@@ -102,6 +102,11 @@ public class JFMMostrar extends javax.swing.JFrame {
         jLgenero.setText(".");
 
         jBagregarHistorial.setText("Agregar Historial");
+        jBagregarHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBagregarHistorialActionPerformed(evt);
+            }
+        });
 
         jListHistorial.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -204,6 +209,11 @@ public class JFMMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
+
+    private void jBagregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHistorialActionPerformed
+        // TODO add your handling code here:
+        new JFFichaMedAgregar().setVisible(true);
+    }//GEN-LAST:event_jBagregarHistorialActionPerformed
 
     /**
      * @param args the command line arguments
