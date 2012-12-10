@@ -138,4 +138,11 @@ public class Veterinaria {
     public boolean esUsuarioRegistrado(Usuario usuario) {
         return (usrManager.obtenerUsuario(usuario) != null);
     }
+
+    public void eliminarMascotasDeCliente(ArrayList<Mascota> mascota) {
+        for (int i = 0; i < mascota.size(); i++) {
+            mManager.deleteById(mascota.get(i));           
+        }
+        
+    }
 }
