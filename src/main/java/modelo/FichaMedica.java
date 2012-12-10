@@ -11,6 +11,7 @@ package modelo;
 public class FichaMedica {
     
     private String id;
+    private String nombre;
     private String motivo;
     private String sintoma;
     private String diagnostico;
@@ -19,8 +20,9 @@ public class FichaMedica {
     public FichaMedica() {
     }
 
-    public FichaMedica(String id, String motivo, String sintoma, String diagnostico, String fecha) {
+    public FichaMedica(String id, String nombre, String motivo, String sintoma, String diagnostico, String fecha) {
         this.id = id;
+        this.nombre=nombre;
         this.motivo = motivo;
         this.sintoma = sintoma;
         this.diagnostico = diagnostico;
@@ -66,4 +68,14 @@ public class FichaMedica {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }
