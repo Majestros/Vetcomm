@@ -10,8 +10,8 @@ import org.apache.ibatis.annotations.Update;
 
 public interface FichaMedicaMapper {
 
-    final String INSERT = "INSERT INTO fichamedica (id, asunto, sintoma, diagnostico, fecha) "
-            + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
+    final String INSERT = "INSERT INTO fichamedica (id, nombre, asunto, sintoma, diagnostico, fecha) "
+            + "VALUES (#{id},#{nombre},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
     final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
     final String UPDATE_BY_ID = "UPDATE fichamedica (id, asunto, sintoma, diagnostico, fecha) "
             + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
