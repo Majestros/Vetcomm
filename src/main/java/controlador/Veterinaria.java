@@ -2,11 +2,13 @@ package controlador;
 
 import java.util.ArrayList;
 import modelo.Cliente;
+import modelo.FichaMedica;
 import modelo.HoraMedica;
 import modelo.Mascota;
 import modelo.MedicoVeterinario;
 import modelo.Usuario;
 import persistencia.ClienteManager;
+import persistencia.FichaMedicaManager;
 import persistencia.MascotaManager;
 import persistencia.MedicoVeterinarioManager;
 import persistencia.UsuarioManager;
@@ -16,11 +18,13 @@ public class Veterinaria {
     private ClienteManager cManager = new ClienteManager();
     private MascotaManager mManager = new MascotaManager();
     private MedicoVeterinarioManager vManager = new MedicoVeterinarioManager();
+    private FichaMedicaManager fManager= new FichaMedicaManager();
     private UsuarioManager usrManager = new UsuarioManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
     // private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
+    private ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
 
     public Veterinaria() {
     }
@@ -135,14 +139,36 @@ public class Veterinaria {
         return null;
     }
 
-    public boolean esUsuarioRegistrado(Usuario usuario) {
-        return (usrManager.obtenerUsuario(usuario) != null);
-    }
+    
 
     public void eliminarMascotasDeCliente(ArrayList<Mascota> mascota) {
         for (int i = 0; i < mascota.size(); i++) {
             mManager.deleteById(mascota.get(i));           
         }
-        
     }
+ //-------------------------------------------------------------------------- 
+    
+
+    public boolean agregarFichaMedica(FichaMedica f) {
+        if (fManager.insert(f) > 0) {
+            this.fichasMedicas.add(f);
+            return true;
+        }
+        return false;
+    
+    }
+    
+    public void llenarFichasMedicasDeMascota(Mascota m) {
+        m.setHistorial(fManager.obtenerTodasByMascota(m));
+    }
+    
+ //--------------------------------------------------------------------------
+    public boolean esUsuarioRegistrado(Usuario usuario) {
+        return (usrManager.obtenerUsuario(usuario) != null);
+    }
+
+    
+    
+ 
+    
 }

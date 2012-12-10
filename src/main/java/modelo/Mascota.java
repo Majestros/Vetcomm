@@ -19,10 +19,7 @@ public class Mascota {
         this.nombre = nombre;
         this.raza = raza;
         this.genero = genero;
-    }
-
-
-    
+    }    
     
     public String getId() {
         return id;
@@ -68,6 +65,9 @@ public class Mascota {
    public String toString (){
        return nombre;
    }
-    
-    
+
+    public void agregarFichaMedica(FichaMedica obtenerDatosHistorial) {
+        this.historial.add(obtenerDatosHistorial);
+    }    
+       
 }

@@ -40,7 +40,7 @@ public class JFCMostrar extends javax.swing.JFrame {
             //TODO: llenar el JList
             mascotasCliente=c.getMascota();
             llenarLista();
-  
+    
         }
     }
     
@@ -240,7 +240,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         if (mascota!=null){
             JFMMostrar.main(mascota);
         }else {
-            JOptionPane.showMessageDialog(null,"No se a elegido mascota.");
+            JOptionPane.showMessageDialog(null, "No se a elegido mascota.");
         }
         
         

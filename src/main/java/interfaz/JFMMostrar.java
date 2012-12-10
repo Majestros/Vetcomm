@@ -10,8 +10,10 @@
  */
 package interfaz;
 
+import static controlador.Principal.VETERINARIA;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import modelo.FichaMedica;
 import modelo.Mascota;
 
@@ -22,39 +24,40 @@ import modelo.Mascota;
 public class JFMMostrar extends javax.swing.JFrame {
 
     private Mascota m;
-    ArrayList<FichaMedica> historial=new ArrayList<FichaMedica>();
+    ArrayList<FichaMedica> historial = new ArrayList<FichaMedica>();
+
     /** Creates new form JFMMostrar */
     public JFMMostrar(Mascota m) {
         initComponents();
-        this.m=m;
-        
-       if  (m!=null){
+        this.m = m;
+
+        if (m != null) {
             jLid.setText(m.getId());
             jLnombre.setText(m.getNombre());
             jLraza.setText(m.getRaza());
-            
-            if (m.getGenero()==false){
+
+            if (m.getGenero() == false) {
                 jLgenero.setText("Hembra");
-            }else {
+            } else {
                 jLgenero.setText("Macho");
             }
-            
+
             //llenar el jList
-            historial=m.getHistorial();
+            historial = m.getHistorial();
             llenarLista();
         }
     }
 
     //para llenar la lista, faltan los metodos de agregar y de actualizar arrayList
-    public void llenarLista(){
+    public void llenarLista() {
         DefaultListModel modeloLista = new DefaultListModel();
-        
-        for (FichaMedica ficha: historial){
+
+        for (FichaMedica ficha : historial) {
             modeloLista.addElement(ficha);
         }
         jListHistorial.setModel(modeloLista);
     }
-    
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -77,7 +80,9 @@ public class JFMMostrar extends javax.swing.JFrame {
         jBagregarHistorial = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListHistorial = new javax.swing.JList();
+        jBactualizar = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
+        jBeliminarMascota = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -115,6 +120,13 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jListHistorial);
 
+        jBactualizar.setText("Actualizar");
+        jBactualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBactualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -125,7 +137,9 @@ public class JFMMostrar extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(28, 28, 28)
-                        .addComponent(jBagregarHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jBactualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
+                            .addComponent(jBagregarHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -164,7 +178,9 @@ public class JFMMostrar extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                        .addGap(98, 98, 98)
+                        .addComponent(jBactualizar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBagregarHistorial))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -179,6 +195,13 @@ public class JFMMostrar extends javax.swing.JFrame {
             }
         });
 
+        jBeliminarMascota.setText("Eliminar");
+        jBeliminarMascota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarMascotaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,7 +211,9 @@ public class JFMMostrar extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(353, Short.MAX_VALUE)
+                .addContainerGap(251, Short.MAX_VALUE)
+                .addComponent(jBeliminarMascota)
+                .addGap(33, 33, 33)
                 .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
         );
@@ -198,7 +223,9 @@ public class JFMMostrar extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBsalir)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBsalir)
+                    .addComponent(jBeliminarMascota))
                 .addContainerGap())
         );
 
@@ -212,8 +239,26 @@ public class JFMMostrar extends javax.swing.JFrame {
 
     private void jBagregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHistorialActionPerformed
         // TODO add your handling code here:
-        new JFFichaMedAgregar().setVisible(true);
+        new JFFichaMedAgregar(m).setVisible(true);
     }//GEN-LAST:event_jBagregarHistorialActionPerformed
+
+    private void jBeliminarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarMascotaActionPerformed
+        // TODO add your handling code here:
+        VETERINARIA.eliminarMascota(m);
+        JOptionPane.showMessageDialog(null, "Mascota eliminada.");
+        this.setVisible(false);
+    }//GEN-LAST:event_jBeliminarMascotaActionPerformed
+
+    private void jBactualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBactualizarActionPerformed
+        // TODO add your handling code here:
+        actualizar();
+    }//GEN-LAST:event_jBactualizarActionPerformed
+    private void actualizar() {
+        VETERINARIA.llenarFichasMedicasDeMascota(m);
+        historial=m.getHistorial();
+        llenarLista();
+    
+    }
 
     /**
      * @param args the command line arguments
@@ -251,7 +296,9 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBactualizar;
     private javax.swing.JButton jBagregarHistorial;
+    private javax.swing.JButton jBeliminarMascota;
     private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

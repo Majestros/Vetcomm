@@ -10,7 +10,9 @@
  */
 package interfaz;
 
+import static controlador.Principal.VETERINARIA;
 import modelo.FichaMedica;
+import modelo.Mascota;
 
 /**
  *
@@ -19,10 +21,16 @@ import modelo.FichaMedica;
 public class JFFichaMedAgregar extends javax.swing.JFrame {
 
     private FichaMedica h=new FichaMedica();
+    private Mascota m;
     
     /** Creates new form JFFichaMedAgregar */
-    public JFFichaMedAgregar() {
+    public JFFichaMedAgregar(Mascota m ) {
         initComponents();
+        this.m=m;
+        
+        jLnombreMascota.setText(m.getNombre());
+        jLid.setText(m.getId());
+        
     }
 
     /** This method is called from within the constructor to
@@ -43,12 +51,14 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jCbdia = new javax.swing.JComboBox();
         jCbmes = new javax.swing.JComboBox();
         jTagno = new javax.swing.JTextField();
-        jTid = new javax.swing.JTextField();
         jTmotivo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTaSintoma = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTaDiagnostico = new javax.swing.JTextArea();
+        jLid = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLnombreMascota = new javax.swing.JLabel();
         jBagregarHistorial = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
 
@@ -62,7 +72,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
 
         jLabel1.setText("Id:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(32, 78, 42, 14);
+        jLabel1.setBounds(30, 50, 42, 14);
 
         jLabel2.setText("Motivo:");
         jPanel1.add(jLabel2);
@@ -70,31 +80,27 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
 
         jLabel3.setText("Sintomas:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(32, 151, 64, 14);
+        jLabel3.setBounds(32, 151, 100, 14);
 
         jLabel4.setText("Diagnostico:  ");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(30, 210, 65, 14);
+        jLabel4.setBounds(30, 210, 90, 14);
 
         jLabel5.setText("Fecha:  ");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(32, 296, 39, 14);
+        jLabel5.setBounds(32, 296, 70, 14);
 
         jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel1.add(jCbdia);
-        jCbdia.setBounds(160, 290, 40, 20);
+        jCbdia.setBounds(240, 290, 60, 20);
 
         jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         jPanel1.add(jCbmes);
-        jCbmes.setBounds(230, 290, 44, 20);
-
-        jTagno.setText("Año");
+        jCbmes.setBounds(170, 290, 60, 20);
         jPanel1.add(jTagno);
-        jTagno.setBounds(300, 290, 57, 20);
-        jPanel1.add(jTid);
-        jTid.setBounds(160, 70, 179, 20);
+        jTagno.setBounds(310, 280, 100, 30);
         jPanel1.add(jTmotivo);
-        jTmotivo.setBounds(160, 110, 194, 20);
+        jTmotivo.setBounds(160, 100, 210, 30);
 
         jTaSintoma.setColumns(20);
         jTaSintoma.setRows(5);
@@ -110,6 +116,18 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jPanel1.add(jScrollPane2);
         jScrollPane2.setBounds(160, 210, 280, 52);
 
+        jLid.setText(".");
+        jPanel1.add(jLid);
+        jLid.setBounds(170, 34, 160, 30);
+
+        jLabel6.setText("Nombre mascota:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(30, 70, 110, 20);
+
+        jLnombreMascota.setText(".");
+        jPanel1.add(jLnombreMascota);
+        jLnombreMascota.setBounds(170, 70, 180, 30);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(40, 20, 450, 350);
 
@@ -120,7 +138,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBagregarHistorial);
-        jBagregarHistorial.setBounds(210, 380, 110, 23);
+        jBagregarHistorial.setBounds(200, 380, 120, 30);
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -129,20 +147,25 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBsalir);
-        jBsalir.setBounds(360, 380, 100, 23);
+        jBsalir.setBounds(340, 380, 120, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBagregarHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHistorialActionPerformed
         // TODO add your handling code here:
-        h.setId(jTid.getText());
+        
+        
+        h.setNombre(m.getNombre());       
+        h.setId(m.getId());
         h.setMotivo(jTmotivo.getText());
         h.setSintoma(jTaSintoma.getText());
         h.setDiagnostico(jTaDiagnostico.getText());
         h.setFecha(jCbdia+"-"+jCbmes+"-"+jTagno);
         
-        
+        VETERINARIA.agregarFichaMedica(obtenerDatosHistorial());
+//        m.agregarFichaMedica(obtenerDatosHistorial());
+                
     }//GEN-LAST:event_jBagregarHistorialActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
@@ -157,7 +180,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(final Mascota m) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -185,7 +208,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new JFFichaMedAgregar().setVisible(true);
+                new JFFichaMedAgregar(m).setVisible(true);
             }
         });
     }
@@ -199,13 +222,15 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLid;
+    private javax.swing.JLabel jLnombreMascota;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTaDiagnostico;
     private javax.swing.JTextArea jTaSintoma;
     private javax.swing.JTextField jTagno;
-    private javax.swing.JTextField jTid;
     private javax.swing.JTextField jTmotivo;
     // End of variables declaration//GEN-END:variables
 }
