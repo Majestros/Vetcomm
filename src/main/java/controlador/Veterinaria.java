@@ -158,13 +158,17 @@ public class Veterinaria {
     
     }
     
-    public void llenarFichasMedicasDeMascota(Mascota m) {
-        m.setHistorial(fManager.obtenerTodasByMascota(m));
+    public void llenarFichaMedicasDeMascota(Mascota m) {
+        m.setHistorial(fManager.obtenerFichasMedicas(m));
     }
     
  //--------------------------------------------------------------------------
     public boolean esUsuarioRegistrado(Usuario usuario) {
         return (usrManager.obtenerUsuario(usuario) != null);
+    }
+
+    void actualizarArrayFichas() {
+        this.fichasMedicas = fManager.obtenerFichasMedicas();
     }
 
     

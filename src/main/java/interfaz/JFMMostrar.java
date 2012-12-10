@@ -254,7 +254,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         actualizar();
     }//GEN-LAST:event_jBactualizarActionPerformed
     private void actualizar() {
-        VETERINARIA.llenarFichasMedicasDeMascota(m);
+        VETERINARIA.llenarFichaMedicasDeMascota(m);
         historial=m.getHistorial();
         llenarLista();
     

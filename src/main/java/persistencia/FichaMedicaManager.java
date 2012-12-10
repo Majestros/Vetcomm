@@ -7,7 +7,6 @@ package persistencia;
 import static controlador.Principal.SQLSESSION;
 import java.util.ArrayList;
 import modelo.FichaMedica;
-import modelo.Mascota;
 import persistencia.mappers.FichaMedicaMapper;
 
 
@@ -46,8 +45,9 @@ public class FichaMedicaManager {
         return result;
     }
 
-    public ArrayList<FichaMedica> obtenerTodasByMascota(Mascota m) {
-        return fMapper.getAllByMascota(m);
+    public ArrayList<FichaMedica> obtenerFichasMedicas() {
+        ArrayList<FichaMedica> listaAct = fMapper.getAllFichas();
+        return listaAct;
     }
     
 }

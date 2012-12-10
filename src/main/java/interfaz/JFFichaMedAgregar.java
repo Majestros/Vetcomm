@@ -161,7 +161,8 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         h.setMotivo(jTmotivo.getText());
         h.setSintoma(jTaSintoma.getText());
         h.setDiagnostico(jTaDiagnostico.getText());
-        h.setFecha(jCbdia+"-"+jCbmes+"-"+jTagno);
+        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jTagno.getText();
+        h.setFecha(fecha);
         
         VETERINARIA.agregarFichaMedica(obtenerDatosHistorial());
 //        m.agregarFichaMedica(obtenerDatosHistorial());
