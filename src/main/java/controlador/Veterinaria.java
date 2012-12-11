@@ -21,7 +21,7 @@ public class Veterinaria {
     private FichaMedicaManager fManager= new FichaMedicaManager();
     private UsuarioManager usrManager = new UsuarioManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-    // private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+ //   private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
     private ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
@@ -71,11 +71,17 @@ public class Veterinaria {
     protected void actualizarArrayMedicos(){
         this.medicos = vManager.obtenerMedicosVeterinarios();
     }
+    
+//    ////
+//    ////
+//    protected void actualizarArrayMascota(){
+//        this.mascotas = mManager.obtenerMascotas();
+//    }
 //    ------------------------------------------------------------
 
     public boolean agregarMascota(Mascota m) {
         if (mManager.insert(m) > 0) {
-//           this.mascotas.add(m);
+  //          this.mascotas.add(m);
             return true;
         }
         return false;
@@ -160,8 +166,9 @@ public class Veterinaria {
     
     }
     
-//    public void llenarFichaMedicasDeMascota(Mascota m) {
-//        m.setHistorial(fManager.obtenerFichasMedicas(m));
+//    public void llenarFichaMedicasDeMascota(String rut, String nombre) {
+//        
+//        m.setHistorial(fManager.obtenerFichasMedicas(rut,nombre));
 //    }
 //    
  //--------------------------------------------------------------------------
@@ -169,9 +176,9 @@ public class Veterinaria {
         return (usrManager.obtenerUsuario(usuario) != null);
     }
 
-    void actualizarArrayFichas() {
-        this.fichasMedicas = fManager.obtenerFichasMedicas();
-    }
+//    void actualizarArrayFichas() {
+//        this.fichasMedicas = fManager.obtenerFichasMedicas();
+//    }
 
     
     

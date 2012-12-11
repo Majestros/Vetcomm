@@ -306,22 +306,22 @@ public class JFCMostrar extends javax.swing.JFrame {
         jLnombre.setVisible(false);
         jTeditarNombre.setVisible(true);
         jTeditarNombre.setText(c.getNombre());
-        c.setNombre(jTeditarNombre.getText());
+        
         
         jLdireccion.setVisible(false);
         jTeditarDireccion.setVisible(true);
         jTeditarDireccion.setText(c.getDireccion());
-        c.setDireccion(jTeditarDireccion.getText());
+        
         
         jLtelefono.setVisible(false);
         jTeditarTelefono.setVisible(true);
         jTeditarTelefono.setText(String.valueOf(c.getTelefono()));
-        c.setTelefono(Integer.parseInt(jTeditarTelefono.getText()));
+        
         
         jLemail.setVisible(false);
         jTeditarEmail.setVisible(true);
         jTeditarEmail.setText(c.getEmail());
-        c.setEmail(jTeditarEmail.getText());
+        
         
               
         
@@ -329,7 +329,10 @@ public class JFCMostrar extends javax.swing.JFrame {
 
     private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
         // TODO add your handling code here:
-        
+        c.setNombre(jTeditarNombre.getText());
+        c.setDireccion(jTeditarDireccion.getText());
+        c.setTelefono(Integer.parseInt(jTeditarTelefono.getText()));
+        c.setEmail(jTeditarEmail.getText());
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**

@@ -22,7 +22,7 @@ import modelo.Mascota;
  * @author Kal-El
  */
 public class JFMMostrar extends javax.swing.JFrame {
-
+    
     private Mascota m;
     ArrayList<FichaMedica> historial = new ArrayList<FichaMedica>();
 
@@ -30,6 +30,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     public JFMMostrar(Mascota m) {
         initComponents();
         this.m = m;
+       
 
         if (m != null) {
             jLid.setText(m.getId());
@@ -44,6 +45,7 @@ public class JFMMostrar extends javax.swing.JFrame {
 
             //llenar el jList
             historial = m.getHistorial();
+            
             llenarLista();
             
             jTeditarNombre.setVisible(false);

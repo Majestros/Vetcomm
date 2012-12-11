@@ -15,7 +15,7 @@ public interface FichaMedicaMapper {
     final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
     final String UPDATE_BY_ID = "UPDATE fichamedica (id, asunto, sintoma, diagnostico, fecha) "
             + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
-    final String SELECT_ALL = "SELECT * fichamedica WHERE id=#{id} AND nombre#{nombre}";
+    final String SELECT_ALL = "SELECT * FROM fichamedica WHERE id=#{id} AND nombre#{nombre}";
 
     @Insert(INSERT)
     int insert(FichaMedica fichamedica);
@@ -27,5 +27,5 @@ public interface FichaMedicaMapper {
     int updateById(FichaMedica fichamedica);
 
     @Select(SELECT_ALL)
-    ArrayList<FichaMedica> getAllFichas();
+    ArrayList<FichaMedica> getAllFichas(Mascota m);
 }
