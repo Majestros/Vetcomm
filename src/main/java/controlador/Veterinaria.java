@@ -160,10 +160,10 @@ public class Veterinaria {
     
     }
     
-    public void llenarFichaMedicasDeMascota(Mascota m) {
-        m.setHistorial(fManager.obtenerFichasMedicas(m));
-    }
-    
+//    public void llenarFichaMedicasDeMascota(Mascota m) {
+//        m.setHistorial(fManager.obtenerFichasMedicas(m));
+//    }
+//    
  //--------------------------------------------------------------------------
     public boolean esUsuarioRegistrado(Usuario usuario) {
         return (usrManager.obtenerUsuario(usuario) != null);
