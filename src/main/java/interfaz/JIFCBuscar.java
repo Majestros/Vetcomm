@@ -114,10 +114,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         c =VETERINARIA.selectClienteByRut(jTrut.getText());
         
-        // llena el arreglo de mascotas
-       // VETERINARIA.llenarMascotasDeCliente(c);
-        //lo anterior lo deje como comentario porque solo si se encuentra el 
-       //cliente se va a llenar la lista de mascotas  
+        
         
         if (c!=null){
             this.setVisible(false);
