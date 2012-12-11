@@ -45,6 +45,11 @@ public class JFMMostrar extends javax.swing.JFrame {
             //llenar el jList
             historial = m.getHistorial();
             llenarLista();
+            
+            jTeditarNombre.setVisible(false);
+            jTeditarRaza.setVisible(false);
+            jCbeditarGenero.setVisible(false);
+            jBguardarCambios.setVisible(false);
         }
     }
 
@@ -81,30 +86,54 @@ public class JFMMostrar extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListHistorial = new javax.swing.JList();
         jBactualizar = new javax.swing.JButton();
+        jTeditarNombre = new javax.swing.JTextField();
+        jTeditarRaza = new javax.swing.JTextField();
+        jCbeditarGenero = new javax.swing.JComboBox();
+        jBguardarCambios = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jBeliminarMascota = new javax.swing.JButton();
+        jBeditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setLayout(null);
 
         jLabel1.setText("Id:");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(47, 39, 52, 14);
 
         jLabel2.setText("Nombre:");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(50, 70, 52, 14);
 
         jLabel3.setText("Raza:");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(50, 100, 52, 14);
 
         jLabel4.setText("Genero:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(50, 130, 39, 14);
 
         jLabel5.setText("Historial:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(50, 160, 363, 14);
 
         jLid.setText(".");
+        jPanel1.add(jLid);
+        jLid.setBounds(150, 40, 179, 14);
 
         jLnombre.setText(".");
+        jPanel1.add(jLnombre);
+        jLnombre.setBounds(150, 70, 179, 14);
 
         jLraza.setText(".");
+        jPanel1.add(jLraza);
+        jLraza.setBounds(150, 100, 190, 20);
 
         jLgenero.setText(".");
+        jPanel1.add(jLgenero);
+        jLgenero.setBounds(150, 130, 179, 14);
 
         jBagregarHistorial.setText("Agregar Historial");
         jBagregarHistorial.addActionListener(new java.awt.event.ActionListener() {
@@ -112,6 +141,8 @@ public class JFMMostrar extends javax.swing.JFrame {
                 jBagregarHistorialActionPerformed(evt);
             }
         });
+        jPanel1.add(jBagregarHistorial);
+        jBagregarHistorial.setBounds(250, 230, 156, 23);
 
         jListHistorial.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -120,73 +151,34 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jListHistorial);
 
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(50, 190, 179, 130);
+
         jBactualizar.setText("Actualizar");
         jBactualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBactualizarActionPerformed(evt);
             }
         });
+        jPanel1.add(jBactualizar);
+        jBactualizar.setBounds(250, 200, 156, 23);
+        jPanel1.add(jTeditarNombre);
+        jTeditarNombre.setBounds(160, 70, 190, 20);
+        jPanel1.add(jTeditarRaza);
+        jTeditarRaza.setBounds(160, 100, 190, 20);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jBactualizar, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)
-                            .addComponent(jBagregarHistorial, javax.swing.GroupLayout.DEFAULT_SIZE, 156, Short.MAX_VALUE)))
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4))
-                        .addGap(57, 57, 57)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLraza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLgenero, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
-                            .addComponent(jLnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLid, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLid))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLnombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLraza))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLgenero))
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jBactualizar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jBagregarHistorial))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jCbeditarGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra" }));
+        jPanel1.add(jCbeditarGenero);
+        jCbeditarGenero.setBounds(160, 130, 140, 20);
+
+        jBguardarCambios.setText("Guardar Cambios");
+        jBguardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBguardarCambiosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBguardarCambios);
+        jBguardarCambios.setBounds(280, 310, 120, 23);
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -202,30 +194,40 @@ public class JFMMostrar extends javax.swing.JFrame {
             }
         });
 
+        jBeditar.setText("Editar");
+        jBeditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
+                .addContainerGap(118, Short.MAX_VALUE)
+                .addComponent(jBeditar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addComponent(jBeliminarMascota)
                 .addGap(33, 33, 33)
                 .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(16, 16, 16)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 344, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBsalir)
-                    .addComponent(jBeliminarMascota))
+                    .addComponent(jBeliminarMascota)
+                    .addComponent(jBeditar))
                 .addContainerGap())
         );
 
@@ -253,6 +255,41 @@ public class JFMMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         actualizar();
     }//GEN-LAST:event_jBactualizarActionPerformed
+
+    private void jBeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeditarActionPerformed
+        // TODO add your handling code here:
+        jBguardarCambios.setVisible(true);
+        
+        jLnombre.setVisible(false);
+        jTeditarNombre.setVisible(true);
+        jTeditarNombre.setText(m.getNombre());
+        m.setNombre(jTeditarNombre.getText());
+       
+        jLraza.setVisible(false);
+        jTeditarRaza.setVisible(true);
+        jTeditarRaza.setText(m.getRaza());
+        m.setRaza(jTeditarRaza.getText());
+        
+        jLgenero.setVisible(false);
+        jCbeditarGenero.setVisible(true);
+        String genero = jCbeditarGenero.getSelectedItem().toString();
+        
+        if(genero.equals("Hembra")){
+            m.setGenero(false);
+        }else{
+            m.setGenero(true);
+        }
+        
+                
+        
+        
+    }//GEN-LAST:event_jBeditarActionPerformed
+
+    private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jBguardarCambiosActionPerformed
     private void actualizar() {
 //        VETERINARIA.llenarFichaMedicasDeMascota(m);
 //        historial=m.getHistorial();
@@ -298,8 +335,11 @@ public class JFMMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBactualizar;
     private javax.swing.JButton jBagregarHistorial;
+    private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarMascota;
+    private javax.swing.JButton jBguardarCambios;
     private javax.swing.JButton jBsalir;
+    private javax.swing.JComboBox jCbeditarGenero;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -312,5 +352,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLraza;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTeditarNombre;
+    private javax.swing.JTextField jTeditarRaza;
     // End of variables declaration//GEN-END:variables
 }

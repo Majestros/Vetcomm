@@ -34,6 +34,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
         
         jTeditarNombre.setVisible(false);
         jTeditarEspecialidad.setVisible(false);
+        jBguardarCambios.setVisible(false);
         
     }
 
@@ -56,6 +57,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
         jLespecialidad = new javax.swing.JLabel();
         jTeditarNombre = new javax.swing.JTextField();
         jTeditarEspecialidad = new javax.swing.JTextField();
+        jBguardarCambios = new javax.swing.JButton();
         jBeliminarVeterinario = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jBeditar = new javax.swing.JButton();
@@ -69,7 +71,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
 
         jLabel1.setText("Rut");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(36, 54, 17, 14);
+        jLabel1.setBounds(36, 54, 40, 14);
 
         jLabel2.setText("Nombre");
         jPanel1.add(jLabel2);
@@ -77,7 +79,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
 
         jLabel3.setText("Especialidad");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(36, 118, 58, 14);
+        jLabel3.setBounds(36, 118, 70, 14);
 
         jLrut.setText(".");
         jPanel1.add(jLrut);
@@ -94,6 +96,15 @@ public class JFMvMostrar extends javax.swing.JFrame {
         jTeditarNombre.setBounds(140, 80, 160, 20);
         jPanel1.add(jTeditarEspecialidad);
         jTeditarEspecialidad.setBounds(140, 110, 160, 20);
+
+        jBguardarCambios.setText("Guardar Cambios");
+        jBguardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBguardarCambiosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBguardarCambios);
+        jBguardarCambios.setBounds(150, 160, 140, 23);
 
         jBeliminarVeterinario.setText("Eliminar");
         jBeliminarVeterinario.addActionListener(new java.awt.event.ActionListener() {
@@ -164,6 +175,8 @@ public class JFMvMostrar extends javax.swing.JFrame {
 
     private void jBeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeditarActionPerformed
         // TODO add your handling code here:
+       jBguardarCambios.setVisible(true);
+        
        jLnombre.setVisible(false);
        jTeditarNombre.setVisible(true);
        jTeditarNombre.setText(v.getNombre());
@@ -175,7 +188,14 @@ public class JFMvMostrar extends javax.swing.JFrame {
        v.setEspecialidad(jTeditarEspecialidad.getText());
        
        
+       
     }//GEN-LAST:event_jBeditarActionPerformed
+
+    private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
+        // TODO add your handling code here:
+        
+        //mandar el veterinario a algun metodo de la veterinaria
+    }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,6 +235,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarVeterinario;
+    private javax.swing.JButton jBguardarCambios;
     private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

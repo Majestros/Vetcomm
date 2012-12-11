@@ -40,8 +40,15 @@ public class JFCMostrar extends javax.swing.JFrame {
             //TODO: llenar el JList
             mascotasCliente=c.getMascota();
             llenarLista();
-    
+           
         }
+        
+        jTeditarNombre.setVisible(false);
+        jTeditarDireccion.setVisible(false);
+        jTeditarTelefono.setVisible(false);
+        jTeditarEmail.setVisible(false);
+        
+        jBguardarCambios.setVisible(false);
     }
     
     public void llenarLista(){
@@ -80,6 +87,11 @@ public class JFCMostrar extends javax.swing.JFrame {
         jBmostrarMascota = new javax.swing.JButton();
         jBagregarMascota = new javax.swing.JButton();
         jBeliminarMascota = new javax.swing.JButton();
+        jTeditarNombre = new javax.swing.JTextField();
+        jTeditarDireccion = new javax.swing.JTextField();
+        jTeditarTelefono = new javax.swing.JTextField();
+        jTeditarEmail = new javax.swing.JTextField();
+        jBguardarCambios = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jBeliminarCliente = new javax.swing.JButton();
         jBeditar = new javax.swing.JButton();
@@ -180,6 +192,23 @@ public class JFCMostrar extends javax.swing.JFrame {
         });
         jPanel1.add(jBeliminarMascota);
         jBeliminarMascota.setBounds(220, 300, 170, 23);
+        jPanel1.add(jTeditarNombre);
+        jTeditarNombre.setBounds(100, 40, 210, 20);
+        jPanel1.add(jTeditarDireccion);
+        jTeditarDireccion.setBounds(100, 70, 270, 20);
+        jPanel1.add(jTeditarTelefono);
+        jTeditarTelefono.setBounds(100, 100, 270, 20);
+        jPanel1.add(jTeditarEmail);
+        jTeditarEmail.setBounds(100, 130, 270, 20);
+
+        jBguardarCambios.setText("Guardar Cambios ");
+        jBguardarCambios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBguardarCambiosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBguardarCambios);
+        jBguardarCambios.setBounds(220, 160, 150, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(30, 20, 400, 350);
@@ -272,8 +301,36 @@ public class JFCMostrar extends javax.swing.JFrame {
 
     private void jBeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeditarActionPerformed
         // TODO add your handling code here:
+        jBguardarCambios.setVisible(true);
+        
+        jLnombre.setVisible(false);
+        jTeditarNombre.setVisible(true);
+        jTeditarNombre.setText(c.getNombre());
+        c.setNombre(jTeditarNombre.getText());
+        
+        jLdireccion.setVisible(false);
+        jTeditarDireccion.setVisible(true);
+        jTeditarDireccion.setText(c.getDireccion());
+        c.setDireccion(jTeditarDireccion.getText());
+        
+        jLtelefono.setVisible(false);
+        jTeditarTelefono.setVisible(true);
+        jTeditarTelefono.setText(String.valueOf(c.getTelefono()));
+        c.setTelefono(Integer.parseInt(jTeditarTelefono.getText()));
+        
+        jLemail.setVisible(false);
+        jTeditarEmail.setVisible(true);
+        jTeditarEmail.setText(c.getEmail());
+        c.setEmail(jTeditarEmail.getText());
+        
+              
         
     }//GEN-LAST:event_jBeditarActionPerformed
+
+    private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -293,6 +350,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarCliente;
     private javax.swing.JButton jBeliminarMascota;
+    private javax.swing.JButton jBguardarCambios;
     private javax.swing.JButton jBmostrarMascota;
     private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
@@ -309,5 +367,9 @@ public class JFCMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLtelefono;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTeditarDireccion;
+    private javax.swing.JTextField jTeditarEmail;
+    private javax.swing.JTextField jTeditarNombre;
+    private javax.swing.JTextField jTeditarTelefono;
     // End of variables declaration//GEN-END:variables
 }
