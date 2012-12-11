@@ -244,9 +244,9 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     private void hmCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hmCrearActionPerformed
         // TODO add your handling code here:
-        JIFHmCrear crearHm=new JIFHmCrear();
-        jDesktopPane1.add(crearHm);
-        crearHm.setVisible(true);
+        JFAgregarHoraMedica agregarHm=new JFAgregarHoraMedica();
+        jDesktopPane1.add(agregarHm);
+        agregarHm.setVisible(true);
         
     }//GEN-LAST:event_hmCrearActionPerformed
 
