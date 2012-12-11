@@ -31,6 +31,10 @@ public class JFMvMostrar extends javax.swing.JFrame {
             jLnombre.setText(v.getNombre());
             jLespecialidad.setText(v.getEspecialidad());
         }
+        
+        jTeditarNombre.setVisible(false);
+        jTeditarEspecialidad.setVisible(false);
+        
     }
 
     /** This method is called from within the constructor to
@@ -42,6 +46,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -49,59 +54,46 @@ public class JFMvMostrar extends javax.swing.JFrame {
         jLrut = new javax.swing.JLabel();
         jLnombre = new javax.swing.JLabel();
         jLespecialidad = new javax.swing.JLabel();
+        jTeditarNombre = new javax.swing.JTextField();
+        jTeditarEspecialidad = new javax.swing.JTextField();
         jBeliminarVeterinario = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
+        jBeditar = new javax.swing.JButton();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        jPanel1.setLayout(null);
 
         jLabel1.setText("Rut");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(36, 54, 17, 14);
 
         jLabel2.setText("Nombre");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(36, 86, 58, 14);
 
         jLabel3.setText("Especialidad");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(36, 118, 58, 14);
 
         jLrut.setText(".");
+        jPanel1.add(jLrut);
+        jLrut.setBounds(125, 54, 155, 14);
 
         jLnombre.setText(".");
+        jPanel1.add(jLnombre);
+        jLnombre.setBounds(125, 86, 155, 14);
 
         jLespecialidad.setText(".");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLespecialidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLnombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLrut, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLrut))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLnombre))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLespecialidad))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
+        jPanel1.add(jLespecialidad);
+        jLespecialidad.setBounds(125, 118, 155, 14);
+        jPanel1.add(jTeditarNombre);
+        jTeditarNombre.setBounds(140, 80, 160, 20);
+        jPanel1.add(jTeditarEspecialidad);
+        jTeditarEspecialidad.setBounds(140, 110, 160, 20);
 
         jBeliminarVeterinario.setText("Eliminar");
         jBeliminarVeterinario.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +109,13 @@ public class JFMvMostrar extends javax.swing.JFrame {
             }
         });
 
+        jBeditar.setText("Editar");
+        jBeditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeditarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,25 +123,28 @@ public class JFMvMostrar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addComponent(jBeditar, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jBeliminarVeterinario, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                        .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(25, 25, 25)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBeliminarVeterinario)
-                    .addComponent(jBsalir))
-                .addContainerGap(39, Short.MAX_VALUE))
+                    .addComponent(jBsalir)
+                    .addComponent(jBeditar))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,6 +161,21 @@ public class JFMvMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jBsalirActionPerformed
+
+    private void jBeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeditarActionPerformed
+        // TODO add your handling code here:
+       jLnombre.setVisible(false);
+       jTeditarNombre.setVisible(true);
+       jTeditarNombre.setText(v.getNombre());
+       v.setNombre(jTeditarNombre.getText());
+       
+       jLespecialidad.setVisible(false);
+       jTeditarEspecialidad.setVisible(true);
+       jTeditarEspecialidad.setText(v.getEspecialidad());
+       v.setEspecialidad(jTeditarEspecialidad.getText());
+       
+       
+    }//GEN-LAST:event_jBeditarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,6 +213,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarVeterinario;
     private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
@@ -205,5 +223,8 @@ public class JFMvMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLnombre;
     private javax.swing.JLabel jLrut;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTeditarEspecialidad;
+    private javax.swing.JTextField jTeditarNombre;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

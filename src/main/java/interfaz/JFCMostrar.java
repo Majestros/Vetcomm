@@ -82,6 +82,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jBeliminarMascota = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jBeliminarCliente = new javax.swing.JButton();
+        jBeditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(500, 600));
@@ -199,7 +200,16 @@ public class JFCMostrar extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jBeliminarCliente);
-        jBeliminarCliente.setBounds(133, 380, 130, 23);
+        jBeliminarCliente.setBounds(200, 380, 107, 23);
+
+        jBeditar.setText("Editar ");
+        jBeditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeditarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBeditar);
+        jBeditar.setBounds(80, 380, 100, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,6 +270,11 @@ public class JFCMostrar extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "Cliente Eliminado!");
     }//GEN-LAST:event_jBeliminarClienteActionPerformed
 
+    private void jBeditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeditarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jBeditarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -275,6 +290,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBactualizar;
     private javax.swing.JButton jBagregarMascota;
+    private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarCliente;
     private javax.swing.JButton jBeliminarMascota;
     private javax.swing.JButton jBmostrarMascota;
