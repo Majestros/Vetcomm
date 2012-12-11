@@ -46,6 +46,12 @@ public class JFPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         JTListarHoras = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        jBagregarHoraMedica = new javax.swing.JButton();
+        jBeliminarHoraMedica = new javax.swing.JButton();
+        jBbuscarHoraMedica = new javax.swing.JButton();
+        jCbmes = new javax.swing.JComboBox();
+        jCbdia = new javax.swing.JComboBox();
+        jTagno = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cAgregar = new javax.swing.JMenuItem();
@@ -56,53 +62,102 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         mvAgregar = new javax.swing.JMenuItem();
         mvBuscar = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        hmCrear = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        hmEliminar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("VETCOMM");
+        setTitle("Vetcomm 1.0");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         JTListarHoras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Id.", "Cliente", "Mascota", "Veterinario", "Hora"
+                "Cliente", "Mascota", "Veterinario", "Hora"
             }
         ));
         jScrollPane1.setViewportView(JTListarHoras);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
-        jLabel1.setText("Consultas del Día.");
+        jLabel1.setText("Consultas.");
+
+        jBagregarHoraMedica.setText("Agregar");
+        jBagregarHoraMedica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBagregarHoraMedicaActionPerformed(evt);
+            }
+        });
+
+        jBeliminarHoraMedica.setText("Eliminar");
+
+        jBbuscarHoraMedica.setText("Buscar");
+        jBbuscarHoraMedica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBbuscarHoraMedicaActionPerformed(evt);
+            }
+        });
+
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+
+        jTagno.setText("Año");
+        jTagno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTagnoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(264, 264, 264))
+                .addContainerGap(228, Short.MAX_VALUE)
+                .addComponent(jBagregarHoraMedica)
+                .addGap(131, 131, 131)
+                .addComponent(jBeliminarHoraMedica)
+                .addGap(207, 207, 207))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(jCbmes, 0, 62, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCbdia, 0, 59, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jBbuscarHoraMedica)
+                .addGap(202, 202, 202))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(288, 288, 288)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(301, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBbuscarHoraMedica)
+                    .addComponent(jCbmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCbdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBagregarHoraMedica)
+                    .addComponent(jBeliminarHoraMedica))
+                .addGap(61, 61, 61))
         );
 
         jPanel1.setBounds(0, 0, 710, 440);
@@ -168,24 +223,6 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu3.setText("Hora Medica ");
-
-        hmCrear.setText("Crear");
-        hmCrear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hmCrearActionPerformed(evt);
-            }
-        });
-        jMenu3.add(hmCrear);
-
-        jMenuItem9.setText("Editar");
-        jMenu3.add(jMenuItem9);
-
-        hmEliminar.setText("Eliminar");
-        jMenu3.add(hmEliminar);
-
-        jMenuBar1.add(jMenu3);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -242,14 +279,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mBuscarActionPerformed
 
-    private void hmCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hmCrearActionPerformed
-        // TODO add your handling code here:
-        JFAgregarHoraMedica agregarHm=new JFAgregarHoraMedica();
-        jDesktopPane1.add(agregarHm);
-        agregarHm.setVisible(true);
-        
-    }//GEN-LAST:event_hmCrearActionPerformed
-
     private void mvAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvAgregarActionPerformed
         // TODO add your handling code here:
         JIFMvAgregar agregarMv=new JIFMvAgregar();
@@ -264,6 +293,21 @@ public class JFPrincipal extends javax.swing.JFrame {
         jDesktopPane1.add(buscarMv);
         buscarMv.setVisible(true);
     }//GEN-LAST:event_mvBuscarActionPerformed
+
+    private void jTagnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTagnoActionPerformed
+
+        // TODO add your handling code here:}//GEN-LAST:event_jTagnoActionPerformed
+    }
+   
+        private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
+        // TODO add your handling code here:
+            JFAgregarHoraMedica agregarHora = new JFAgregarHoraMedica();
+            agregarHora.setVisible(true);
+    }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
+
+    private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBbuscarHoraMedicaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,18 +328,20 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JTable JTListarHoras;
     private javax.swing.JMenuItem cAgregar;
     private javax.swing.JMenuItem cBuscar;
-    private javax.swing.JMenuItem hmCrear;
-    private javax.swing.JMenuItem hmEliminar;
+    private javax.swing.JButton jBagregarHoraMedica;
+    private javax.swing.JButton jBbuscarHoraMedica;
+    private javax.swing.JButton jBeliminarHoraMedica;
+    private javax.swing.JComboBox jCbdia;
+    private javax.swing.JComboBox jCbmes;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField jTagno;
     private javax.swing.JMenuItem mAgregar;
     private javax.swing.JMenuItem mBuscar;
     private javax.swing.JMenuItem mvAgregar;
