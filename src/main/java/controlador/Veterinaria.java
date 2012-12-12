@@ -122,13 +122,8 @@ public class Veterinaria {
     }
     
     public boolean editarMedicoVeterinario (MedicoVeterinario v) {
-        if (vManager.updateByRut(v) > 0) {
-            for (MedicoVeterinario medico: medicos){
-                if(medico.getRut().equals(v.getRut())){
-                    medico=v;
-                }
-            }
-            //this.medicos.add(v);
+        if (vManager.updateByRut(v) > 0) {            
+            this.medicos.add(v);
             return true;
         }
         return false;
