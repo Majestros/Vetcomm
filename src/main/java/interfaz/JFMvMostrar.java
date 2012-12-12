@@ -196,6 +196,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
        v.setNombre(jTeditarNombre.getText()); 
        v.setEspecialidad(jTeditarEspecialidad.getText()); 
         
+       VETERINARIA.editarMedicoVeterinario(v);
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**
