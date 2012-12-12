@@ -12,6 +12,7 @@ package interfaz;
 
 import static controlador.Principal.VETERINARIA;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import modelo.Cliente;
 import modelo.HoraMedica;
 import modelo.Mascota;
@@ -225,7 +226,10 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         String sala = jCbsala.getSelectedItem().toString();
         h.setSala(sala);
 
-        VETERINARIA.agregarHora(obtenerDatosHoraMedica());
+        boolean s= VETERINARIA.agregarHora(obtenerDatosHoraMedica());
+        if (s) {
+            JOptionPane.showMessageDialog(rootPane, "Hora Medica agregada!");
+        }
     }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
 
     public HoraMedica obtenerDatosHoraMedica() {
