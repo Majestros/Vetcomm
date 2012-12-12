@@ -98,5 +98,12 @@ public class Cliente {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return  rut + " - " + nombre;
+    }
+    
+   
     
 }

@@ -69,5 +69,7 @@ public class Mascota {
     public void agregarFichaMedica(FichaMedica obtenerDatosHistorial) {
         this.historial.add(obtenerDatosHistorial);
     }    
+    
+    
        
 }

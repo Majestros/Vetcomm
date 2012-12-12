@@ -90,11 +90,11 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(32, 296, 70, 14);
 
-        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
         jPanel1.add(jCbdia);
         jCbdia.setBounds(240, 290, 60, 20);
 
-        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         jPanel1.add(jCbmes);
         jCbmes.setBounds(170, 290, 60, 20);
         jPanel1.add(jTagno);

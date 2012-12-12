@@ -10,15 +10,26 @@
  */
 package interfaz;
 
+import static controlador.Principal.VETERINARIA;
+import java.util.ArrayList;
+import modelo.Cliente;
+import modelo.HoraMedica;
+import modelo.Mascota;
+
 /**
  *
  * @author Kal-El
  */
 public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
+    private HoraMedica f=new HoraMedica();
+    ArrayList<Mascota> mascotasCliente=new ArrayList<Mascota>();
+   // private Cliente cElegido=new Cliente();
     /** Creates new form JFAgregarHoraMedica */
     public JFAgregarHoraMedica() {
         initComponents();
+        llenarListaClientes();        
+      
     }
 
     /** This method is called from within the constructor to
@@ -41,6 +52,8 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         jTagno = new javax.swing.JTextField();
         jCbHora = new javax.swing.JComboBox();
         jCbMinuto = new javax.swing.JComboBox();
+        jCbclientes = new javax.swing.JComboBox();
+        jCbmascota = new javax.swing.JComboBox();
         jBagregarHoraMedica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -59,20 +72,24 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
         jLabel5.setText("Hora: ");
 
-        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia ", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jTagno.setText("Año");
-        jTagno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTagnoActionPerformed(evt);
-            }
-        });
 
         jCbHora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hora", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
 
-        jCbMinuto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Minuto", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59" }));
+        jCbMinuto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Minuto", "00", "20", "40" }));
+
+        jCbclientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cliente" }));
+        jCbclientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCbclientesActionPerformed(evt);
+            }
+        });
+
+        jCbmascota.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mascota" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -87,26 +104,38 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jCbHora, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jCbmes, javax.swing.GroupLayout.Alignment.LEADING, 0, 62, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCbMinuto, 0, 59, Short.MAX_VALUE)
-                    .addComponent(jCbdia, 0, 59, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jCbHora, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCbmes, javax.swing.GroupLayout.Alignment.LEADING, 0, 62, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jCbMinuto, 0, 59, Short.MAX_VALUE)
+                            .addComponent(jCbdia, 0, 59, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jCbmascota, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jCbclientes, javax.swing.GroupLayout.Alignment.LEADING, 0, 201, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jCbclientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3))
+                    .addComponent(jCbmascota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -146,20 +175,54 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBagregarHoraMedica)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTagnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTagnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTagnoActionPerformed
-
     private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        
+           
+        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jTagno.getText();
+        f.setFecha(fecha);
+        
+        String hora=jCbHora.getSelectedItem().toString()+" : "+jCbMinuto.getSelectedItem().toString();
+        f.setHora(hora);
     }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
 
+    private void jCbclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbclientesActionPerformed
+        // TODO add your handling code here:
+        Cliente cElegido=(Cliente) jCbclientes.getSelectedItem();
+             
+        if (cElegido!=null){                
+                
+                VETERINARIA.llenarMascotasDeCliente(cElegido);
+                mascotasCliente=cElegido.getMascota();
+                
+                llenarListaMascotas();
+            }
+    }//GEN-LAST:event_jCbclientesActionPerformed
+
+    private void llenarListaClientes() {
+              
+        for (Cliente c: VETERINARIA.getClientes()){
+            jCbclientes.addItem(c);
+            llenarListaMascotas(); 
+            
+        }
+    }
+    
+    private void llenarListaMascotas() {
+         for (Mascota mascota : mascotasCliente) {
+                     jCbmascota.addItem(mascota);
+                }  
+        
+    }
+       
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -199,7 +262,9 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     private javax.swing.JButton jBagregarHoraMedica;
     private javax.swing.JComboBox jCbHora;
     private javax.swing.JComboBox jCbMinuto;
+    private javax.swing.JComboBox jCbclientes;
     private javax.swing.JComboBox jCbdia;
+    private javax.swing.JComboBox jCbmascota;
     private javax.swing.JComboBox jCbmes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -209,4 +274,10 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTagno;
     // End of variables declaration//GEN-END:variables
+
+    
+
+    
+
+    
 }
