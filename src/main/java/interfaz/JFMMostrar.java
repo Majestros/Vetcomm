@@ -265,22 +265,16 @@ public class JFMMostrar extends javax.swing.JFrame {
         jLnombre.setVisible(false);
         jTeditarNombre.setVisible(true);
         jTeditarNombre.setText(m.getNombre());
-        m.setNombre(jTeditarNombre.getText());
+        
        
         jLraza.setVisible(false);
         jTeditarRaza.setVisible(true);
         jTeditarRaza.setText(m.getRaza());
-        m.setRaza(jTeditarRaza.getText());
+        
         
         jLgenero.setVisible(false);
         jCbeditarGenero.setVisible(true);
-        String genero = jCbeditarGenero.getSelectedItem().toString();
         
-        if(genero.equals("Hembra")){
-            m.setGenero(false);
-        }else{
-            m.setGenero(true);
-        }
         
                 
         
@@ -289,6 +283,15 @@ public class JFMMostrar extends javax.swing.JFrame {
 
     private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
         // TODO add your handling code here:
+        m.setNombre(jTeditarNombre.getText());
+        m.setRaza(jTeditarRaza.getText());
+        String genero = jCbeditarGenero.getSelectedItem().toString();
+        
+        if(genero.equals("Hembra")){
+            m.setGenero(false);
+        }else{
+            m.setGenero(true);
+        }
         
         
     }//GEN-LAST:event_jBguardarCambiosActionPerformed

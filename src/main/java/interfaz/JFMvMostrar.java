@@ -180,12 +180,12 @@ public class JFMvMostrar extends javax.swing.JFrame {
        jLnombre.setVisible(false);
        jTeditarNombre.setVisible(true);
        jTeditarNombre.setText(v.getNombre());
-       v.setNombre(jTeditarNombre.getText());
+       
        
        jLespecialidad.setVisible(false);
        jTeditarEspecialidad.setVisible(true);
        jTeditarEspecialidad.setText(v.getEspecialidad());
-       v.setEspecialidad(jTeditarEspecialidad.getText());
+       
        
        
        
@@ -193,8 +193,9 @@ public class JFMvMostrar extends javax.swing.JFrame {
 
     private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
         // TODO add your handling code here:
+       v.setNombre(jTeditarNombre.getText()); 
+       v.setEspecialidad(jTeditarEspecialidad.getText()); 
         
-        //mandar el veterinario a algun metodo de la veterinaria
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**
