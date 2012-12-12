@@ -10,32 +10,28 @@ package modelo;
  */
 public class HoraMedica {
     
-    private Cliente cliente;
-    private Mascota mascota;
-    private MedicoVeterinario veterinario;
+    private String rutCliente;
+    private String nombreMascota;
+    private String rutVeterinario;
     private String fecha;
     private String hora;
+    private String sala;
 
     public HoraMedica() {
     }
 
-    public HoraMedica(Cliente cliente, Mascota mascota, MedicoVeterinario veterinario, String fecha, String hora) {
-        this.cliente = cliente;
-        this.mascota = mascota;
-        this.veterinario = veterinario;
+    public HoraMedica(String rutCliente, String nombreMascota, String rutVeterinario, String fecha, String hora, String sala) {
+        this.rutCliente = rutCliente;
+        this.nombreMascota = nombreMascota;
+        this.nombreMascota = nombreMascota;
         this.fecha = fecha;
         this.hora = hora;
+        this.sala = sala;
     }
     
     
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
+    
 
     public String getFecha() {
         return fecha;
@@ -53,20 +49,38 @@ public class HoraMedica {
         this.hora = hora;
     }
 
-    public Mascota getMascota() {
-        return mascota;
+    public String getNombreMascota() {
+        return nombreMascota;
     }
 
-    public void setMascota(Mascota mascota) {
-        this.mascota = mascota;
+    public void setNombreMascota(String nombreMascota) {
+        this.nombreMascota = nombreMascota;
     }
 
-    public MedicoVeterinario getVeterinario() {
-        return veterinario;
+    public String getRutCliente() {
+        return rutCliente;
     }
 
-    public void setVeterinario(MedicoVeterinario veterinario) {
-        this.veterinario = veterinario;
+    public void setRutCliente(String rutCliente) {
+        this.rutCliente = rutCliente;
+    }
+
+    public String getRutVeterinario() {
+        return rutVeterinario;
+    }
+
+    public void setRutVeterinario(String rutVeterinario) {
+        this.rutVeterinario = rutVeterinario;
+    }
+
+   
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
     }
     
     
