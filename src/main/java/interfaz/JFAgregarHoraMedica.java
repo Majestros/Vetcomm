@@ -23,15 +23,16 @@ import modelo.MedicoVeterinario;
  */
 public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
-    private HoraMedica f=new HoraMedica();
-    ArrayList<Mascota> mascotasCliente=new ArrayList<Mascota>();
-   // private Cliente cElegido=new Cliente();
+    private HoraMedica h = new HoraMedica();
+    ArrayList<Mascota> mascotasCliente = new ArrayList<Mascota>();
+    // private Cliente cElegido=new Cliente();
+
     /** Creates new form JFAgregarHoraMedica */
     public JFAgregarHoraMedica() {
         initComponents();
-        llenarListaClientes();  
+        llenarListaClientes();
         llenarListaMedicoVeterinario();
-      
+
     }
 
     /** This method is called from within the constructor to
@@ -206,69 +207,69 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
     private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        Cliente cElegido = (Cliente) jCbclientes.getSelectedItem();
+        h.setRutCliente(cElegido.getRut());
         
-         Mascota m=(Mascota) jCbmascota.getSelectedItem(); 
-         f.setNombreMascota(m.getNombre());
-         
-         MedicoVeterinario v=(MedicoVeterinario) jCbmedicoVeterinario.getSelectedItem();
-         f.setRutVeterinario(v.getRut());
+        Mascota m = (Mascota) jCbmascota.getSelectedItem();
+        h.setNombreMascota(m.getNombre());
+
+        MedicoVeterinario v = (MedicoVeterinario) jCbmedicoVeterinario.getSelectedItem();
+        h.setRutVeterinario(v.getRut());
         
-        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jTagno.getText();
-        f.setFecha(fecha);
+        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jTagno.getText();
+        h.setFecha(fecha);
         
-        String hora=jCbHora.getSelectedItem().toString()+" : "+jCbMinuto.getSelectedItem().toString();
-        f.setHora(hora);
-        
+        String hora = jCbHora.getSelectedItem().toString() + " : " + jCbMinuto.getSelectedItem().toString();
+        h.setHora(hora);
+
         String sala = jCbsala.getSelectedItem().toString();
-        f.setSala(sala);
-        
+        h.setSala(sala);
+
         VETERINARIA.agregarHora(obtenerDatosHoraMedica());
     }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
 
-    
-    public HoraMedica obtenerDatosHoraMedica(){
-        return f;
+    public HoraMedica obtenerDatosHoraMedica() {
+        return h;
     }
-    
+
     private void jCbclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbclientesActionPerformed
         // TODO add your handling code here:
-        Cliente cElegido=(Cliente) jCbclientes.getSelectedItem();
-        f.setRutCliente(cElegido.getRut());     
-        
-        if (cElegido!=null){                
-                
-                VETERINARIA.llenarMascotasDeCliente(cElegido);
-                mascotasCliente=cElegido.getMascota();
-                
-                llenarListaMascotas();
-            }
+        Cliente cElegido = (Cliente) jCbclientes.getSelectedItem();
+        h.setRutCliente(cElegido.getRut());
+
+        if (cElegido != null) {
+
+            VETERINARIA.llenarMascotasDeCliente(cElegido);
+            mascotasCliente = cElegido.getMascota();
+
+            llenarListaMascotas();
+        }
     }//GEN-LAST:event_jCbclientesActionPerformed
 
     //llena las lista de mascota dependiendo del cliente elegido 
     private void llenarListaClientes() {
-              
-        for (Cliente c: VETERINARIA.getClientes()){
+
+        for (Cliente c : VETERINARIA.getClientes()) {
             jCbclientes.addItem(c);
-            llenarListaMascotas(); 
-            
+            llenarListaMascotas();
+
         }
     }
-    
+
     private void llenarListaMascotas() {
-         for (Mascota mascota : mascotasCliente) {
-                     jCbmascota.addItem(mascota);
-                }  
-        
+        for (Mascota mascota : mascotasCliente) {
+            jCbmascota.addItem(mascota);
+        }
+
     }
-      
+
     private void llenarListaMedicoVeterinario() {
-        for (MedicoVeterinario v: VETERINARIA.getMedicos()){
+        for (MedicoVeterinario v : VETERINARIA.getMedicos()) {
             jCbmedicoVeterinario.addItem(v);
-            
+
         }
     }
-    
-    
+
     /**
      * @param args the command line arguments
      */
@@ -323,12 +324,4 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTagno;
     // End of variables declaration//GEN-END:variables
-
-    
-
-    
-
-    
-
-    
 }

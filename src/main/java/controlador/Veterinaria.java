@@ -9,6 +9,7 @@ import modelo.MedicoVeterinario;
 import modelo.Usuario;
 import persistencia.ClienteManager;
 import persistencia.FichaMedicaManager;
+import persistencia.HoraMedicaManager;
 import persistencia.MascotaManager;
 import persistencia.MedicoVeterinarioManager;
 import persistencia.UsuarioManager;
@@ -19,15 +20,14 @@ public class Veterinaria {
     private MascotaManager mManager = new MascotaManager();
     private MedicoVeterinarioManager vManager = new MedicoVeterinarioManager();
     private FichaMedicaManager fManager= new FichaMedicaManager();
-    private UsuarioManager usrManager = new UsuarioManager();
+    private UsuarioManager usrManager = new UsuarioManager();    
+    private HoraMedicaManager hManager= new HoraMedicaManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
  //   private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
     private ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
 
-    
-    
     public Veterinaria() {
     }
 
@@ -131,8 +131,12 @@ public class Veterinaria {
 
 
 //    ------------------------------------------------------------
-    public void agregarHora(HoraMedica h) {
-        this.horas.add(h);
+    public boolean agregarHora(HoraMedica h) {
+        if (hManager.insert(h) > 0) {
+            this.horas.add(h);
+            return true;
+        }
+        return false;
     }
 
     public ArrayList<MedicoVeterinario> getMedicos() {

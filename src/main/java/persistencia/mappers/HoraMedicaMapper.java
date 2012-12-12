@@ -5,15 +5,21 @@ import modelo.HoraMedica;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
 public interface HoraMedicaMapper {
 
-//    final String INSERT = "INSERT INTO fichamedica (id, asunto, sintoma, diagnostico, fecha) "
-//                + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
-//    final String DELETE_BY_ID = "DELETE FROM mascota WHERE id=#{id}";
-//    final String UPDATE_BY_FECHA = "UPDATE fichamedica (id, asunto, sintoma, diagnostico, fecha) "
-//                + "VALUES (#{id},#{asunto},#{sintoma},#{diagnostico},#{fecha}) ";
-//
-//    
+    final String INSERT = "INSERT INTO horamedica (rutcliente, nombremascota, rutveterinario, fecha, hora, sala) "
+                + "VALUES ( #{rutcliente}, #{nombremascota}, #{rutveterinario}, #{fecha}, #{hora}, #{sala} ) ";
+    final String DELETE_BY_FECHA = "DELETE FROM horamedica WHERE fecha=#{fecha}";
+    final String SELECT_ALL = "SELECT * FROM horamedica";
+    
+    @Insert(INSERT)
+    int insertHoraMedica(HoraMedica h);
+    
+    @Delete(DELETE_BY_FECHA)
+    int deleteByFecha(String fecha);
+    
+    @Select(SELECT_ALL)
+    ArrayList<HoraMedica> obtenerHorasMedicas();
+            
 }

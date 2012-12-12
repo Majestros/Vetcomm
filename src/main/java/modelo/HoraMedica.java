@@ -10,9 +10,9 @@ package modelo;
  */
 public class HoraMedica {
     
-    private String rutCliente;
-    private String nombreMascota;
-    private String rutVeterinario;
+    private String rutcliente;
+    private String nombremascota;
+    private String rutveterinario;
     private String fecha;
     private String hora;
     private String sala;
@@ -21,17 +21,13 @@ public class HoraMedica {
     }
 
     public HoraMedica(String rutCliente, String nombreMascota, String rutVeterinario, String fecha, String hora, String sala) {
-        this.rutCliente = rutCliente;
-        this.nombreMascota = nombreMascota;
-        this.nombreMascota = nombreMascota;
+        this.rutcliente = rutCliente;
+        this.nombremascota = nombreMascota;
+        this.nombremascota = nombreMascota;
         this.fecha = fecha;
         this.hora = hora;
         this.sala = sala;
     }
-    
-    
-
-    
 
     public String getFecha() {
         return fecha;
@@ -50,30 +46,28 @@ public class HoraMedica {
     }
 
     public String getNombreMascota() {
-        return nombreMascota;
+        return nombremascota;
     }
 
     public void setNombreMascota(String nombreMascota) {
-        this.nombreMascota = nombreMascota;
+        this.nombremascota = nombreMascota;
     }
 
     public String getRutCliente() {
-        return rutCliente;
+        return rutcliente;
     }
 
     public void setRutCliente(String rutCliente) {
-        this.rutCliente = rutCliente;
+        this.rutcliente = rutCliente;
     }
 
     public String getRutVeterinario() {
-        return rutVeterinario;
+        return rutveterinario;
     }
 
     public void setRutVeterinario(String rutVeterinario) {
-        this.rutVeterinario = rutVeterinario;
+        this.rutveterinario = rutVeterinario;
     }
-
-   
 
     public String getSala() {
         return sala;
@@ -82,7 +76,5 @@ public class HoraMedica {
     public void setSala(String sala) {
         this.sala = sala;
     }
-    
-    
     
 }

@@ -5,6 +5,7 @@
 package persistencia;
 
 import static controlador.Principal.SQLSESSION;
+import java.util.ArrayList;
 import modelo.HoraMedica;
 import persistencia.mappers.HoraMedicaMapper;
 
@@ -22,19 +23,23 @@ public class HoraMedicaManager {
         }
     }
     
-//    public int insert(HoraMedica h){
-//        int resut = hMapper.insert(h);
-//        if(resut > 0) {
-//            SQLSESSION.commit();
-//        }
-//        return resut;
-//    }
-//    
-//    public boolean deleteByFecha(String fecha) {
-//        if(hMapper.deleteByFecha(fecha)>0){
-//            SQLSESSION.commit();
-//            return true;
-//        }
-//        return false;
-//    }
+    public int insert(HoraMedica h){
+        int resut = hMapper.insertHoraMedica(h);
+        if(resut > 0) {
+            SQLSESSION.commit();
+        }
+        return resut;
+    }
+    
+    public boolean deleteByFecha(String fecha) {
+        if(hMapper.deleteByFecha(fecha)>0){
+            SQLSESSION.commit();
+            return true;
+        }
+        return false;
+    }
+    
+    public ArrayList<HoraMedica> obtenerHorasMedicas(){
+        return hMapper.obtenerHorasMedicas();
+    }
 }
