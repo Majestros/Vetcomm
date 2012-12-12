@@ -13,9 +13,8 @@ public interface ClienteMapper {
             + "INSERT INTO cliente (rut,nombre,direccion,telefono,email) "
             + "VALUES (#{rut},#{nombre},#{direccion},#{telefono},#{email}) ";
     final String DELETE_BY_RUT = "DELETE FROM cliente WHERE rut=#{rut}";
-    final String UPDATE_BY_RUT = "UPDATE cliente (rut,nombre,direccion,telefono,email) "
-            + "VALUES (#{rut},#{nombre},#{direccion},#{telefono},#{email}) "
-            + "WHERE rut=#{rut}";
+    final String UPDATE = "UPDATE cliente SET nombre=#{nombre},direccion=#{direccion},telefono=#{telefono},email=#{email} "
+            + " WHERE rut=#{rut}";
     final String SELECT_BY_RUT = "SELECT FROM cliente WHERE rut=#{rut}";
     final String SELECT_ALL = "SELECT * FROM cliente";
 
@@ -25,8 +24,8 @@ public interface ClienteMapper {
     @Delete(DELETE_BY_RUT)
     int deleteByRut(String rut);
 
-    @Update(UPDATE_BY_RUT)
-    int updateByRut(Cliente cliente);
+    @Update(UPDATE)
+    int update(Cliente cliente);
 
     @Select(SELECT_BY_RUT)
     Cliente selectByRut(String rut);

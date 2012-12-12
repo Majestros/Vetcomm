@@ -34,7 +34,7 @@ public class MascotaManager {
     }
     
     public int updateById(Mascota m){
-        int result = mMapper.updateById(m);
+        int result = mMapper.update(m);
         if(result > 0) {
             SQLSESSION.commit();
         }

@@ -37,8 +37,8 @@ public class ClienteManager {
         return false;
     }
 
-    public int updateByRut(Cliente c) {
-        int result = cMapper.updateByRut(c);
+    public int update(Cliente c) {
+        int result = cMapper.update(c);
         if (result > 0) {
             SQLSESSION.commit();
         }

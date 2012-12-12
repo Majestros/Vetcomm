@@ -12,8 +12,6 @@ public interface MedicoVeterinarioMapper {
     final String INSERT = "INSERT INTO medicoveterinario (rut, nombre, especialidad) "
             + "VALUES (#{rut},#{nombre},#{especialidad}) ";
     final String DELETE_BY_RUT = "DELETE FROM medicoveterinario WHERE rut=#{rut}";
-//    final String UPDATE_BY_RUT = "UPDATE medicoveterinario (rut, nombre, especialidad) "
-//            + "VALUES (#{rut},#{nombre},#{especial})";
     final String UPDATE = "UPDATE medicoveterinario SET nombre=#{nombre},especialidad=#{especialidad} "
             + " WHERE rut=#{rut}";
     final String SELECT_ALL = "SELECT * FROM medicoveterinario";
