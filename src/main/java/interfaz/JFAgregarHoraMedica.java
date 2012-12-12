@@ -205,6 +205,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_jCbclientesActionPerformed
 
+    //llena las lista de mascota dependiendo del cliente elegido 
     private void llenarListaClientes() {
               
         for (Cliente c: VETERINARIA.getClientes()){
