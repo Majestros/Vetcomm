@@ -14,7 +14,7 @@ public interface MedicoVeterinarioMapper {
     final String DELETE_BY_RUT = "DELETE FROM medicoveterinario WHERE rut=#{rut}";
 //    final String UPDATE_BY_RUT = "UPDATE medicoveterinario (rut, nombre, especialidad) "
 //            + "VALUES (#{rut},#{nombre},#{especial})";
-    final String UPDATE_BY_RUT = "UPDATE medicoveterinario SET (rut, nombre, especialidad) "
+    final String UPDATE = "UPDATE medicoveterinario SET (rut, nombre, especialidad) "
             + "VALUES (#{rut},#{nombre},#{especial})";
     final String SELECT_ALL = "SELECT * FROM medicoveterinario";
     final String SELECT_BY_RUT = "SELECT FROM medicoveterinario WHERE rut=#{rut}";
@@ -25,8 +25,8 @@ public interface MedicoVeterinarioMapper {
     @Delete(DELETE_BY_RUT)
     int deleteByRut(String rut);
 
-    @Update(UPDATE_BY_RUT)
-    int updateByRut(MedicoVeterinario medicoveterinario);
+    @Update(UPDATE)
+    int updateMedicoVeterinario(MedicoVeterinario medicoveterinario);
 
     @Select(SELECT_ALL)
     ArrayList<MedicoVeterinario> selectAll();

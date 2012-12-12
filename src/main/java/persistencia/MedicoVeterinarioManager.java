@@ -39,7 +39,7 @@ public class MedicoVeterinarioManager {
     }
 
     public int updateMedicoVeterinario(MedicoVeterinario v) {
-        int result = vMapper.update(v);
+        int result = vMapper.updateMedicoVeterinario(v);
         SQLSESSION.commit();
         return result;
     }
