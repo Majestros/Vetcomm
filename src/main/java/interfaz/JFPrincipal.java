@@ -7,7 +7,9 @@ package interfaz;
 import com.seaglasslookandfeel.SeaGlassLookAndFeel;
 import static controlador.Principal.VETERINARIA;
 import controlador.Veterinaria;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.table.DefaultTableModel;
 import modelo.HoraMedica;
 
@@ -97,6 +99,11 @@ public class JFPrincipal extends javax.swing.JFrame {
         });
 
         jBeliminarHoraMedica.setText("Eliminar");
+        jBeliminarHoraMedica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarHoraMedicaActionPerformed(evt);
+            }
+        });
 
         jBbuscarHoraMedica.setText("Buscar");
         jBbuscarHoraMedica.addActionListener(new java.awt.event.ActionListener() {
@@ -306,26 +313,34 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        
         String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jTagno.getText();
+        modeloListarHora.setRowCount(0);
+        
         
         String datos[]=new String [5];
         for (int cont=0;cont<listaHoras.size();cont++ ){
             if (listaHoras.get(cont).getFecha().equals(fecha)){
+                
                 datos[0]=listaHoras.get(cont).getRutCliente();
                 datos[1]=listaHoras.get(cont).getNombreMascota();
                 datos[2]=listaHoras.get(cont).getRutVeterinario();
                 datos[3]=listaHoras.get(cont).getHora();
                 datos[4]=listaHoras.get(cont).getSala();
-            
-            
+                
                 modeloListarHora.addRow(datos); 
-            }
-            
-            
-            
-            
+            }           
         }
+        
+        
     }//GEN-LAST:event_jBbuscarHoraMedicaActionPerformed
+
+    
+    
+    private void jBeliminarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarHoraMedicaActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jBeliminarHoraMedicaActionPerformed
 
     /**
      * @param args the command line arguments

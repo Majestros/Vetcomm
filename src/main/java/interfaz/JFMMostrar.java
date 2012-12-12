@@ -48,7 +48,7 @@ public class JFMMostrar extends javax.swing.JFrame {
             
             llenarLista();
             
-            jTeditarNombre.setVisible(false);
+            
             jTeditarRaza.setVisible(false);
             jCbeditarGenero.setVisible(false);
             jBguardarCambios.setVisible(false);
@@ -88,7 +88,6 @@ public class JFMMostrar extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jListHistorial = new javax.swing.JList();
         jBactualizar = new javax.swing.JButton();
-        jTeditarNombre = new javax.swing.JTextField();
         jTeditarRaza = new javax.swing.JTextField();
         jCbeditarGenero = new javax.swing.JComboBox();
         jBguardarCambios = new javax.swing.JButton();
@@ -164,8 +163,6 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
         jPanel1.add(jBactualizar);
         jBactualizar.setBounds(250, 200, 156, 23);
-        jPanel1.add(jTeditarNombre);
-        jTeditarNombre.setBounds(160, 70, 190, 20);
         jPanel1.add(jTeditarRaza);
         jTeditarRaza.setBounds(160, 100, 190, 20);
 
@@ -262,9 +259,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         jBguardarCambios.setVisible(true);
         
-        jLnombre.setVisible(false);
-        jTeditarNombre.setVisible(true);
-        jTeditarNombre.setText(m.getNombre());
+        
         
        
         jLraza.setVisible(false);
@@ -283,7 +278,7 @@ public class JFMMostrar extends javax.swing.JFrame {
 
     private void jBguardarCambiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBguardarCambiosActionPerformed
         // TODO add your handling code here:
-        m.setNombre(jTeditarNombre.getText());
+        
         m.setRaza(jTeditarRaza.getText());
         String genero = jCbeditarGenero.getSelectedItem().toString();
         
@@ -293,7 +288,7 @@ public class JFMMostrar extends javax.swing.JFrame {
             m.setGenero(true);
         }
         
-        
+        VETERINARIA.editarMascota(m);
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
     private void actualizar() {
 //        VETERINARIA.llenarFichaMedicasDeMascota(m);
@@ -357,7 +352,6 @@ public class JFMMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLraza;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTeditarNombre;
     private javax.swing.JTextField jTeditarRaza;
     // End of variables declaration//GEN-END:variables
 }

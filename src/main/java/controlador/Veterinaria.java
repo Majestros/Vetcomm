@@ -200,5 +200,22 @@ public class Veterinaria {
     protected void actualizarArrayHoraMedica(){
        this.horas = hManager.obtenerHorasMedicas();
    }
+
+    public boolean editarCliente(Cliente c) {
+        if (cManager.update(c) > 0) {            
+            this.clientes.add(c);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean editarMascota(Mascota m) {
+        if (mManager.updateById(m) > 0) { 
+            return true;
+        }
+        return false;
+    }
+    
+    
     
 }

@@ -10,7 +10,7 @@ public interface HoraMedicaMapper {
 
     final String INSERT = "INSERT INTO horamedica (rutcliente, nombremascota, rutveterinario, fecha, hora, sala) "
                 + "VALUES ( #{rutcliente}, #{nombremascota}, #{rutveterinario}, #{fecha}, #{hora}, #{sala} ) ";
-    final String DELETE_BY_FECHA = "DELETE FROM horamedica WHERE fecha=#{fecha}";
+    final String DELETE_BY_FECHA = "DELETE FROM horamedica WHERE fecha=#{fecha} AND hora=#{hora}";
     final String SELECT_ALL = "SELECT * FROM horamedica";
     
     @Insert(INSERT)

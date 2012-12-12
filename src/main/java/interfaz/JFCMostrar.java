@@ -333,6 +333,8 @@ public class JFCMostrar extends javax.swing.JFrame {
         c.setDireccion(jTeditarDireccion.getText());
         c.setTelefono(Integer.parseInt(jTeditarTelefono.getText()));
         c.setEmail(jTeditarEmail.getText());
+        
+        VETERINARIA.editarCliente(c);
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**
