@@ -46,21 +46,4 @@ public class MedicoVeterinario {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final MedicoVeterinario other = (MedicoVeterinario) obj;
-        if ((this.rut == null) ? (other.rut != null) : !this.rut.equals(other.rut)) {
-            return false;
-        }
-        return true;
-    }
-
-   
 }
