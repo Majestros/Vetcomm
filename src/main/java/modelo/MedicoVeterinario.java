@@ -46,4 +46,9 @@ public class MedicoVeterinario {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
+    @Override
+    public String toString() {
+        return  rut + " - " + nombre;
+    }
+
 }
