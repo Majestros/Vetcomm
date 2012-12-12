@@ -29,12 +29,6 @@ public class MedicoVeterinarioManager {
         return false;
     }
 
-    public int updateByRut(MedicoVeterinario v) {
-        int result = vMapper.updateByRut(v);
-        SQLSESSION.commit();
-        return result;
-    }
-
     public MedicoVeterinario obtenerMedicoVeterinario(String rut) {
         return vMapper.selectByRut(rut);
     }
@@ -42,5 +36,11 @@ public class MedicoVeterinarioManager {
     public ArrayList<MedicoVeterinario> obtenerMedicosVeterinarios() {
         ArrayList<MedicoVeterinario> listaAct = vMapper.selectAll();
         return listaAct;
+    }
+
+    public int updateMedicoVeterinario(MedicoVeterinario v) {
+        int result = vMapper.update(v);
+        SQLSESSION.commit();
+        return result;
     }
 }
