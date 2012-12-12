@@ -29,10 +29,10 @@ public class JFPrincipal extends javax.swing.JFrame {
     public JFPrincipal() {
         initComponents();
         
-        String titulos[] = {" RUT CLIENTE","MASCOTA","RUT VETERINARIO","HORA"};
+        String titulos[] = {"RUT CLIENTE","MASCOTA","RUT VETERINARIO","HORA","SALA"};
         modeloListarHora.setColumnIdentifiers(titulos);
         this.JTListarHoras.setModel(modeloListarHora);
-        //this.listaHoras = VETERINARIA;
+        this.listaHoras = VETERINARIA.getHoraMedica();
     }
     
     
@@ -75,13 +75,13 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         JTListarHoras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Cliente", "Mascota", "Veterinario", "Hora"
+                "Rut Cliente", "Mascota", "Rut Veterinario", "Hora", "Sala"
             }
         ));
         jScrollPane1.setViewportView(JTListarHoras);
@@ -306,15 +306,22 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jTagno.getText();
+        
         String datos[]=new String [5];
         for (int cont=0;cont<listaHoras.size();cont++ ){
-            datos[0]=listaHoras.get(cont).getRutCliente();
-            datos[1]=listaHoras.get(cont).getNombreMascota();
-            datos[2]=listaHoras.get(cont).getRutVeterinario();
-            datos[3]=listaHoras.get(cont).getHora();
+            if (listaHoras.get(cont).getFecha().equals(fecha)){
+                datos[0]=listaHoras.get(cont).getRutCliente();
+                datos[1]=listaHoras.get(cont).getNombreMascota();
+                datos[2]=listaHoras.get(cont).getRutVeterinario();
+                datos[3]=listaHoras.get(cont).getHora();
+                datos[4]=listaHoras.get(cont).getSala();
             
             
-            modeloListarHora.addRow(datos);
+                modeloListarHora.addRow(datos); 
+            }
+            
+            
             
             
         }

@@ -193,8 +193,12 @@ public class Veterinaria {
 //        this.fichasMedicas = fManager.obtenerFichasMedicas();
 //    }
 
+    public ArrayList<HoraMedica> getHoraMedica() {
+        return horas;
+    }
     
-    
- 
+    protected void actualizarArrayHoraMedica(){
+       this.horas = hManager.obtenerHorasMedicas();
+   }
     
 }

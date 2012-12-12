@@ -52,6 +52,7 @@ public class Principal {
         VETERINARIA.actualizarArrayClientes();
         VETERINARIA.actualizarArrayMedicos();
         //VETERINARIA.actualizarArrayFichas();
+        VETERINARIA.actualizarArrayHoraMedica();
         
         // Inicia la UI de ingreso
         new JFIngreso().setVisible(true);
