@@ -20,7 +20,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     
     //creacion tabla para listar Horas medicas del dia.
     //blah blah
-    DefaultTableModel listarHora = new DefaultTableModel();
+    DefaultTableModel modeloListarHora = new DefaultTableModel();
     private ArrayList<HoraMedica> listaHoras= new ArrayList<HoraMedica>();
     
     /**
@@ -28,6 +28,11 @@ public class JFPrincipal extends javax.swing.JFrame {
      */
     public JFPrincipal() {
         initComponents();
+        
+        String titulos[] = {" RUT CLIENTE","MASCOTA","RUT VETERINARIO","HORA"};
+        modeloListarHora.setColumnIdentifiers(titulos);
+        this.JTListarHoras.setModel(modeloListarHora);
+        //this.listaHoras = VETERINARIA;
     }
     
     
@@ -241,13 +246,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Funcion para mostrar datos en la tabla, posteriormente se debe de complementar en el constructor...
-    public void listarHoras(ArrayList<HoraMedica> hora){
-        String titulos[] = {"RUT","DV","NOMBRE","APELLIDOS","TELEFONO","EMAIL"};
-        listarHora.setColumnIdentifiers(titulos);
-        this.JTListarHoras.setModel(listarHora);
-        this.listaHoras = hora;
-    }
+    
     
     private void cAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAgregarActionPerformed
         // TODO add your handling code here:
@@ -307,6 +306,18 @@ public class JFPrincipal extends javax.swing.JFrame {
 
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        String datos[]=new String [5];
+        for (int cont=0;cont<listaHoras.size();cont++ ){
+            datos[0]=listaHoras.get(cont).getRutCliente();
+            datos[1]=listaHoras.get(cont).getNombreMascota();
+            datos[2]=listaHoras.get(cont).getRutVeterinario();
+            datos[3]=listaHoras.get(cont).getHora();
+            
+            
+            modeloListarHora.addRow(datos);
+            
+            
+        }
     }//GEN-LAST:event_jBbuscarHoraMedicaActionPerformed
 
     /**
