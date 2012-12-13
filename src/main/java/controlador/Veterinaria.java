@@ -23,11 +23,14 @@ public class Veterinaria {
     private UsuarioManager usrManager = new UsuarioManager();    
     private HoraMedicaManager hManager= new HoraMedicaManager();
     private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
- //   private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+   
     private ArrayList<HoraMedica> horas = new ArrayList<HoraMedica>();
     private ArrayList<MedicoVeterinario> medicos = new ArrayList<MedicoVeterinario>();
     private ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
 
+    
+//    private ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
+    
     public Veterinaria() {
     }
 
@@ -95,6 +98,7 @@ public class Veterinaria {
         return false;
     }
 
+   
 //    ------------------------------------------------------------
     public boolean agregarMedicoVeterinario(MedicoVeterinario v) {
         if (vManager.insert(v) > 0) {
@@ -223,6 +227,25 @@ public class Veterinaria {
         }
         return false;
     }
+
+    //metodo para buscar una mascota en particular desde un cliente PERO NO FUNCIONA!!!! 
+//    public Mascota obtenerMascota(String id, String nombre) {
+//        actualizarArrayClientes();
+//        
+//        for (Cliente cliente : clientes) {
+//            if (cliente.getRut().equals(id)){
+//                 mascotas=cliente.getMascota();
+//                 for (Mascota mascota: mascotas){
+//                     if (mascota.getNombre().equals(nombre)){
+//                         return mascota;
+//                     }
+//                 }
+//                 
+//            }          
+//        }
+//        return null;
+//        
+//    }
     
     
     
