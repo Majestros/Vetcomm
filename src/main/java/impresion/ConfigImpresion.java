@@ -12,6 +12,8 @@ public class ConfigImpresion {
     
     public void config(){
         
+        
+        
     }
     
 }
