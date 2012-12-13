@@ -303,6 +303,12 @@ public class JFCMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         jBguardarCambios.setVisible(true);
         
+        jBactualizar.setEnabled(false);
+        jBagregarMascota.setEnabled(false);
+        jBeliminarCliente.setEnabled(false);
+        jBeliminarMascota.setEnabled(false);
+        jBmostrarMascota.setEnabled(false);
+        
         jLnombre.setVisible(false);
         jTeditarNombre.setVisible(true);
         jTeditarNombre.setText(c.getNombre());

@@ -27,12 +27,12 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Component id="jBagregarHoraMedica" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel1" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="33" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -167,31 +167,30 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fecha: "/>
+            <Property name="text" type="java.lang.String" value="Fecha (M/D/AAAA): "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hora: "/>
+            <Property name="text" type="java.lang.String" value="Hora (HH:MM): "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jCbmes">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="13">
-                <StringItem index="0" value="Mes"/>
-                <StringItem index="1" value="01"/>
-                <StringItem index="2" value="02"/>
-                <StringItem index="3" value="03"/>
-                <StringItem index="4" value="04"/>
-                <StringItem index="5" value="05"/>
-                <StringItem index="6" value="06"/>
-                <StringItem index="7" value="07"/>
-                <StringItem index="8" value="08"/>
-                <StringItem index="9" value="09"/>
-                <StringItem index="10" value="10"/>
-                <StringItem index="11" value="11"/>
-                <StringItem index="12" value="12"/>
+              <StringArray count="12">
+                <StringItem index="0" value="01"/>
+                <StringItem index="1" value="02"/>
+                <StringItem index="2" value="03"/>
+                <StringItem index="3" value="04"/>
+                <StringItem index="4" value="05"/>
+                <StringItem index="5" value="06"/>
+                <StringItem index="6" value="07"/>
+                <StringItem index="7" value="08"/>
+                <StringItem index="8" value="09"/>
+                <StringItem index="9" value="10"/>
+                <StringItem index="10" value="11"/>
+                <StringItem index="11" value="12"/>
               </StringArray>
             </Property>
           </Properties>
@@ -199,8 +198,49 @@
         <Component class="javax.swing.JComboBox" name="jCbdia">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="32">
-                <StringItem index="0" value="Dia "/>
+              <StringArray count="31">
+                <StringItem index="0" value="01"/>
+                <StringItem index="1" value="02"/>
+                <StringItem index="2" value="03"/>
+                <StringItem index="3" value="04"/>
+                <StringItem index="4" value="05"/>
+                <StringItem index="5" value="06"/>
+                <StringItem index="6" value="07"/>
+                <StringItem index="7" value="08"/>
+                <StringItem index="8" value="09"/>
+                <StringItem index="9" value="10"/>
+                <StringItem index="10" value="11"/>
+                <StringItem index="11" value="12"/>
+                <StringItem index="12" value="13"/>
+                <StringItem index="13" value="14"/>
+                <StringItem index="14" value="15"/>
+                <StringItem index="15" value="16"/>
+                <StringItem index="16" value="17"/>
+                <StringItem index="17" value="18"/>
+                <StringItem index="18" value="19"/>
+                <StringItem index="19" value="20"/>
+                <StringItem index="20" value="21"/>
+                <StringItem index="21" value="22"/>
+                <StringItem index="22" value="23"/>
+                <StringItem index="23" value="24"/>
+                <StringItem index="24" value="25"/>
+                <StringItem index="25" value="26"/>
+                <StringItem index="26" value="27"/>
+                <StringItem index="27" value="28"/>
+                <StringItem index="28" value="29"/>
+                <StringItem index="29" value="30"/>
+                <StringItem index="30" value="31"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTagno">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jCbHora">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="24">
+                <StringItem index="0" value="00"/>
                 <StringItem index="1" value="01"/>
                 <StringItem index="2" value="02"/>
                 <StringItem index="3" value="03"/>
@@ -224,52 +264,6 @@
                 <StringItem index="21" value="21"/>
                 <StringItem index="22" value="22"/>
                 <StringItem index="23" value="23"/>
-                <StringItem index="24" value="24"/>
-                <StringItem index="25" value="25"/>
-                <StringItem index="26" value="26"/>
-                <StringItem index="27" value="27"/>
-                <StringItem index="28" value="28"/>
-                <StringItem index="29" value="29"/>
-                <StringItem index="30" value="30"/>
-                <StringItem index="31" value="31"/>
-              </StringArray>
-            </Property>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTagno">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="jCbHora">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="25">
-                <StringItem index="0" value="Hora"/>
-                <StringItem index="1" value="00"/>
-                <StringItem index="2" value="01"/>
-                <StringItem index="3" value="02"/>
-                <StringItem index="4" value="03"/>
-                <StringItem index="5" value="04"/>
-                <StringItem index="6" value="05"/>
-                <StringItem index="7" value="06"/>
-                <StringItem index="8" value="07"/>
-                <StringItem index="9" value="08"/>
-                <StringItem index="10" value="09"/>
-                <StringItem index="11" value="10"/>
-                <StringItem index="12" value="11"/>
-                <StringItem index="13" value="12"/>
-                <StringItem index="14" value="13"/>
-                <StringItem index="15" value="14"/>
-                <StringItem index="16" value="15"/>
-                <StringItem index="17" value="16"/>
-                <StringItem index="18" value="17"/>
-                <StringItem index="19" value="18"/>
-                <StringItem index="20" value="19"/>
-                <StringItem index="21" value="20"/>
-                <StringItem index="22" value="21"/>
-                <StringItem index="23" value="22"/>
-                <StringItem index="24" value="23"/>
               </StringArray>
             </Property>
           </Properties>
@@ -277,11 +271,10 @@
         <Component class="javax.swing.JComboBox" name="jCbMinuto">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Minuto"/>
-                <StringItem index="1" value="00"/>
-                <StringItem index="2" value="20"/>
-                <StringItem index="3" value="40"/>
+              <StringArray count="3">
+                <StringItem index="0" value="00"/>
+                <StringItem index="1" value="20"/>
+                <StringItem index="2" value="40"/>
               </StringArray>
             </Property>
           </Properties>
@@ -289,9 +282,7 @@
         <Component class="javax.swing.JComboBox" name="jCbclientes">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Cliente"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
           <Events>
@@ -301,18 +292,14 @@
         <Component class="javax.swing.JComboBox" name="jCbmascota">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Mascota"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JComboBox" name="jCbmedicoVeterinario">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="1">
-                <StringItem index="0" value="Medico Veterinario"/>
-              </StringArray>
+              <StringArray count="0"/>
             </Property>
           </Properties>
         </Component>

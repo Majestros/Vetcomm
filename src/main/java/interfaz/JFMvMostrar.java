@@ -177,6 +177,9 @@ public class JFMvMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
        jBguardarCambios.setVisible(true);
         
+       jBeliminarVeterinario.setEnabled(false);
+       jBsalir.setEnabled(false);
+       
        jLnombre.setVisible(false);
        jTeditarNombre.setVisible(true);
        jTeditarNombre.setText(v.getNombre());

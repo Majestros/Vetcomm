@@ -60,6 +60,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         jCbmes = new javax.swing.JComboBox();
         jCbdia = new javax.swing.JComboBox();
         jTagno = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cAgregar = new javax.swing.JMenuItem();
@@ -113,16 +114,17 @@ public class JFPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
 
-        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jTagno.setText("Año");
         jTagno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTagnoActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Fecha (MM/DD/AAAA):");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,8 +136,10 @@ public class JFPrincipal extends javax.swing.JFrame {
                 .addGap(131, 131, 131)
                 .addComponent(jBeliminarHoraMedica)
                 .addGap(207, 207, 207))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(194, 194, 194)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jCbmes, 0, 62, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jCbdia, 0, 59, Short.MAX_VALUE)
@@ -143,7 +147,7 @@ public class JFPrincipal extends javax.swing.JFrame {
                 .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBbuscarHoraMedica)
-                .addGap(202, 202, 202))
+                .addGap(171, 171, 171))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +167,8 @@ public class JFPrincipal extends javax.swing.JFrame {
                     .addComponent(jBbuscarHoraMedica)
                     .addComponent(jCbmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCbdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -375,6 +380,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox jCbmes;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;

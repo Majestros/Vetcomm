@@ -75,30 +75,23 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
         jLabel3.setText("Veterinario: ");
 
-        jLabel4.setText("Fecha: ");
+        jLabel4.setText("Fecha (M/D/AAAA): ");
 
-        jLabel5.setText("Hora: ");
+        jLabel5.setText("Hora (HH:MM): ");
 
-        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mes", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Dia ", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
-        jTagno.setText("Año");
+        jCbHora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
 
-        jCbHora.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hora", "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23" }));
+        jCbMinuto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "00", "20", "40" }));
 
-        jCbMinuto.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Minuto", "00", "20", "40" }));
-
-        jCbclientes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cliente" }));
         jCbclientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCbclientesActionPerformed(evt);
             }
         });
-
-        jCbmascota.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mascota" }));
-
-        jCbmedicoVeterinario.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Medico Veterinario" }));
 
         jCbsala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06" }));
 
@@ -187,11 +180,11 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBagregarHoraMedica))
-                .addContainerGap(33, Short.MAX_VALUE))
+                    .addComponent(jBagregarHoraMedica)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,6 +254,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     }
 
     private void llenarListaMascotas() {
+        jCbmascota.removeAllItems();
         for (Mascota mascota : mascotasCliente) {
             jCbmascota.addItem(mascota);
         }

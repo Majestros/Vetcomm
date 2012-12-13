@@ -164,7 +164,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         jPanel1.add(jBactualizar);
         jBactualizar.setBounds(250, 200, 156, 23);
         jPanel1.add(jTeditarRaza);
-        jTeditarRaza.setBounds(160, 100, 190, 20);
+        jTeditarRaza.setBounds(160, 100, 190, 25);
 
         jCbeditarGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Macho", "Hembra" }));
         jPanel1.add(jCbeditarGenero);
@@ -177,7 +177,7 @@ public class JFMMostrar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBguardarCambios);
-        jBguardarCambios.setBounds(280, 310, 120, 23);
+        jBguardarCambios.setBounds(250, 290, 160, 23);
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -259,7 +259,9 @@ public class JFMMostrar extends javax.swing.JFrame {
         // TODO add your handling code here:
         jBguardarCambios.setVisible(true);
         
-        
+        jBactualizar.setEnabled(false);
+        jBagregarHistorial.setEnabled(false);
+        jBeliminarMascota.setEnabled(false);
         
        
         jLraza.setVisible(false);

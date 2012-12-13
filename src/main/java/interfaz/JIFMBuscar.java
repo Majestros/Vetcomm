@@ -38,9 +38,7 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
         jTid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jTnombre = new javax.swing.JTextField();
-        buscarMascota = new javax.swing.JButton();
-        editarMascota = new javax.swing.JButton();
-        eliminarMascota = new javax.swing.JButton();
+        jBbuscarMascota = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
 
         setClosable(true);
@@ -83,16 +81,12 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
                 .addContainerGap(48, Short.MAX_VALUE))
         );
 
-        buscarMascota.setText("Buscar");
-        buscarMascota.addActionListener(new java.awt.event.ActionListener() {
+        jBbuscarMascota.setText("Buscar");
+        jBbuscarMascota.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buscarMascotaActionPerformed(evt);
+                jBbuscarMascotaActionPerformed(evt);
             }
         });
-
-        editarMascota.setText("Editar");
-
-        eliminarMascota.setText("Eliminar");
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -106,14 +100,8 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(173, Short.MAX_VALUE)
-                .addComponent(editarMascota, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(eliminarMascota)
-                .addGap(170, 170, 170))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(235, Short.MAX_VALUE)
-                .addComponent(buscarMascota)
+                .addComponent(jBbuscarMascota)
                 .addGap(26, 26, 26)
                 .addComponent(jBsalir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(101, 101, 101))
@@ -127,21 +115,17 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(buscarMascota)
+                    .addComponent(jBbuscarMascota)
                     .addComponent(jBsalir))
-                .addGap(122, 122, 122)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(eliminarMascota)
-                    .addComponent(editarMascota))
-                .addGap(37, 37, 37))
+                .addGap(182, 182, 182))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarMascotaActionPerformed
+    private void jBbuscarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarMascotaActionPerformed
         // TODO add your handling code here:
       
         
@@ -160,7 +144,7 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
 //            jTid.setText("");
 //            jTnombre.setText("");
 //        }
-    }//GEN-LAST:event_buscarMascotaActionPerformed
+    }//GEN-LAST:event_jBbuscarMascotaActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
         // TODO add your handling code here:
@@ -168,9 +152,7 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBsalirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buscarMascota;
-    private javax.swing.JButton editarMascota;
-    private javax.swing.JButton eliminarMascota;
+    private javax.swing.JButton jBbuscarMascota;
     private javax.swing.JButton jBsalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
