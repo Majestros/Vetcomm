@@ -24,6 +24,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     //blah blah
     DefaultTableModel modeloListarHora = new DefaultTableModel();
     private ArrayList<HoraMedica> listaHoras= new ArrayList<HoraMedica>();
+    private HoraMedica h;
     
     /**
      * Creates new form JFVentanaGeneral
@@ -332,13 +333,19 @@ public class JFPrincipal extends javax.swing.JFrame {
             }           
         }
         
-        
+
     }//GEN-LAST:event_jBbuscarHoraMedicaActionPerformed
 
     
     
     private void jBeliminarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarHoraMedicaActionPerformed
         // TODO add your handling code here:
+        int pos=JTListarHoras.getSelectedRow();
+        h=listaHoras.get(pos);
+        if(h!=null){
+            VETERINARIA.eliminarHoraMedica(h);
+            modeloListarHora.removeRow(pos);
+        }
         
     }//GEN-LAST:event_jBeliminarHoraMedicaActionPerformed
 

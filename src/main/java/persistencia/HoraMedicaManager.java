@@ -31,8 +31,8 @@ public class HoraMedicaManager {
         return resut;
     }
     
-    public boolean deleteByFecha(String fecha) {
-        if(hMapper.deleteByFecha(fecha)>0){
+    public boolean deleteByFecha(HoraMedica h) {
+        if(hMapper.deleteByFecha(h)>0){
             SQLSESSION.commit();
             return true;
         }

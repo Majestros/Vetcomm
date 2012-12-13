@@ -215,6 +215,14 @@ public class Veterinaria {
         }
         return false;
     }
+
+    public boolean eliminarHoraMedica(HoraMedica h) {
+        if (this.hManager.deleteByFecha(h)) {
+            horas.remove(h);
+            return true;
+        }
+        return false;
+    }
     
     
     

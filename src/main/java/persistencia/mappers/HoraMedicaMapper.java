@@ -17,7 +17,7 @@ public interface HoraMedicaMapper {
     int insertHoraMedica(HoraMedica h);
     
     @Delete(DELETE_BY_FECHA)
-    int deleteByFecha(String fecha);
+    int deleteByFecha(HoraMedica h);
     
     @Select(SELECT_ALL)
     ArrayList<HoraMedica> obtenerHorasMedicas();
