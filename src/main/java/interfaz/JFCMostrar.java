@@ -118,7 +118,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLnombre.setText(".");
         jPanel1.add(jLnombre);
-        jLnombre.setBounds(90, 50, 220, 10);
+        jLnombre.setBounds(90, 40, 220, 20);
 
         jLabel3.setText("Dirección");
         jPanel1.add(jLabel3);
@@ -134,7 +134,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLtelefono.setText(".");
         jPanel1.add(jLtelefono);
-        jLtelefono.setBounds(90, 110, 220, 10);
+        jLtelefono.setBounds(90, 100, 220, 20);
 
         jLabel5.setText("Email");
         jPanel1.add(jLabel5);
@@ -142,7 +142,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLemail.setText(".");
         jPanel1.add(jLemail);
-        jLemail.setBounds(90, 140, 220, 10);
+        jLemail.setBounds(90, 140, 220, 20);
 
         jLabel7.setText("Mascotas Registradas");
         jPanel1.add(jLabel7);
@@ -156,7 +156,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jListMascotas);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(20, 200, 180, 130);
+        jScrollPane1.setBounds(20, 210, 180, 130);
 
         jBactualizar.setText("Actualizar");
         jBactualizar.addActionListener(new java.awt.event.ActionListener() {

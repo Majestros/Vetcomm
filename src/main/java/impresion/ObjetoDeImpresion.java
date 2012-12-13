@@ -5,24 +5,29 @@ import java.awt.print.PageFormat;
 import java.awt.print.Printable;
 import java.util.ArrayList;
 import modelo.FichaMedica;
-import modelo.Mascota;
 
 public class ObjetoDeImpresion implements Printable{
     
     private String histOrdenado="";
+    ArrayList<FichaMedica> fichasMedicas=new ArrayList<FichaMedica>();
+
+    public ObjetoDeImpresion() {
+    }
     
-    public boolean imprimirHistorial(Mascota m){
+    public ObjetoDeImpresion(ArrayList<FichaMedica> fM){
+        this.fichasMedicas = fM;
+    }
+    
+    public void imprimirHistorial(){
         
-        ordenarHistorial(m.getHistorial());
+        ordenarHistorial(this.fichasMedicas);
+        print(null, null, PAGE_EXISTS);
         
-        return false;
     }
 
     public int print(Graphics g, PageFormat f, int pageIndex){
         if(pageIndex == 0){
-            g.drawString("Historial Mascota.", 100, 200);
-            g.drawString("Colocar aca mas datos.", 100, 205);
-            g.drawString(histOrdenado, pageIndex, pageIndex);
+            g.drawString(histOrdenado, 100, 200);
             
             //para agregar mas texto
             //g.drawString(“mas texto”, coordenada_x, coordenada_y)
@@ -32,13 +37,12 @@ public class ObjetoDeImpresion implements Printable{
         }
     }
 
-    private String ordenarHistorial(ArrayList<FichaMedica> historial) {
+    private void ordenarHistorial(ArrayList<FichaMedica> historial) {
         
         for (int cont = 0; cont < historial.size(); cont++) {
             FichaMedica fichaMedica = historial.get(cont);
-            histOrdenado = fichaMedica.toString()+"\n";
+            this.histOrdenado += fichaMedica.toString()+"\n\n";
         }
-        return histOrdenado;
     }
     
 }

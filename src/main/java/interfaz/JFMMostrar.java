@@ -16,6 +16,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelo.FichaMedica;
 import modelo.Mascota;
+import impresion.ObjetoDeImpresion;
 
 /**
  *
@@ -24,7 +25,8 @@ import modelo.Mascota;
 public class JFMMostrar extends javax.swing.JFrame {
     
     private Mascota m;
-    ArrayList<FichaMedica> historial = new ArrayList<FichaMedica>();
+    private ArrayList<FichaMedica> historial = new ArrayList<FichaMedica>();
+    private ObjetoDeImpresion histImp;
 
     /** Creates new form JFMMostrar */
     public JFMMostrar(Mascota m) {
@@ -93,6 +95,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         jCbeditarGenero = new javax.swing.JComboBox();
         jBguardarCambios = new javax.swing.JButton();
         jBimprimirHistorial = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jBsalir = new javax.swing.JButton();
         jBeliminarMascota = new javax.swing.JButton();
         jBeditar = new javax.swing.JButton();
@@ -120,7 +123,7 @@ public class JFMMostrar extends javax.swing.JFrame {
 
         jLabel5.setText("Historial:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(50, 160, 363, 14);
+        jLabel5.setBounds(50, 154, 363, 20);
 
         jLid.setText(".");
         jPanel1.add(jLid);
@@ -189,6 +192,10 @@ public class JFMMostrar extends javax.swing.JFrame {
         });
         jPanel1.add(jBimprimirHistorial);
         jBimprimirHistorial.setBounds(250, 280, 160, 23);
+
+        jLabel6.setText("MM/DD/AAAA -  Motivo");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(50, 170, 170, 20);
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -312,6 +319,8 @@ public class JFMMostrar extends javax.swing.JFrame {
 
     private void jBimprimirHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBimprimirHistorialActionPerformed
         // TODO add your handling code here:
+        histImp = new ObjetoDeImpresion(historial);
+        histImp.imprimirHistorial();
         
     }//GEN-LAST:event_jBimprimirHistorialActionPerformed
     private void actualizar() {
@@ -370,6 +379,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLgenero;
     private javax.swing.JLabel jLid;
     private javax.swing.JList jListHistorial;

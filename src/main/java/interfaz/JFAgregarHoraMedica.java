@@ -214,7 +214,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         MedicoVeterinario v = (MedicoVeterinario) jCbmedicoVeterinario.getSelectedItem();
         h.setRutVeterinario(v.getRut());
         
-        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jCbagno.getSelectedItem().toString();
+        String fecha = jCbmes.getSelectedItem().toString()+"-" + jCbdia.getSelectedItem().toString()+"-" + jCbagno.getSelectedItem().toString();
         h.setFecha(fecha);
         
         String hora = jCbHora.getSelectedItem().toString() + " : " + jCbMinuto.getSelectedItem().toString();

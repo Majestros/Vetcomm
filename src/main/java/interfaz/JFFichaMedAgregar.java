@@ -11,6 +11,7 @@
 package interfaz;
 
 import static controlador.Principal.VETERINARIA;
+import javax.swing.JOptionPane;
 import modelo.FichaMedica;
 import modelo.Mascota;
 
@@ -164,11 +165,12 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         h.setMotivo(jTmotivo.getText());
         h.setSintoma(jTaSintoma.getText());
         h.setDiagnostico(jTaDiagnostico.getText());
-        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jCbagno.getSelectedItem().toString();
+        String fecha=jCbmes.getSelectedItem().toString()+"-"+jCbdia.getSelectedItem().toString()+"-"+jCbagno.getSelectedItem().toString();
         h.setFecha(fecha);
         
         VETERINARIA.agregarFichaMedica(obtenerDatosHistorial());
-//        m.agregarFichaMedica(obtenerDatosHistorial());
+        JOptionPane.showMessageDialog(null, "Ficha medica Ingresada.");
+        this.dispose();
                 
     }//GEN-LAST:event_jBagregarHistorialActionPerformed
 

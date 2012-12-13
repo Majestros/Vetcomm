@@ -311,7 +311,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
         
-        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jCbagno.getSelectedItem().toString();
+        String fecha = jCbmes.getSelectedItem().toString()+"-" + jCbdia.getSelectedItem().toString()+"-" + jCbagno.getSelectedItem().toString();
         modeloListarHora.setRowCount(0);
         
         
