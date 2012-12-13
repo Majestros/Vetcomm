@@ -54,7 +54,6 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jCbmes = new javax.swing.JComboBox();
         jCbdia = new javax.swing.JComboBox();
-        jTagno = new javax.swing.JTextField();
         jCbHora = new javax.swing.JComboBox();
         jCbMinuto = new javax.swing.JComboBox();
         jCbclientes = new javax.swing.JComboBox();
@@ -62,6 +61,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         jCbmedicoVeterinario = new javax.swing.JComboBox();
         jCbsala = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
+        jCbagno = new javax.swing.JComboBox();
         jBagregarHoraMedica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -98,6 +98,8 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
         jLabel6.setText("Sala:");
 
+        jCbagno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -124,11 +126,11 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
                                 .addComponent(jCbmes, javax.swing.GroupLayout.Alignment.LEADING, 0, 62, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jCbMinuto, 0, 59, Short.MAX_VALUE)
-                                .addComponent(jCbdia, 0, 59, Short.MAX_VALUE))
+                                .addComponent(jCbMinuto, 0, 66, Short.MAX_VALUE)
+                                .addComponent(jCbdia, 0, 66, Short.MAX_VALUE))
                             .addGap(18, 18, 18)
-                            .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(42, 42, 42))
+                            .addComponent(jCbagno, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(41, 41, 41))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jCbmascota, javax.swing.GroupLayout.Alignment.LEADING, 0, 259, Short.MAX_VALUE)
@@ -157,7 +159,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jCbmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCbdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCbagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -211,7 +213,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         MedicoVeterinario v = (MedicoVeterinario) jCbmedicoVeterinario.getSelectedItem();
         h.setRutVeterinario(v.getRut());
         
-        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jTagno.getText();
+        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jCbagno.getSelectedItem().toString();
         h.setFecha(fecha);
         
         String hora = jCbHora.getSelectedItem().toString() + " : " + jCbMinuto.getSelectedItem().toString();
@@ -308,6 +310,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     private javax.swing.JButton jBagregarHoraMedica;
     private javax.swing.JComboBox jCbHora;
     private javax.swing.JComboBox jCbMinuto;
+    private javax.swing.JComboBox jCbagno;
     private javax.swing.JComboBox jCbclientes;
     private javax.swing.JComboBox jCbdia;
     private javax.swing.JComboBox jCbmascota;
@@ -321,6 +324,5 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTagno;
     // End of variables declaration//GEN-END:variables
 }

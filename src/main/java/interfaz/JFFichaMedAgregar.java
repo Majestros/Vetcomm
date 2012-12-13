@@ -51,7 +51,6 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jCbdia = new javax.swing.JComboBox();
         jCbmes = new javax.swing.JComboBox();
-        jTagno = new javax.swing.JTextField();
         jTmotivo = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTaSintoma = new javax.swing.JTextArea();
@@ -60,6 +59,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jLid = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLnombreMascota = new javax.swing.JLabel();
+        jCbagno = new javax.swing.JComboBox();
         jBagregarHistorial = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
 
@@ -98,8 +98,6 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
         jPanel1.add(jCbmes);
         jCbmes.setBounds(170, 290, 60, 20);
-        jPanel1.add(jTagno);
-        jTagno.setBounds(310, 280, 100, 30);
         jPanel1.add(jTmotivo);
         jTmotivo.setBounds(160, 100, 210, 30);
 
@@ -128,6 +126,10 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         jLnombreMascota.setText(".");
         jPanel1.add(jLnombreMascota);
         jLnombreMascota.setBounds(170, 70, 180, 30);
+
+        jCbagno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015" }));
+        jPanel1.add(jCbagno);
+        jCbagno.setBounds(320, 290, 80, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(40, 20, 450, 350);
@@ -162,7 +164,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
         h.setMotivo(jTmotivo.getText());
         h.setSintoma(jTaSintoma.getText());
         h.setDiagnostico(jTaDiagnostico.getText());
-        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jTagno.getText();
+        String fecha=jCbmes.getSelectedItem().toString()+jCbdia.getSelectedItem().toString()+jCbagno.getSelectedItem().toString();
         h.setFecha(fecha);
         
         VETERINARIA.agregarFichaMedica(obtenerDatosHistorial());
@@ -217,6 +219,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBagregarHistorial;
     private javax.swing.JButton jBsalir;
+    private javax.swing.JComboBox jCbagno;
     private javax.swing.JComboBox jCbdia;
     private javax.swing.JComboBox jCbmes;
     private javax.swing.JLabel jLabel1;
@@ -232,7 +235,6 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTaDiagnostico;
     private javax.swing.JTextArea jTaSintoma;
-    private javax.swing.JTextField jTagno;
     private javax.swing.JTextField jTmotivo;
     // End of variables declaration//GEN-END:variables
 }

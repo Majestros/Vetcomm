@@ -134,16 +134,16 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
        String nombre= jTnombre.getText();
        String id= jTid.getText();
        
-//       m=VETERINARIA.obtenerMascota(id,nombre);
-//       
-//       if (m!=null){
-//            this.setVisible(false);
-//            JFMMostrar.main(m);
-//        }else {
-//            JOptionPane.showMessageDialog(null,"Mascota no se pudo encontrar.");
-//            jTid.setText("");
-//            jTnombre.setText("");
-//        }
+       m=VETERINARIA.obtenerMascota(id,nombre);
+       
+       if (m!=null){
+            this.setVisible(false);
+            JFMMostrar.main(m);
+        }else {
+            JOptionPane.showMessageDialog(null,"Mascota no se pudo encontrar.");
+            jTid.setText("");
+            jTnombre.setText("");
+        }
     }//GEN-LAST:event_jBbuscarMascotaActionPerformed
 
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed

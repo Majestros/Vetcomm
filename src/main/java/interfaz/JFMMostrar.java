@@ -115,7 +115,7 @@ public class JFMMostrar extends javax.swing.JFrame {
 
         jLabel4.setText("Genero:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(50, 130, 39, 14);
+        jLabel4.setBounds(50, 130, 90, 14);
 
         jLabel5.setText("Historial:");
         jPanel1.add(jLabel5);

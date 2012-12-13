@@ -60,14 +60,13 @@ public class JFPrincipal extends javax.swing.JFrame {
         jBbuscarHoraMedica = new javax.swing.JButton();
         jCbmes = new javax.swing.JComboBox();
         jCbdia = new javax.swing.JComboBox();
-        jTagno = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jCbagno = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cAgregar = new javax.swing.JMenuItem();
         cBuscar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        mAgregar = new javax.swing.JMenuItem();
         mBuscar = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         mvAgregar = new javax.swing.JMenuItem();
@@ -115,17 +114,13 @@ public class JFPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jCbmes.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
 
-        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
-
-        jTagno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTagnoActionPerformed(evt);
-            }
-        });
+        jCbdia.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
 
         jLabel2.setText("Fecha (MM/DD/AAAA):");
+
+        jCbagno.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2012", "2013", "2014", "2015" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,11 +139,11 @@ public class JFPrincipal extends javax.swing.JFrame {
                 .addComponent(jCbmes, 0, 62, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jCbdia, 0, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCbagno, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBbuscarHoraMedica)
-                .addGap(171, 171, 171))
+                .addComponent(jBbuscarHoraMedica, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(128, 128, 128))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -168,8 +163,8 @@ public class JFPrincipal extends javax.swing.JFrame {
                     .addComponent(jBbuscarHoraMedica)
                     .addComponent(jCbmes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jCbdia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(jCbagno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -203,14 +198,6 @@ public class JFPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Mascota");
-
-        mAgregar.setText("Agregar");
-        mAgregar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mAgregarActionPerformed(evt);
-            }
-        });
-        jMenu2.add(mAgregar);
 
         mBuscar.setText("Buscar");
         mBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -279,11 +266,6 @@ public class JFPrincipal extends javax.swing.JFrame {
                       
     }//GEN-LAST:event_cBuscarActionPerformed
 
-    private void mAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mAgregarActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_mAgregarActionPerformed
-
     private void mBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mBuscarActionPerformed
         // TODO add your handling code here:
         JIFMBuscar buscarM=new JIFMBuscar();
@@ -306,11 +288,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         jDesktopPane1.add(buscarMv);
         buscarMv.setVisible(true);
     }//GEN-LAST:event_mvBuscarActionPerformed
-
-    private void jTagnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTagnoActionPerformed
-
-        // TODO add your handling code here:}//GEN-LAST:event_jTagnoActionPerformed
-    }
+    
    
         private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
         // TODO add your handling code here:
@@ -321,7 +299,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
         
-        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jTagno.getText();
+        String fecha = jCbmes.getSelectedItem().toString() + jCbdia.getSelectedItem().toString() + jCbagno.getSelectedItem().toString();
         modeloListarHora.setRowCount(0);
         
         
@@ -377,6 +355,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jBagregarHoraMedica;
     private javax.swing.JButton jBbuscarHoraMedica;
     private javax.swing.JButton jBeliminarHoraMedica;
+    private javax.swing.JComboBox jCbagno;
     private javax.swing.JComboBox jCbdia;
     private javax.swing.JComboBox jCbmes;
     private javax.swing.JDesktopPane jDesktopPane1;
@@ -388,8 +367,6 @@ public class JFPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTagno;
-    private javax.swing.JMenuItem mAgregar;
     private javax.swing.JMenuItem mBuscar;
     private javax.swing.JMenuItem mvAgregar;
     private javax.swing.JMenuItem mvBuscar;
