@@ -134,7 +134,7 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
        String nombre= jTnombre.getText();
        String id= jTid.getText();
        
-       m=VETERINARIA.obtenerMascota(id,nombre);
+       m=obtenerMascota(id,nombre);
        
        if (m!=null){
             this.setVisible(false);
@@ -146,6 +146,22 @@ public class JIFMBuscar extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jBbuscarMascotaActionPerformed
 
+    //metodo para buscar una mascota en particular desde un cliente PERO NO FUNCIONA!!!! 
+    public Mascota obtenerMascota(String rutC, String nombreM) {
+  
+        ArrayList<Cliente> clientes = VETERINARIA.getClientes();
+        ArrayList<Mascota> mascotas;
+        
+        for (Cliente cliente : clientes) {
+            mascotas = cliente.getMascota();
+            for (Mascota mascota: mascotas){
+                if ((rutC.equals(cliente.getRut()))&&(nombreM.equals(mascota.getNombre()))){
+                    return mascota;
+                }       
+            }          
+        }
+        return null;      
+    }
     private void jBsalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBsalirActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);

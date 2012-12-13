@@ -228,23 +228,7 @@ public class Veterinaria {
         return false;
     }
 
-    //metodo para buscar una mascota en particular desde un cliente PERO NO FUNCIONA!!!! 
-    public Mascota obtenerMascota(String id, String nombre) {
-        actualizarArrayClientes();
-        
-        for (Cliente cliente : getClientes()) {
-            for (Mascota mascota: cliente.getMascota()){
-                if ((id.equals(cliente.getRut()))&&(nombre.equals(mascota.getNombre()))){
-                    return mascota;
-                }
-                           
-            }          
-        }
-        
-        return null;
-
-        
-    }
+    
     
     
     
