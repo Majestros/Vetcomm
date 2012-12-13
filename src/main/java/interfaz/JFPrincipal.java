@@ -33,6 +33,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
+        
         String titulos[] = {"RUT CLIENTE","MASCOTA","RUT VETERINARIO","HORA","SALA"};
         modeloListarHora.setColumnIdentifiers(titulos);
         this.JTListarHoras.setModel(modeloListarHora);
@@ -75,6 +76,9 @@ public class JFPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vetcomm 1.0");
 
+        jDesktopPane1.setName("VETCOMM 1.0"); // NOI18N
+        jDesktopPane1.setOpaque(false);
+
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         JTListarHoras.setModel(new javax.swing.table.DefaultTableModel(
@@ -90,7 +94,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(JTListarHoras);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Consultas.");
 
         jBagregarHoraMedica.setText("Agregar");
@@ -145,13 +149,14 @@ public class JFPrincipal extends javax.swing.JFrame {
                 .addComponent(jBbuscarHoraMedica, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(128, 128, 128))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(48, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(288, 288, 288)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(288, 288, 288)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +179,7 @@ public class JFPrincipal extends javax.swing.JFrame {
                 .addGap(61, 61, 61))
         );
 
-        jPanel1.setBounds(0, 0, 710, 440);
+        jPanel1.setBounds(0, 0, 710, 410);
         jDesktopPane1.add(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenu1.setText("Cliente");
@@ -240,15 +245,15 @@ public class JFPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jDesktopPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
-    
+    //abre la internal frame que agrega al cliente  
     private void cAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cAgregarActionPerformed
         // TODO add your handling code here:
         JIFCAgregar agregarC=new JIFCAgregar();
@@ -258,6 +263,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_cAgregarActionPerformed
 
+    //abre la internal frame que busca al cliente
     private void cBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cBuscarActionPerformed
         // TODO add your handling code here:
         JIFCBuscar buscarC=new JIFCBuscar();
@@ -266,6 +272,7 @@ public class JFPrincipal extends javax.swing.JFrame {
                       
     }//GEN-LAST:event_cBuscarActionPerformed
 
+    //abre la internal frame que busca al cliente
     private void mBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mBuscarActionPerformed
         // TODO add your handling code here:
         JIFMBuscar buscarM=new JIFMBuscar();
@@ -274,6 +281,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mBuscarActionPerformed
 
+    //abre la internal frame que agrega al medico veterinario
     private void mvAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvAgregarActionPerformed
         // TODO add your handling code here:
         JIFMvAgregar agregarMv=new JIFMvAgregar();
@@ -282,6 +290,7 @@ public class JFPrincipal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_mvAgregarActionPerformed
 
+    //abre la internal frame que busca al medico veterinario
     private void mvBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mvBuscarActionPerformed
         // TODO add your handling code here:
         JIFMvBuscar buscarMv=new JIFMvBuscar();
@@ -289,13 +298,16 @@ public class JFPrincipal extends javax.swing.JFrame {
         buscarMv.setVisible(true);
     }//GEN-LAST:event_mvBuscarActionPerformed
     
-   
+    
+   //abre el frame que agrega la hora medica
         private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
         // TODO add your handling code here:
             JFAgregarHoraMedica agregarHora = new JFAgregarHoraMedica();
             agregarHora.setVisible(true);
     }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
 
+    //boton que busca la hora medica mediante la fecha. 
+    //Mostrando las horas medicas del dia escogido. 
     private void jBbuscarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBbuscarHoraMedicaActionPerformed
         // TODO add your handling code here:
         
@@ -321,7 +333,7 @@ public class JFPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jBbuscarHoraMedicaActionPerformed
 
     
-    
+   //Boton que elimina una hora medica elegida en la tabla.   
     private void jBeliminarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarHoraMedicaActionPerformed
         // TODO add your handling code here:
         int pos=JTListarHoras.getSelectedRow();

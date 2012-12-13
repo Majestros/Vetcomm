@@ -29,7 +29,7 @@ public class JFCMostrar extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.c=c;
         
-        DefaultListModel dlm = new DefaultListModel();        
+//        DefaultListModel dlm = new DefaultListModel();        
         
         if (c!=null){
             jLnombre.setText(c.getNombre());
@@ -246,10 +246,10 @@ public class JFCMostrar extends javax.swing.JFrame {
 
     private void jBagregarMascotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarMascotaActionPerformed
         // TODO add your handling code here:
+        //crea la frame que agrega la mascota, enviandole el rut del cliente. 
+        //Y hace visible la frame
          new JFMAgregar(c.getRut()).setVisible(true);
- //      es lo mismo        
- //            JIFMAgregar agregarMascota = new JIFMAgregar();
-//            agregarMascota.setVisible(true);
+
          
    
          

@@ -26,7 +26,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
     private HoraMedica h = new HoraMedica();
     ArrayList<Mascota> mascotasCliente = new ArrayList<Mascota>();
-    // private Cliente cElegido=new Cliente();
+   
 
     /** Creates new form JFAgregarHoraMedica */
     public JFAgregarHoraMedica() {
@@ -202,6 +202,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void jBagregarHoraMedicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBagregarHoraMedicaActionPerformed
         // TODO add your handling code here:
         Cliente cElegido = (Cliente) jCbclientes.getSelectedItem();
@@ -232,11 +233,15 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         return h;
     }
 
+    
     private void jCbclientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCbclientesActionPerformed
         // TODO add your handling code here:
+        
+         
         Cliente cElegido = (Cliente) jCbclientes.getSelectedItem();
         h.setRutCliente(cElegido.getRut());
 
+        //Dependiendo del cliente que se elija se van a mostrar las mascotas que posea.  
         if (cElegido != null) {
 
             VETERINARIA.llenarMascotasDeCliente(cElegido);
@@ -246,7 +251,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jCbclientesActionPerformed
 
-    //llena las lista de mascota dependiendo del cliente elegido 
+    //Llena la lista del cliente elegido 
     private void llenarListaClientes() {
 
         for (Cliente c : VETERINARIA.getClientes()) {
@@ -256,6 +261,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         }
     }
 
+    //Llena la lista de mascota 
     private void llenarListaMascotas() {
         jCbmascota.removeAllItems();
         for (Mascota mascota : mascotasCliente) {
@@ -264,6 +270,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
 
     }
 
+    //Llena la lista del medico veterinario 
     private void llenarListaMedicoVeterinario() {
         for (MedicoVeterinario v : VETERINARIA.getMedicos()) {
             jCbmedicoVeterinario.addItem(v);
