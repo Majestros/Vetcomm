@@ -92,6 +92,7 @@ public class JFMMostrar extends javax.swing.JFrame {
         jTeditarRaza = new javax.swing.JTextField();
         jCbeditarGenero = new javax.swing.JComboBox();
         jBguardarCambios = new javax.swing.JButton();
+        jBimprimirHistorial = new javax.swing.JButton();
         jBsalir = new javax.swing.JButton();
         jBeliminarMascota = new javax.swing.JButton();
         jBeditar = new javax.swing.JButton();
@@ -144,7 +145,7 @@ public class JFMMostrar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBagregarHistorial);
-        jBagregarHistorial.setBounds(250, 230, 156, 23);
+        jBagregarHistorial.setBounds(250, 240, 156, 23);
 
         jListHistorial.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -178,7 +179,16 @@ public class JFMMostrar extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jBguardarCambios);
-        jBguardarCambios.setBounds(250, 290, 160, 23);
+        jBguardarCambios.setBounds(250, 160, 160, 23);
+
+        jBimprimirHistorial.setText("Imprimir Historial");
+        jBimprimirHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBimprimirHistorialActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBimprimirHistorial);
+        jBimprimirHistorial.setBounds(250, 280, 160, 23);
 
         jBsalir.setText("Salir");
         jBsalir.addActionListener(new java.awt.event.ActionListener() {
@@ -292,11 +302,22 @@ public class JFMMostrar extends javax.swing.JFrame {
         }
         
         VETERINARIA.editarMascota(m);
+        
+//        jBactualizar.setEnabled(true);
+//        jBagregarHistorial.setEnabled(true);
+//        jBeliminarMascota.setEnabled(true);
+        
+        this.dispose();
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
+
+    private void jBimprimirHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBimprimirHistorialActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jBimprimirHistorialActionPerformed
     private void actualizar() {
-//        VETERINARIA.llenarFichaMedicasDeMascota(m);
-//        historial=m.getHistorial();
-//        llenarLista();
+        VETERINARIA.llenarFichaMedicasDeMascota(m);
+        historial=m.getHistorial();
+        llenarLista();
     
     }
 
@@ -341,6 +362,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     private javax.swing.JButton jBeditar;
     private javax.swing.JButton jBeliminarMascota;
     private javax.swing.JButton jBguardarCambios;
+    private javax.swing.JButton jBimprimirHistorial;
     private javax.swing.JButton jBsalir;
     private javax.swing.JComboBox jCbeditarGenero;
     private javax.swing.JLabel jLabel1;

@@ -126,7 +126,7 @@ public class JFCMostrar extends javax.swing.JFrame {
 
         jLdireccion.setText(".");
         jPanel1.add(jLdireccion);
-        jLdireccion.setBounds(90, 80, 220, 10);
+        jLdireccion.setBounds(90, 70, 220, 20);
 
         jLabel4.setText("Telefono");
         jPanel1.add(jLabel4);
@@ -200,7 +200,8 @@ public class JFCMostrar extends javax.swing.JFrame {
         jPanel1.add(jTeditarTelefono);
         jTeditarTelefono.setBounds(100, 100, 270, 20);
         jPanel1.add(jTeditarEmail);
-        jTeditarEmail.setBounds(100, 130, 270, 20);
+        jTeditarEmail.setBounds(100, 130, 270, 25);
+        jTeditarEmail.getAccessibleContext().setAccessibleName("");
 
         jBguardarCambios.setText("Guardar Cambios ");
         jBguardarCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -342,6 +343,16 @@ public class JFCMostrar extends javax.swing.JFrame {
         c.setEmail(jTeditarEmail.getText());
         
         VETERINARIA.editarCliente(c);
+        
+//        jBactualizar.setEnabled(true);
+//        jBagregarMascota.setEnabled(true);
+//        jBeliminarCliente.setEnabled(true);
+//        jBeliminarMascota.setEnabled(true);
+//        jBmostrarMascota.setEnabled(true);
+        
+        this.dispose();
+        
+        
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**

@@ -140,8 +140,8 @@ public class JFIngreso extends javax.swing.JFrame {
         }           
         else{ 
             JOptionPane.showMessageDialog(rootPane, "Usuario no registrado!");
-            this._usuario.setText("");
-            this.clave.setText("");
+            this._usuario.setText(null);
+            this.clave.setText(null);
         }
             
             

@@ -226,6 +226,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
         boolean s= VETERINARIA.agregarHora(obtenerDatosHoraMedica());
         if (s) {
             JOptionPane.showMessageDialog(rootPane, "Hora Medica agregada!");
+            this.dispose();
         }
     }//GEN-LAST:event_jBagregarHoraMedicaActionPerformed
 

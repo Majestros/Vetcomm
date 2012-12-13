@@ -45,9 +45,14 @@ public class FichaMedicaManager {
         }
         return result;
     }
+    
+    public ArrayList<FichaMedica> obtenerFichasMedicas() {
+        ArrayList<FichaMedica> listaAct = fMapper.getFichas();
+        return listaAct;
+    }
 
-    public ArrayList<FichaMedica> obtenerFichasMedicas(Mascota m) {
-        ArrayList<FichaMedica> listaAct = fMapper.getAllFichas(m);
+    public ArrayList<FichaMedica> obtenerFichasMedicasDeMascota(Mascota m) {
+        ArrayList<FichaMedica> listaAct = fMapper.getFichasByMascota(m);
         return listaAct;
     }
     

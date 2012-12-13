@@ -183,11 +183,9 @@ public class Veterinaria {
     
     }
     
-//    public void llenarFichaMedicasDeMascota(String rut, String nombre) {
-//        
-//        m.setHistorial(fManager.obtenerFichasMedicas(rut,nombre));
-//    }
-//    
+    public void llenarFichaMedicasDeMascota(Mascota m) {
+        m.setHistorial(fManager.obtenerFichasMedicasDeMascota(m));
+    }
  //--------------------------------------------------------------------------
     public boolean esUsuarioRegistrado(Usuario usuario) {
         return (usrManager.obtenerUsuario(usuario) != null);

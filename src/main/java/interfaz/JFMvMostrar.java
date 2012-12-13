@@ -200,6 +200,11 @@ public class JFMvMostrar extends javax.swing.JFrame {
        v.setEspecialidad(jTeditarEspecialidad.getText()); 
         
        VETERINARIA.editarMedicoVeterinario(v);
+       
+//       jBeliminarVeterinario.setEnabled(true);      
+//       jBguardarCambios.setVisible(true);
+       
+       this.dispose();
     }//GEN-LAST:event_jBguardarCambiosActionPerformed
 
     /**

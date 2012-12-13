@@ -151,6 +151,8 @@ public class JFMAgregar extends javax.swing.JFrame {
         
         
        VETERINARIA.agregarMascota(obtenerDatosMascota());
+       JOptionPane.showMessageDialog(rootPane, "Mascota Agregada!");
+       this.dispose();
                                                  
 
     }//GEN-LAST:event_jBagregarMascotaActionPerformed
