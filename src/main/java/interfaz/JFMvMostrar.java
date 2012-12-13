@@ -24,6 +24,7 @@ public class JFMvMostrar extends javax.swing.JFrame {
     /** Creates new form JFMvMostrar */
     public JFMvMostrar(MedicoVeterinario v) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.v=v;
         
         if (v!=null){
@@ -93,9 +94,9 @@ public class JFMvMostrar extends javax.swing.JFrame {
         jPanel1.add(jLespecialidad);
         jLespecialidad.setBounds(125, 118, 155, 14);
         jPanel1.add(jTeditarNombre);
-        jTeditarNombre.setBounds(140, 80, 160, 20);
+        jTeditarNombre.setBounds(140, 80, 160, 25);
         jPanel1.add(jTeditarEspecialidad);
-        jTeditarEspecialidad.setBounds(140, 110, 160, 20);
+        jTeditarEspecialidad.setBounds(140, 110, 160, 25);
 
         jBguardarCambios.setText("Guardar Cambios");
         jBguardarCambios.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +179,6 @@ public class JFMvMostrar extends javax.swing.JFrame {
        jBguardarCambios.setVisible(true);
         
        jBeliminarVeterinario.setEnabled(false);
-       jBsalir.setEnabled(false);
        
        jLnombre.setVisible(false);
        jTeditarNombre.setVisible(true);

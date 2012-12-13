@@ -19,6 +19,7 @@ public class JIFMvAgregar extends javax.swing.JInternalFrame {
      */
     public JIFMvAgregar() {
         initComponents();
+        
     }
 
     /**

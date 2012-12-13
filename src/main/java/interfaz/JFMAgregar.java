@@ -25,6 +25,7 @@ public class JFMAgregar extends javax.swing.JFrame {
     /** Creates new form JFMAgregar */
     public JFMAgregar(String arg) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.arg = arg;
         this.jLRutCliente.setText(arg);
     }

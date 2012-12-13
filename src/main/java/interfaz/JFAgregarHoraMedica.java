@@ -31,6 +31,7 @@ public class JFAgregarHoraMedica extends javax.swing.JFrame {
     /** Creates new form JFAgregarHoraMedica */
     public JFAgregarHoraMedica() {
         initComponents();
+        this.setLocationRelativeTo(null);
         llenarListaClientes();
         llenarListaMedicoVeterinario();
 

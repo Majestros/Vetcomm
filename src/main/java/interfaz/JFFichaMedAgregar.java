@@ -26,6 +26,7 @@ public class JFFichaMedAgregar extends javax.swing.JFrame {
     /** Creates new form JFFichaMedAgregar */
     public JFFichaMedAgregar(Mascota m ) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.m=m;
         
         jLnombreMascota.setText(m.getNombre());

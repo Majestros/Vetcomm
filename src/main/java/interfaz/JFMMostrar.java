@@ -29,6 +29,7 @@ public class JFMMostrar extends javax.swing.JFrame {
     /** Creates new form JFMMostrar */
     public JFMMostrar(Mascota m) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.m = m;
        
 

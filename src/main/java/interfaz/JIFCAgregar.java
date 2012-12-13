@@ -21,6 +21,7 @@ public class JIFCAgregar extends javax.swing.JInternalFrame {
      */
     public JIFCAgregar() {
         initComponents();
+        
     }
 
     /**

@@ -31,6 +31,7 @@ public class JFPrincipal extends javax.swing.JFrame {
      */
     public JFPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
         
         String titulos[] = {"RUT CLIENTE","MASCOTA","RUT VETERINARIO","HORA","SALA"};
         modeloListarHora.setColumnIdentifiers(titulos);

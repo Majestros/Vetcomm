@@ -26,6 +26,7 @@ public class JFCMostrar extends javax.swing.JFrame {
     /** Creates new form JFCMostrar */
     public JFCMostrar(Cliente c) {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.c=c;
         
         DefaultListModel dlm = new DefaultListModel();        

@@ -19,6 +19,7 @@ public class JIFCBuscar extends javax.swing.JInternalFrame {
      */
     public JIFCBuscar() {
         initComponents();
+        
     }
 
     /**
